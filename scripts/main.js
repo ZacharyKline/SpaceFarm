@@ -2,7 +2,31 @@
 function swapHeader() {
     let funnyHeaders = document.getElementById('funnyheaders')
     let randomNum = Math.floor(Math.random() * 23)
-    const headerText = ['A long time ago in a galaxy farm farm away', 'In space no one can hear you bleet', 'GOATS IN SPACE', 'Earth Sheep are Easy', 'Cold Vacuum of Space Creamery', 'Roosters in space are constantly cawing', 'Oh the cocklamity', 'We kid you not', 'In 3027 Old MadDonald had a farm, designation: EIEIO', 'If it moos, we can kill it', 'Out of left Asteroid Field', 'Have you herd the one about the space sheep?', 'Who feels like space chicken tonight?', 'You got beef? We got beef.', 'Space Farmers: More than meets the sty', 'Our vehicles have tractor beams', 'Laugh until you\'re hoarse', 'We want a space pony for X-mas', 'Only the finest space slop', 'The crop circles are free', 'Holy crop(s)', 'You know you have to tell me if you\'re a c(r)op right?', 'By shear coincidence']
+    const headerText = [
+        'A long time ago in a galaxy farm farm away',
+        'In space no one can hear you bleet',
+        'GOATS IN SPACE',
+        'Earth Sheep are Easy',
+        'Cold Vacuum of Space Creamery',
+        'Roosters in space are constantly cawing',
+        'Oh the cocklamity',
+        'We kid you not',
+        'In 3027 Old MadDonald had a farm, designation: EIEIO',
+        'If it moos, we can kill it',
+        'Out of left Asteroid Field',
+        'Have you herd the one about the space sheep?',
+        'Who feels like space chicken tonight?',
+        'You got beef? We got beef.',
+        'Space Farmers: More than meets the sty',
+        'Our vehicles have tractor beams',
+        'Laugh until you\'re hoarse',
+        'We want a space pony for X-mas',
+        'Only the finest space slop',
+        'The crop circles are free',
+        'Holy crop(s)',
+        'You know you have to tell me if you\'re a c(r)op right?',
+        'By shear coincidence'
+    ]
     let funnyTexted = document.createTextNode(headerText[randomNum])
     funnyHeaders.appendChild(funnyTexted)
 }

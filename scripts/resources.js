@@ -139,6 +139,7 @@ function buyGoats() {
 window.setInterval(function () {
     generateGMilk(goatCount)
 }, timeValue)
+
 //========================================================
 //Animals/Hire Geese
 //========================================================
@@ -160,12 +161,11 @@ function buyGeese() {
         document.getElementById('gooseNumber').innerHTML = gooseCount
         document.getElementById('chaosy').innerHTML = chaosCount
         document.getElementById('goosey').innerHTML = "<button onclick='buyGeese()'>" + goosePrice + " G-Milk" + "</button>"
-        console.log(chaosCount)
     }
 }
 
 window.setInterval(function () {
-    generateChaos(chaosCount)
+    generateChaos(gooseCount)
 }, timeValue)
 //========================================================
 //Animals/Hire Ducks
@@ -186,7 +186,7 @@ const sheepInterval = setInterval(function () {
     if (sheepCount > 10) {
         document.getElementById('cowy').innerHTML = '<button onclick="buyCows()">10 wool</button>'
         document.getElementById('cowCounty').innerHTML = "Cows: <p id='cowNumber'>0</p>"
-        document.getElementById('milkSpot').innerHTML = "Milk: <p id='milky'>0</p>"
+        // document.getElementById('milkSpot').innerHTML = "Milk: <p id='milky'>0</p>"
         clearInterval(sheepInterval)
     }
 }, 5000)
@@ -197,7 +197,7 @@ const cowInterval = setInterval(function () {
     if (cowCount > 5) {
         document.getElementById('chickeny').innerHTML = '<button onclick="buyChickens()">20 milk</button>'
         document.getElementById('chickenCounty').innerHTML = "Chickens: <p id='chickenNumber'>0</p>"
-        document.getElementById('eggSpot').innerHTML = "Egg: <p id='eggy'>0</p>"
+        // document.getElementById('eggSpot').innerHTML = "Egg: <p id='eggy'>0</p>"
         clearInterval(cowInterval)
     }
 }, 5000)
@@ -207,7 +207,7 @@ const chickenInterval = setInterval(function () {
     if (eggCount > 1000) {
         document.getElementById('goaty').innerHTML = '<button onclick="buyGoats()">2000 eggs</button>'
         document.getElementById('goatCounty').innerHTML = "Goats: <p id='goatNumber'>0</p>"
-        document.getElementById('gmilkSpot').innerHTML = "G-Milk: <p id='gmilky'>0</p>"
+        // document.getElementById('gmilkSpot').innerHTML = "G-Milk: <p id='gmilky'>0</p>"
         clearInterval(chickenInterval)
     }
 }, 5000)
@@ -217,7 +217,7 @@ const goatInterval = setInterval(function () {
     if (gmilkCount > 500) {
         document.getElementById('goosey').innerHTML = '<button onclick="buyGeese()">100 gmilk</button>'
         document.getElementById('gooseCounty').innerHTML = "Goose: <p id='gooseNumber'>0</p>"
-        document.getElementById('chaosSpot').innerHTML = "CHAOS: <p id='chaosy'>0</p>"
+        // document.getElementById('chaosSpot').innerHTML = "CHAOS: <p id='chaosy'>0</p>"
         clearInterval(goatInterval)
     }
 }, 5000)
