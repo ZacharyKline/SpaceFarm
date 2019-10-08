@@ -1,0 +1,46 @@
+body {
+    background: lightgreen;
+    color: black;
+    position: relative;
+    margin: 0px;
+    display: flex;
+
+}
+#styleheader:after {
+    content: "No better spacecows this side of the Milky Way... get it?";
+
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    margin-left: 14%;
+}
+
+#resourceBar {
+    width: 13%;
+    height: 100%;
+    background: rgb(92, 176, 92);
+    position: fixed;
+    margin: 0px;
+}
+
+
+#clickMe {
+    margin: auto;
+    width: 60%;
+    height: 10em;
+    background: lightgreen;
+    background-image: url('../img/sheep-png-18219.png');
+    background-size: cover;
+    border: none;
+    font-size: 15px;
+    font-weight: bolder;
+    color: rgb(16, 58, 16);
+    text-shadow: 1px 1px white;
+}
+
+#clickMe:active {
+    padding:3px 4px 3px 6px;
+    width: 50%;
+    height: 8em;

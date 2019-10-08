@@ -1,0 +1,52 @@
+body {
+    content: "We would be in a bit of a pickle but thats not a resource";
+    background: tan;
+    color: black;
+    position: relative;
+    margin: 0px;
+    display: flex;
+
+}
+
+#styleheader:after {
+    content: "We would be in a bit of a pickle but thats not a resource";
+
+}
+#content {
+    display: flex;
+    flex-direction: column;
+    margin-left: 14%;
+}
+
+#resourceBar {
+    width: 13%;
+    height: 100%;
+    background: rgb(157, 136, 108);
+    position: fixed;
+    margin: 0px;
+   }
+
+#clickMe {
+    margin: auto;
+    width: 60%;
+    height: 10em;
+    background: tan;
+    background-image: url('../img/sheep-png-18219.png');
+    background-size: cover;
+    border: none;
+    font-size: 15px;
+    font-weight: bolder;
+    color: rgb(16, 58, 16);
+    text-shadow: 1px 1px white;
+}
+
+#clickMe:active {
+    padding:3px 4px 3px 6px;
+    width: 50%;
+    height: 8em;
+}
+
+#stuff {
+    margin-left: 5px;
+    margin-bottom: 0px;
+}

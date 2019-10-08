@@ -1,0 +1,48 @@
+body {
+    content: "Welcome to the altar for your SPACEGODS";
+    background: black;
+    color: tan;
+    position: relative;
+    margin: 0px;
+    display: flex;
+
+}
+
+#styleheader:after {
+    content: "Welcome to the altar for your SPACEGODS";
+    color: yellow
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    margin-left: 14%;
+}
+
+#resourceBar {
+    width: 13%;
+    height: 100%;
+    background: rgb(96, 96, 96);
+    position: fixed;
+    margin: 0px;
+   }
+
+
+#clickMe {
+    margin: auto;
+    width: 60%;
+    height: 10em;
+    background: black;
+    background-image: url('../img/sheep-png-18219.png');
+    background-size: cover;
+    border: none;
+    font-size: 15px;
+    font-weight: bolder;
+    color: rgb(16, 58, 16);
+    text-shadow: 1px 1px white;
+}
+
+#clickMe:active {
+    padding:3px 4px 3px 6px;
+    width: 50%;
+    height: 8em;
