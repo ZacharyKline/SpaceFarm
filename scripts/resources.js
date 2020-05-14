@@ -2,27 +2,34 @@
 
 //Global variables:
 let clickButton = document.getElementById('clickMe');
-
+const sheepAudio = new Audio('./audio/lamb.wav')
 //Resources per second
 let woolCount = 0   //Wool per second
 let milkCount = 0  //Milk per second
 let eggCount = 0  //Eggs per second
 let gmilkCount = 0  //Goats Milk per second?
 let chaosCount = 0
+let dEggCount = 0
 let squaredEyes = 0  //Special rare sheep currency
-let timeValue = 10
+let timeValue = 3
 
-
+// Broken for now.
+// function incomeCalc(animalname, animalcost, animalcount, resourcecount, resourcename) {
+//         resourcecount -= animalcost;
+//         let toThePowerOf = Math.pow(1.1, animalcount);
+//         animalcost = Math.trunc(22 * toThePowerOf);
+//         animalcount += 1
+//         console.log(animalcount)
+//         document.getElementById(animalname + "y").innerHTML = animalcount
+//         document.getElementById(resourcename + 'y').innerHTML = resourcecount
+//         document.getElementById(animalname+ "pricy").innerHTML = animalcost + " " + resourcename;
+// }
 
 //The first and most basic currency in the space farm game will be wool, and their producer will be space sheep.
 function shearButton(number) {
     randomNum = Math.floor(Math.random() * 100)
     woolCount = woolCount + number
     document.getElementById('wooly').innerHTML = woolCount;
-    if (randomNum == 99) {
-        squaredEyes = squaredEyes + 1
-        document.getElementById('squared').innerHTML = squaredEyes
-    }
 
 }
 
@@ -33,23 +40,33 @@ let sheepPrice = 20
 let sheepCount = 0
 let startingInt = sheepCount + 1
 
+function generateWool(number) {
+	woolCount = woolCount + number;
+	document.getElementById("wooly").innerHTML = woolCount;
+    timeValue = timeValue / sheepCount
+}
+
 function buySheep() {
+    // if (woolCount >= sheepPrice) {
+    //     incomeCalc("sheep", sheepPrice, sheepCount, woolCount, 'wool')
+    // }
     if (woolCount >= sheepPrice) {
         woolCount -= sheepPrice;
         let toThePowerOf = Math.pow(1.1, sheepCount);
         sheepPrice = Math.trunc(22 * toThePowerOf);
         sheepCount += 1
-        timeValue = timeValue / sheepCount
         document.getElementById('sheepy').innerHTML = sheepCount
         document.getElementById('wooly').innerHTML = woolCount
         document.getElementById('sheeppricy').innerHTML = sheepPrice + ' Wool'
+    //     // very annoying
+    //     // sheepAudio.play(); 
+
     }
 
 }
 
-
 window.setInterval(function () {
-    shearButton(sheepCount)
+    generateWool(sheepCount);
 
 }, timeValue)
 
@@ -170,7 +187,32 @@ window.setInterval(function () {
 //========================================================
 //Animals/Hire Ducks
 //========================================================
+let duckPrice = 100;
+let duckCount = 0;
 
+function generateDuckEggs(number) {
+	dEggCount = dEggCount + number;
+	document.getElementById("deggy").innerHTML = dEggCount;
+}
+
+function buyDucks() {
+    console.log('click')
+	if (chaosCount >= duckPrice) {
+		chaosCount -= duckPrice;
+		let toThePowerOf = Math.pow(1.1, gooseCount);
+		duckPrice = Math.trunc(110 * toThePowerOf);
+		duckCount += 1;
+		document.getElementById("chaosy").innerHTML = chaosCount;
+		document.getElementById("duckNumber").innerHTML = duckCount;
+		document.getElementById("deggy").innerHTML = dEggCount;
+		document.getElementById("goosey").innerHTML =
+			"<button onclick='buyDuck()'>" + duckPrice + " Duck Eggs" + "</button>";
+	}
+}
+
+window.setInterval(function () {
+	generateDuckEggs(duckCount);
+}, timeValue);
 
 //========================================================
 //Animals/Hire Pigs
@@ -221,3 +263,11 @@ const goatInterval = setInterval(function () {
         clearInterval(goatInterval)
     }
 }, 5000)
+
+const gooseInterval = setInterval(function () {
+    if (chaosCount > 1000) {
+        document.getElementById('duckey').innerHTML = '<button onclick="buyDucks()">100 chaos</button>'
+        document.getElementById('duckCounty').innerHTML = "Duck: <p id='duckNumber'>0</p>"
+        clearInterval(gooseInterval)
+    }
+})
