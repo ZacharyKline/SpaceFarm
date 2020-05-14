@@ -177,7 +177,7 @@ function buyGeese() {
         document.getElementById('gmilky').innerHTML = gmilkCount
         document.getElementById('gooseNumber').innerHTML = gooseCount
         document.getElementById('chaosy').innerHTML = chaosCount
-        document.getElementById('goosey').innerHTML = "<button onclick='buyGeese()'>" + goosePrice + " G-Milk" + "</button>"
+        document.getElementById('goosey').innerHTML = "<button onclick='buyGeese()'>" + goosePrice + " g-milk" + "</button>"
     }
 }
 
@@ -199,14 +199,13 @@ function buyDucks() {
     console.log('click')
 	if (chaosCount >= duckPrice) {
 		chaosCount -= duckPrice;
-		let toThePowerOf = Math.pow(1.1, gooseCount);
+		let toThePowerOf = Math.pow(1.1, duckCount);
 		duckPrice = Math.trunc(110 * toThePowerOf);
 		duckCount += 1;
 		document.getElementById("chaosy").innerHTML = chaosCount;
 		document.getElementById("duckNumber").innerHTML = duckCount;
 		document.getElementById("deggy").innerHTML = dEggCount;
-		document.getElementById("goosey").innerHTML =
-			"<button onclick='buyDuck()'>" + duckPrice + " Duck Eggs" + "</button>";
+		document.getElementById("duckey").innerHTML = "<button onclick='buyDucks()'>" + duckPrice + " chaos" + "</button>";
 	}
 }
 
