@@ -68,7 +68,7 @@ function buySheep() {
 window.setInterval(function () {
     generateWool(sheepCount);
     incrementTime+=Math.random()*1000
-}, timeValue + incrementTime)
+}, timeValue - incrementTime)
 
 
 //========================================================
@@ -224,13 +224,17 @@ window.setInterval(function () {
 //========================================================
 const sheepInterval = setInterval(function () {
     //Add in the sheep related unlocks here
+    // hving a  modulus so that way every  10th sheep the interval resets.
     if (sheepCount > 10) {
         document.getElementById('cowy').innerHTML = '<button onclick="buyCows()">10 wool</button>'
         document.getElementById('cowCounty').innerHTML = "Cows: <p id='cowNumber'>0</p>"
         // document.getElementById('milkSpot').innerHTML = "Milk: <p id='milky'>0</p>"
-        clearInterval(sheepInterval)
+        if(sheepCount % 2===0){
+            incrementTime = 0
+        }
     }
 }, 5000)
+
 
 // TODO: Known bug, this is currently not clearing interval after finishing the objective.
 const cowInterval = setInterval(function () {
