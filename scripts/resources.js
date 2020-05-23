@@ -11,8 +11,8 @@ let gmilkCount = 0  //Goats Milk per second?
 let chaosCount = 0
 let dEggCount = 0
 let squaredEyes = 0  //Special rare sheep currency
-let timeValue = 3
-
+let timeValue = 900
+let incrementTime = Math.random()+100
 // Broken for now.
 // function incomeCalc(animalname, animalcost, animalcount, resourcecount, resourcename) {
 //         resourcecount -= animalcost;
@@ -67,8 +67,8 @@ function buySheep() {
 
 window.setInterval(function () {
     generateWool(sheepCount);
-
-}, timeValue)
+    incrementTime+=Math.random()*1000
+}, timeValue + incrementTime)
 
 
 //========================================================
