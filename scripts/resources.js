@@ -12,7 +12,7 @@ let chaosCount = 0
 let dEggCount = 0
 let squaredEyes = 0  //Special rare sheep currency
 let timeValue = 900
-let incrementTime = Math.random()+100
+let incrementTime = Math.random()+10
 // Broken for now.
 // function incomeCalc(animalname, animalcost, animalcount, resourcecount, resourcename) {
 //         resourcecount -= animalcost;
