@@ -225,10 +225,11 @@ window.setInterval(function () {
 //========================================================
 //Set interval to check if things are unlocked
 //========================================================
-const stop = (thing) => clearInterval(thing)
+
+const stop = (interval) => clearInterval(interval)
+
 const sheepInterval = setInterval(function () {
     //Add in the sheep related unlocks here
-    console.log('still going')
     if (sheepCount > 10) {
         document.getElementById('cowy').innerHTML = '<button onclick="buyCows()">10 wool</button>'
         document.getElementById('cowCounty').innerHTML = "Cows: <p id='cowNumber'>0</p>"
@@ -249,9 +250,6 @@ const cowInterval = setInterval(function () {
         document.getElementById('chickenCounty').innerHTML = "Chickens: <p id='chickenNumber'>0</p>"
         // document.getElementById('eggSpot').innerHTML = "Egg: <p id='eggy'>0</p>"
         stop(cowInterval)
-        if(cowCount % 20===0){
-            incrementTime = 0
-        }
     }
 }, 5000)
 
