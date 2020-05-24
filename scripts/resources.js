@@ -11,7 +11,7 @@ let gmilkCount = 0  //Goats Milk per second?
 let chaosCount = 0
 let dEggCount = 0
 let squaredEyes = 0  //Special rare sheep currency
-let timeValue = 900
+let timeValue = 9
 let incrementTime = Math.random()+10
 // Broken for now.
 // function incomeCalc(animalname, animalcost, animalcount, resourcecount, resourcename) {
@@ -224,16 +224,20 @@ window.setInterval(function () {
 //========================================================
 const sheepInterval = setInterval(function () {
     //Add in the sheep related unlocks here
-    // hving a  modulus so that way every  10th sheep the interval resets.
-    if (sheepCount > 10) {
+    if (sheepCount === 10) {
         document.getElementById('cowy').innerHTML = '<button onclick="buyCows()">10 wool</button>'
         document.getElementById('cowCounty').innerHTML = "Cows: <p id='cowNumber'>0</p>"
         // document.getElementById('milkSpot').innerHTML = "Milk: <p id='milky'>0</p>"
-        if(sheepCount % 2===0){
-            incrementTime = 0
-        }
+    }
+    else if(sheepCount > 10){   
+        document.getElementById('cowCounty').innerHTML = `Cows: <p id='cowNumber'>${document.getElementById('cowNumber').innerHTML}</p>`
+    }
+    if(sheepCount % 20===0){
+        incrementTime = 0
     }
 }, 5000)
+
+
 
 
 // TODO: Known bug, this is currently not clearing interval after finishing the objective.
@@ -243,7 +247,9 @@ const cowInterval = setInterval(function () {
         document.getElementById('chickeny').innerHTML = '<button onclick="buyChickens()">20 milk</button>'
         document.getElementById('chickenCounty').innerHTML = "Chickens: <p id='chickenNumber'>0</p>"
         // document.getElementById('eggSpot').innerHTML = "Egg: <p id='eggy'>0</p>"
-        clearInterval(cowInterval)
+        if(cowCount % 20===0){
+            incrementTime = 0
+        }
     }
 }, 5000)
 
