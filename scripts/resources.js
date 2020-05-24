@@ -11,7 +11,7 @@ let gmilkCount = 0  //Goats Milk per second?
 let chaosCount = 0
 let dEggCount = 0
 let squaredEyes = 0  //Special rare sheep currency
-let timeValue = 9
+let timeValue = 900
 let incrementTime = Math.random()+10
 // Broken for now.
 // function incomeCalc(animalname, animalcost, animalcount, resourcecount, resourcename) {
@@ -98,8 +98,8 @@ function buyCows() {
 
 window.setInterval(function () {
     generateMilk(cowCount)
-
-}, timeValue)
+    incrementTime+=Math.random()*1000
+}, timeValue - incrementTime)
 
 //========================================================
 //Animals/Hire Chicken
@@ -127,7 +127,8 @@ function buyChickens() {
 
 window.setInterval(function () {
     generateEggs(chickenCount)
-}, timeValue)
+    incrementTime+=Math.random()*1000
+}, timeValue - incrementTime)
 
 //========================================================
 //Animals/Hire Goats
@@ -154,8 +155,8 @@ function buyGoats() {
 }
 
 window.setInterval(function () {
-    generateGMilk(goatCount)
-}, timeValue)
+    incrementTime+=Math.random()*1000
+}, timeValue - incrementTime)
 
 //========================================================
 //Animals/Hire Geese
@@ -183,7 +184,8 @@ function buyGeese() {
 
 window.setInterval(function () {
     generateChaos(gooseCount)
-}, timeValue)
+    incrementTime+=Math.random()*1000
+}, timeValue - incrementTime)
 //========================================================
 //Animals/Hire Ducks
 //========================================================
@@ -211,7 +213,8 @@ function buyDucks() {
 
 window.setInterval(function () {
 	generateDuckEggs(duckCount);
-}, timeValue);
+    incrementTime+=Math.random()*1000
+}, timeValue - incrementTime)
 
 //========================================================
 //Animals/Hire Pigs
@@ -222,18 +225,15 @@ window.setInterval(function () {
 //========================================================
 //Set interval to check if things are unlocked
 //========================================================
+const stop = (thing) => clearInterval(thing)
 const sheepInterval = setInterval(function () {
     //Add in the sheep related unlocks here
-    if (sheepCount === 10) {
+    console.log('still going')
+    if (sheepCount > 10) {
         document.getElementById('cowy').innerHTML = '<button onclick="buyCows()">10 wool</button>'
         document.getElementById('cowCounty').innerHTML = "Cows: <p id='cowNumber'>0</p>"
         // document.getElementById('milkSpot').innerHTML = "Milk: <p id='milky'>0</p>"
-    }
-    else if(sheepCount > 10){   
-        document.getElementById('cowCounty').innerHTML = `Cows: <p id='cowNumber'>${document.getElementById('cowNumber').innerHTML}</p>`
-    }
-    if(sheepCount % 20===0){
-        incrementTime = 0
+        stop(sheepInterval)
     }
 }, 5000)
 
@@ -243,10 +243,12 @@ const sheepInterval = setInterval(function () {
 // TODO: Known bug, this is currently not clearing interval after finishing the objective.
 const cowInterval = setInterval(function () {
     //Add in cow related unlocks here
+
     if (cowCount > 5) {
         document.getElementById('chickeny').innerHTML = '<button onclick="buyChickens()">20 milk</button>'
         document.getElementById('chickenCounty').innerHTML = "Chickens: <p id='chickenNumber'>0</p>"
         // document.getElementById('eggSpot').innerHTML = "Egg: <p id='eggy'>0</p>"
+        stop(cowInterval)
         if(cowCount % 20===0){
             incrementTime = 0
         }
@@ -258,8 +260,8 @@ const chickenInterval = setInterval(function () {
     if (eggCount > 1000) {
         document.getElementById('goaty').innerHTML = '<button onclick="buyGoats()">2000 eggs</button>'
         document.getElementById('goatCounty').innerHTML = "Goats: <p id='goatNumber'>0</p>"
+        stop(chickenInterval)
         // document.getElementById('gmilkSpot').innerHTML = "G-Milk: <p id='gmilky'>0</p>"
-        clearInterval(chickenInterval)
     }
 }, 5000)
 
@@ -269,7 +271,7 @@ const goatInterval = setInterval(function () {
         document.getElementById('goosey').innerHTML = '<button onclick="buyGeese()">100 gmilk</button>'
         document.getElementById('gooseCounty').innerHTML = "Goose: <p id='gooseNumber'>0</p>"
         // document.getElementById('chaosSpot').innerHTML = "CHAOS: <p id='chaosy'>0</p>"
-        clearInterval(goatInterval)
+        stop(goatInterval)
     }
 }, 5000)
 
@@ -277,6 +279,6 @@ const gooseInterval = setInterval(function () {
     if (chaosCount > 1000) {
         document.getElementById('duckey').innerHTML = '<button onclick="buyDucks()">100 chaos</button>'
         document.getElementById('duckCounty').innerHTML = "Duck: <p id='duckNumber'>0</p>"
-        clearInterval(gooseInterval)
+        stop(gooseInterval)
     }
 })
