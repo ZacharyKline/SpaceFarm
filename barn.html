@@ -6,7 +6,7 @@
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<link
 			id="pagestyle"
-			href="./styles/resources.css"
+			href="./styles/farmStyle.css"
 			rel="stylesheet"
 			type="text/css"
 		/>
@@ -21,6 +21,10 @@
 					<div>
 						Wool:
 						<p id="wooly">0</p>
+					</div>
+					<div>
+						Squared Eyes:
+						<p id="squared">0</p>
 					</div>
 					<div id="milkSpot">
 						Milk:
@@ -37,10 +41,6 @@
 					<div id="chaosSpot">
 						CHAOS:
 						<p id="chaosy">0</p>
-					</div>
-					<div id='deggySpot'>
-						Duck Eggs:
-						<p id='deggy'>0</p>
 					</div>
 				</div>
 				<div id="animalCounts">
@@ -59,36 +59,28 @@
 					<div id="goaty"></div>
 					<div id="goatCounty"></div>
 					<div id="goosey"></div>
-					<div id="gooseCounty"></div>
-					<div id="duckey"></div>
-					<div id="duckCounty"></div>
+                    <div id="gooseCounty"></div>
+                    <div id='duckey'></div>
+                    <div id='duckCounty'></div>
 				</div>
 			</div>
 		</aside>
-
-		<div id="gameBody">
+		<div id='gameBody'>
 			<h3 id="funnyheaders"></h3>
 			<div id="content">
 				<div id="farmtabsarea">
-					<button id="resources" onclick="swapStyles()">Resources</button>
+					<!-- <button id="resources" onclick="swapStyles()">Resources</button>
 					<button id="spacefarm" onclick="swapStyles()">Space Barn</button>
 					<button id="altarbutt" onclick="swapStyles()">
 						Altar to your SPACEGODS
-					</button>
+                    </button> -->
+                    <a href='index.html'><button>Resources</button></a>
+                    <button>Altar</button>
 				</div>
 				<h5 id="styleheader"></h5>
 				<button id="clickMe" onclick="shearButton(1)">Click me to shear</button>
-            </div>
-				<div id="specialtyArea">
-					<div id="ResourceTab">
-						<p>Upgrades:</p>
-						<button id='sheepUp1'>S1</button>
-						<button id='sheepUp2'>S2</button>
-					</div>
-					<div id="spaceBarnTab"></div>
-					<div id="altarTab"></div>
-				</div>
-        </div>
+			</div>
+		</div>
 		<script src="./scripts/main.js"></script>
 		<script src="./scripts/resources.js"></script>
 	</body>
