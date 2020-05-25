@@ -1,10 +1,13 @@
 // This is the javascript file to mess around with resources, and animals, etc.
 
 //Global variables:
-let clickButton = document.getElementById('clickMe');
+const clickButton = document.querySelector('#clickMe');
+const sheepUp1 = document.querySelector('#sheepUp1')
+const sheepUp2 = document.querySelector('#sheepUp2')
 const sheepAudio = new Audio('./audio/lamb.wav')
 //Resources per second
 let woolCount = 0   //Wool per second
+let woolGenerator = 1
 let milkCount = 0  //Milk per second
 let eggCount = 0  //Eggs per second
 let gmilkCount = 0  //Goats Milk per second?
@@ -41,7 +44,8 @@ let sheepCount = 0
 let startingInt = sheepCount + 1
 
 function generateWool(number) {
-	woolCount = woolCount + number;
+//    woolGenerator += number
+	woolCount = woolCount + number * sheepUpgrade1 * sheepUpgrade2 
 	document.getElementById("wooly").innerHTML = woolCount;
     timeValue = timeValue / sheepCount
 }
@@ -278,5 +282,31 @@ const gooseInterval = setInterval(function () {
         document.getElementById('duckey').innerHTML = '<button onclick="buyDucks()">100 chaos</button>'
         document.getElementById('duckCounty').innerHTML = "Duck: <p id='duckNumber'>0</p>"
         stop(gooseInterval)
+    }
+})
+
+
+//========================================================
+//Animal Upgrades
+//========================================================
+let sheepUpgrade1 = 1
+let sheepUpgrade2 = 1
+
+sheepUp1.addEventListener('click', function upgrade1() {
+    if (woolCount >= 40) {
+        woolCount -= 40
+        sheepUpgrade1 = 2
+        sheepUp1.classList.add('used')
+        sheepUp1.removeEventListener('click', upgrade1)
+    }
+})
+
+sheepUp2.addEventListener('click', function sheepy2() {
+    if (woolCount >= 400) {
+        woolCount -= 400
+        sheepUpgrade2 = 2
+        sheepUp2.classList.add("used");
+        sheepUp2.removeEventListener('click', sheepy2)
+
     }
 })

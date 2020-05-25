@@ -85,3 +85,19 @@ body {
     top: 50%;
     left: 13%;
 }
+
+.used {
+    background-color: grey !important;
+    border-style: outset;
+}
+
+#sheepUp1, #sheepUp2 {
+    background-color: aquamarine;
+    height: 45px;
+    width: 45px;
+    border: 3px solid rgb(99, 197, 164);
+    border-radius: 5px;
+    font-size: 25px;
+    padding: 5px;
+
+}
