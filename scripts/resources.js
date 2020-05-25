@@ -37,20 +37,25 @@ function shearButton(number) {
 }
 let commaIncluded = value => value.toString().split('').reverse().map((element, index)=>index%3===0?element+=',':element).reverse().join('').slice(0,-1)
 
+let sequentializer = (startingValue, endingValue,destination) =>{
+    for(let i = startingValue ; i <= endingValue ; i++){
+        console.log(i)
+        document.getElementById(`${destination}`).innerHTML = commaIncluded(i)
+    }
+}
 //========================================================
 //Animals/Hire Sheep
 //========================================================
 let sheepPrice = 20
 let sheepCount = 0
-let startingInt = sheepCount + 1
 
 function generateWool(number) {
 //    woolGenerator += number
     woolCount = woolCount + number * sheepUpgrade1 * sheepUpgrade2
-    let stringed = commaIncluded(woolCount)
-	document.getElementById("wooly").innerHTML = stringed;
+	document.getElementById("wooly").innerHTML = commaIncluded(woolCount);
     timeValue = timeValue / sheepCount
 }
+
 
 function buySheep() {
     // if (woolCount >= sheepPrice) {
@@ -72,8 +77,12 @@ function buySheep() {
 }
 
 window.setInterval(function () {
+    let oldWool = woolCount
     generateWool(sheepCount);
     incrementTime+=Math.random()*1000
+    if(sheepCount > 0){
+        sequentializer(oldWool, woolCount,"wooly")
+    }
 }, timeValue - incrementTime)
 
 
