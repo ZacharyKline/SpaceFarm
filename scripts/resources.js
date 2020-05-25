@@ -15,7 +15,7 @@ let chaosCount = 0
 let dEggCount = 0
 let squaredEyes = 0  //Special rare sheep currency
 let timeValue = 900
-let incrementTime = Math.random()+10
+let incrementTime = (Math.random()+.1)+10
 // Broken for now.
 // function incomeCalc(animalname, animalcost, animalcount, resourcecount, resourcename) {
 //         resourcecount -= animalcost;
@@ -35,6 +35,7 @@ function shearButton(number) {
     document.getElementById('wooly').innerHTML = woolCount;
 
 }
+let commaIncluded = value => value.toString().split('').reverse().map((element, index)=>index%3===0?element+=',':element).reverse().join('').slice(0,-1)
 
 //========================================================
 //Animals/Hire Sheep
@@ -45,8 +46,9 @@ let startingInt = sheepCount + 1
 
 function generateWool(number) {
 //    woolGenerator += number
-	woolCount = woolCount + number * sheepUpgrade1 * sheepUpgrade2 
-	document.getElementById("wooly").innerHTML = woolCount;
+    woolCount = woolCount + number * sheepUpgrade1 * sheepUpgrade2
+    let stringed = commaIncluded(woolCount)
+	document.getElementById("wooly").innerHTML = stringed;
     timeValue = timeValue / sheepCount
 }
 
@@ -59,9 +61,9 @@ function buySheep() {
         let toThePowerOf = Math.pow(1.1, sheepCount);
         sheepPrice = Math.trunc(22 * toThePowerOf);
         sheepCount += 1
-        document.getElementById('sheepy').innerHTML = sheepCount
-        document.getElementById('wooly').innerHTML = woolCount
-        document.getElementById('sheeppricy').innerHTML = sheepPrice + ' Wool'
+        document.getElementById('sheepy').innerHTML = commaIncluded(sheepCount)
+        document.getElementById('wooly').innerHTML = commaIncluded(woolCount)
+        document.getElementById('sheeppricy').innerHTML = commaIncluded(sheepPrice) + ' Wool'
     //     // very annoying
     //     // sheepAudio.play(); 
 
@@ -83,7 +85,7 @@ let cowCount = 0
 
 function generateMilk(number) {
     milkCount = milkCount + number
-    document.getElementById('milky').innerHTML = milkCount;
+    document.getElementById('milky').innerHTML = commaIncluded(milkCount);
 }
 
 function buyCows() {
@@ -93,10 +95,10 @@ function buyCows() {
         let toThePowerOf = Math.pow(1.1, cowCount);
         cowPrice = Math.trunc(12 * toThePowerOf);
         cowCount += 1
-        document.getElementById('wooly').innerHTML = woolCount
-        document.getElementById('cowNumber').innerHTML = cowCount
-        document.getElementById('milky').innerHTML = milkCount
-        document.getElementById('cowy').innerHTML = "<button onclick='buyCows()'>" + cowPrice + " wool" + "</button>"
+        document.getElementById('wooly').innerHTML = commaIncluded(woolCount)
+        document.getElementById('cowNumber').innerHTML = commaIncluded(cowCount)
+        document.getElementById('milky').innerHTML = commaIncluded(milkCount)
+        document.getElementById('cowy').innerHTML = "<button onclick='buyCows()'>" + commaIncluded(cowPrice) + " wool" + "</button>"
     }
 }
 
@@ -113,7 +115,7 @@ let chickenCount = 0
 
 function generateEggs(number) {
     eggCount = eggCount + number
-    document.getElementById('eggy').innerHTML = eggCount;
+    document.getElementById('eggy').innerHTML = commaIncluded(eggCount);
 }
 
 function buyChickens() {
@@ -122,10 +124,10 @@ function buyChickens() {
         let toThePowerOf = Math.pow(1.1, chickenCount);
         chickenPrice = Math.trunc(12 * toThePowerOf);
         chickenCount += 1
-        document.getElementById('milky').innerHTML = milkCount
-        document.getElementById('chickenNumber').innerHTML = chickenCount
-        document.getElementById('eggy').innerHTML = eggCount
-        document.getElementById('chickeny').innerHTML = "<button onclick='buyChickens()'>" + chickenPrice + " milk" + "</button>"
+        document.getElementById('milky').innerHTML = commaIncluded(milkCount)
+        document.getElementById('chickenNumber').innerHTML = commaIncluded(chickenCount)
+        document.getElementById('eggy').innerHTML = commaIncluded(eggCount)
+        document.getElementById('chickeny').innerHTML = "<button onclick='buyChickens()'>" + commaIncluded(chickenPrice) + " milk" + "</button>"
     }
 }
 
@@ -142,7 +144,7 @@ let goatCount = 0
 
 function generateGMilk(number) {
     gmilkCount = gmilkCount + number
-    document.getElementById('gmilky').innerHTML = gmilkCount;
+    document.getElementById('gmilky').innerHTML = commaIncluded(gmilkCount);
 }
 
 function buyGoats() {
@@ -151,10 +153,10 @@ function buyGoats() {
         let toThePowerOf = Math.pow(1.1, goatCount);
         goatPrice = Math.trunc(2200 * toThePowerOf);
         goatCount += 1
-        document.getElementById('eggy').innerHTML = eggCount
-        document.getElementById('goatNumber').innerHTML = goatCount
-        document.getElementById('gmilky').innerHTML = gmilkCount
-        document.getElementById('goaty').innerHTML = "<button onclick='buyGoats()'>" + goatPrice + " eggs" + "</button>"
+        document.getElementById('eggy').innerHTML = commaIncluded(eggCount)
+        document.getElementById('goatNumber').innerHTML = commaIncluded(goatCount)
+        document.getElementById('gmilky').innerHTML = commaIncluded(gmilkCount)
+        document.getElementById('goaty').innerHTML = "<button onclick='buyGoats()'>" + commaIncluded(goatPrice) + " eggs" + "</button>"
     }
 }
 
@@ -170,7 +172,7 @@ let gooseCount = 0
 
 function generateChaos(number) {
     chaosCount = chaosCount + number
-    document.getElementById('chaosy').innerHTML = chaosCount
+    document.getElementById('chaosy').innerHTML = commaIncluded(chaosCount)
 }
 
 function buyGeese() {
@@ -179,10 +181,10 @@ function buyGeese() {
         let toThePowerOf = Math.pow(1.1, gooseCount);
         goosePrice = Math.trunc(110 * toThePowerOf);
         gooseCount += 1
-        document.getElementById('gmilky').innerHTML = gmilkCount
-        document.getElementById('gooseNumber').innerHTML = gooseCount
-        document.getElementById('chaosy').innerHTML = chaosCount
-        document.getElementById('goosey').innerHTML = "<button onclick='buyGeese()'>" + goosePrice + " g-milk" + "</button>"
+        document.getElementById('gmilky').innerHTML = commaIncluded(gmilkCount)
+        document.getElementById('gooseNumber').innerHTML = commaIncluded(gooseCount)
+        document.getElementById('chaosy').innerHTML = commaIncluded(chaosCount)
+        document.getElementById('goosey').innerHTML = "<button onclick='buyGeese()'>" + commaIncluded(goosePrice) + " g-milk" + "</button>"
     }
 }
 
@@ -198,7 +200,7 @@ let duckCount = 0;
 
 function generateDuckEggs(number) {
 	dEggCount = dEggCount + number;
-	document.getElementById("deggy").innerHTML = dEggCount;
+	document.getElementById("deggy").innerHTML = commaIncluded(dEggCount);
 }
 
 function buyDucks() {
@@ -208,10 +210,10 @@ function buyDucks() {
 		let toThePowerOf = Math.pow(1.1, duckCount);
 		duckPrice = Math.trunc(110 * toThePowerOf);
 		duckCount += 1;
-		document.getElementById("chaosy").innerHTML = chaosCount;
-		document.getElementById("duckNumber").innerHTML = duckCount;
-		document.getElementById("deggy").innerHTML = dEggCount;
-		document.getElementById("duckey").innerHTML = "<button onclick='buyDucks()'>" + duckPrice + " chaos" + "</button>";
+		document.getElementById("chaosy").innerHTML = commaIncluded(chaosCount);
+		document.getElementById("duckNumber").innerHTML = commaIncluded(duckCount);
+		document.getElementById("deggy").innerHTML = commaIncluded(dEggCount);
+		document.getElementById("duckey").innerHTML = "<button onclick='buyDucks()'>" + commaIncluded(duckPrice) + " chaos" + "</button>";
 	}
 }
 
@@ -245,7 +247,7 @@ const sheepInterval = setInterval(function () {
 
 
 
-// TODO: Known bug, this is currently not clearing interval after finishing the objective.
+
 const cowInterval = setInterval(function () {
     //Add in cow related unlocks here
 
