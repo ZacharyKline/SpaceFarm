@@ -6,7 +6,8 @@ const sheepUp1 = document.querySelector('#sheepUp1')
 const sheepUp2 = document.querySelector('#sheepUp2')
 const sheepAudio = new Audio('./audio/lamb.wav')
 //Resources per second
-let woolCount = 0   //Wool per second
+let woolCount = 2000000
+0   //Wool per second
 let woolGenerator = 1
 let milkCount = 0  //Milk per second
 let eggCount = 0  //Eggs per second
@@ -44,7 +45,6 @@ let commaIncluded = value => value.toString().split('').reverse().map((element, 
 //========================================================
 let sheepPrice = 20
 let sheepCount = 0
-let startingInt = sheepCount + 1
 
 function generateWool(number) {
 //    woolGenerator += number
@@ -75,10 +75,15 @@ function buySheep() {
 // inspired by https://teamtreehouse.com/community/how-to-run-setinterval-with-dynamic-delay-value
 
 function sheepAccumulator(){
+    // recursive function to dynamically alter time based off of sheep count
     setTimeout(() =>{
+        // only 0 or 1 wool per increment of time based on sheep count
         generateWool(sheepCount >= 1 ? 1 : sheepCount);
+        // recurse!
         sheepAccumulator()
-    }, timeValue/Math.log((sheepCount+1))/(1+Math.log(-.1*(sheepCount-50))))
+        // adjusts time to keep rate sigmotic
+        // switches to logarithmic for when the sheep count exceeds 95
+    }, sheepCount >= 95 ? timeValue - timeValue/2 - Math.log((sheepCount+100-Math.E**750)) : timeValue - (timeValue/2)*(1+Math.E ** Math.log(sheepCount/(sheepCount+10))))
     // formula acquired from logistics function 
 }
 sheepAccumulator()
@@ -113,7 +118,8 @@ function cowAccumulator(){
     setTimeout(() =>{
         generateMilk(cowCount >= 1 ? 1 : cowCount);
         cowAccumulator()
-    }, timeValue/Math.log((cowCount+1))/(1+Math.log(-.1*(cowCount-50))))
+    }, cowCount >= 95 ? timeValue - timeValue/2 - Math.log((cowCount+100-Math.E**750)) : timeValue - (timeValue/2)*(1+Math.E ** Math.log(cowCount/(cowCount+10))))
+    // }, timeValue - (timeValue/2)*(1+Math.pow(Math.E, Math.log(cowCount/(cowCount+10)))))
     // formula acquired from logistics function 
 }
 cowAccumulator()
@@ -146,7 +152,8 @@ function chickenAccumulator(){
     setTimeout(() =>{
         generateEggs(chickenCount >= 1 ? 1 : chickenCount);
         chickenAccumulator()
-    }, timeValue/Math.log((chickenCount+1))/(1+Math.log(-.1*(chickenCount-50))))
+    },chickenCount >= 95 ? timeValue - timeValue/2 - Math.log((chickenCount+100-Math.E**750)) : timeValue - (timeValue/2)*(1+Math.E ** Math.log(chickenCount/(chickenCount+10))))
+    // }, timeValue/Math.log((chickenCount+1))/(1+Math.log(-.1*(chickenCount-50))))
     // formula acquired from logistics function 
 }
 chickenAccumulator()
@@ -177,7 +184,8 @@ function goatAccumulator(){
     setTimeout(() =>{
         generateGMilk(goatCount >= 1 ? 1 : goatCount);
         goatAccumulator()
-    }, timeValue/Math.log((goatCount+1))/(1+Math.log(-.1*(goatCount-50))))
+    },goatCount >= 95 ? timeValue - timeValue/2 - Math.log((goatCount+100-Math.E**750)) : timeValue - (timeValue/2)*(1+Math.E ** Math.log(goatCount/(goatCount+10))))
+    // }, timeValue - (timeValue/2)*(1+Math.pow(Math.E, Math.log(goatCount/(goatCount+10)))))
     // formula acquired from logistics function 
 }
 goatAccumulator()
@@ -209,7 +217,8 @@ function gooseAccumulator(){
     setTimeout(() =>{
         generateChaos(gooseCount >= 1 ? 1 : gooseCount);
         gooseAccumulator()
-    }, timeValue/Math.log((gooseCount+1))/(1+Math.log(-.1*(gooseCount-50))))
+    },gooseCount >= 95 ? timeValue - timeValue/2 - Math.log((gooseCount+100-Math.E**750)) : timeValue - (timeValue/2)*(1+Math.E ** Math.log(gooseCount/(gooseCount+10))))
+    // }, timeValue - (timeValue/2)*(1+Math.pow(Math.E, Math.log(gooseCount/(gooseCount+10)))))
     // formula acquired from logistics function 
 }
 gooseAccumulator()
@@ -242,7 +251,8 @@ function duckAccumulator(){
     setTimeout(() =>{
         generateDuckEggs(duckCount >= 1 ? 1 : duckCount);
         duckAccumulator()
-    }, timeValue/Math.log((duckCount+1))/(1+Math.log(-.1*(duckCount-50))))
+    },duckCount >= 95 ? timeValue - timeValue/2 - Math.log((duckCount+100-Math.E**750)) : timeValue - (timeValue/2)*(1+Math.E ** Math.log(duckCount/(duckCount+10))))
+    // }, timeValue - (timeValue/2)*(1+Math.pow(Math.E, Math.log(duckCount/(duckCount+10)))))
     // formula acquired from logistics function 
 }
 duckAccumulator()
