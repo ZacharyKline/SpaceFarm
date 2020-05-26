@@ -6,7 +6,7 @@ const sheepUp1 = document.querySelector('#sheepUp1')
 const sheepUp2 = document.querySelector('#sheepUp2')
 const sheepAudio = new Audio('./audio/lamb.wav')
 //Resources per second
-let woolCount = 0   //Wool per second
+let woolCount = 19999999   //Wool per second
 let woolGenerator = 1
 let milkCount = 0  //Milk per second
 let eggCount = 0  //Eggs per second
@@ -74,15 +74,15 @@ function buySheep() {
 
 // inspired by https://teamtreehouse.com/community/how-to-run-setinterval-with-dynamic-delay-value
 
-function accumulator(){
+function sheepAccumulator(){
     setTimeout(() =>{
         generateWool(sheepCount >= 1 ? 1 : sheepCount);
-        console.log(woolCount)
-        accumulator()
+        sheepAccumulator()
     }, timeValue/Math.log((sheepCount+1))/(1+Math.log(-.1*(sheepCount-50))))
     // formula acquired from logistics function 
 }
-accumulator()
+sheepAccumulator()
+
 
 //========================================================
 //Animals/Hire Cow
@@ -109,10 +109,14 @@ function buyCows() {
     }
 }
 
-window.setInterval(function () {
-    generateMilk(cowCount)
-    incrementTime+=Math.random()*1000
-}, timeValue - incrementTime)
+function cowAccumulator(){
+    setTimeout(() =>{
+        generateMilk(cowCount >= 1 ? 1 : cowCount);
+        cowAccumulator()
+    }, timeValue/Math.log((cowCount+1))/(1+Math.log(-.1*(cowCount-50))))
+    // formula acquired from logistics function 
+}
+cowAccumulator()
 
 //========================================================
 //Animals/Hire Chicken
@@ -138,11 +142,14 @@ function buyChickens() {
     }
 }
 
-window.setInterval(function () {
-    generateEggs(chickenCount)
-    incrementTime+=Math.random()*1000
-}, timeValue - incrementTime)
-
+function chickenAccumulator(){
+    setTimeout(() =>{
+        generateEggs(chickenCount >= 1 ? 1 : chickenCount);
+        chickenAccumulator()
+    }, timeValue/Math.log((chickenCount+1))/(1+Math.log(-.1*(chickenCount-50))))
+    // formula acquired from logistics function 
+}
+chickenAccumulator()
 //========================================================
 //Animals/Hire Goats
 //========================================================
@@ -166,7 +173,14 @@ function buyGoats() {
         document.getElementById('goaty').innerHTML = "<button onclick='buyGoats()'>" + commaIncluded(goatPrice) + " eggs" + "</button>"
     }
 }
-
+function goatAccumulator(){
+    setTimeout(() =>{
+        generateGMilk(goatCount >= 1 ? 1 : goatCount);
+        goatAccumulator()
+    }, timeValue/Math.log((goatCount+1))/(1+Math.log(-.1*(goatCount-50))))
+    // formula acquired from logistics function 
+}
+goatAccumulator()
 //========================================================
 //Animals/Hire Geese
 //========================================================
@@ -191,10 +205,14 @@ function buyGeese() {
     }
 }
 
-window.setInterval(function () {
-    generateChaos(gooseCount)
-    incrementTime+=Math.random()*1000
-}, timeValue - incrementTime)
+function gooseAccumulator(){
+    setTimeout(() =>{
+        generateChaos(gooseCount >= 1 ? 1 : gooseCount);
+        gooseAccumulator()
+    }, timeValue/Math.log((gooseCount+1))/(1+Math.log(-.1*(gooseCount-50))))
+    // formula acquired from logistics function 
+}
+gooseAccumulator()
 //========================================================
 //Animals/Hire Ducks
 //========================================================
@@ -220,11 +238,14 @@ function buyDucks() {
 	}
 }
 
-window.setInterval(function () {
-	generateDuckEggs(duckCount);
-    incrementTime+=Math.random()*1000
-}, timeValue - incrementTime)
-
+function duckAccumulator(){
+    setTimeout(() =>{
+        generateDuckEggs(duckCount >= 1 ? 1 : duckCount);
+        duckAccumulator()
+    }, timeValue/Math.log((duckCount+1))/(1+Math.log(-.1*(duckCount-50))))
+    // formula acquired from logistics function 
+}
+duckAccumulator()
 //========================================================
 //Animals/Hire Pigs
 //========================================================
