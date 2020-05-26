@@ -14,8 +14,8 @@ let gmilkCount = 0  //Goats Milk per second?
 let chaosCount = 0
 let dEggCount = 0
 let squaredEyes = 0  //Special rare sheep currency
-let timeValue = 900
-let incrementTime = (Math.random()+.1)+10
+let timeValue = 1500
+let incrementTime = (Math.random()+.1)*10
 let sheepUpgrade1 = 1
 let sheepUpgrade2 = 1
 // Broken for now.
@@ -79,7 +79,7 @@ function accumulator(){
         generateWool(sheepCount >= 1 ? 1 : sheepCount);
         console.log(woolCount)
         accumulator()
-    }, timeValue/(1+1/(sheepCount+1)+Math.log(-.1*(sheepCount-50))))
+    }, timeValue/Math.log((sheepCount+1))/(1+Math.log(-.1*(sheepCount-50))))
     // formula acquired from logistics function 
 }
 accumulator()
