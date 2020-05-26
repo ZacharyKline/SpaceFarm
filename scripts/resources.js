@@ -6,7 +6,7 @@ const sheepUp1 = document.querySelector('#sheepUp1')
 const sheepUp2 = document.querySelector('#sheepUp2')
 const sheepAudio = new Audio('./audio/lamb.wav')
 //Resources per second
-let woolCount = 0   //Wool per second
+let woolCount = 44   //Wool per second
 let woolGenerator = 1
 let milkCount = 0  //Milk per second
 let eggCount = 0  //Eggs per second
@@ -16,6 +16,8 @@ let dEggCount = 0
 let squaredEyes = 0  //Special rare sheep currency
 let timeValue = 900
 let incrementTime = (Math.random()+.1)+10
+let sheepUpgrade1 = 1
+let sheepUpgrade2 = 1
 // Broken for now.
 // function incomeCalc(animalname, animalcost, animalcount, resourcecount, resourcename) {
 //         resourcecount -= animalcost;
@@ -49,7 +51,6 @@ function generateWool(number) {
     woolCount = woolCount + number * sheepUpgrade1 * sheepUpgrade2
     let stringed = commaIncluded(woolCount)
 	document.getElementById("wooly").innerHTML = stringed;
-    timeValue = timeValue / sheepCount
 }
 
 function buySheep() {
@@ -71,11 +72,17 @@ function buySheep() {
 
 }
 
-window.setInterval(function () {
-    generateWool(sheepCount);
-    incrementTime+=Math.random()*1000
-}, timeValue - incrementTime)
+// inspired by https://teamtreehouse.com/community/how-to-run-setinterval-with-dynamic-delay-value
 
+function accumulator(){
+    setTimeout(() =>{
+        generateWool(sheepCount >= 1 ? 1 : sheepCount);
+        console.log(woolCount)
+        accumulator()
+    }, timeValue/(1+1/(sheepCount+1)+Math.log(-.1*(sheepCount-50))))
+    // formula acquired from logistics function 
+}
+accumulator()
 
 //========================================================
 //Animals/Hire Cow
@@ -159,10 +166,6 @@ function buyGoats() {
         document.getElementById('goaty').innerHTML = "<button onclick='buyGoats()'>" + commaIncluded(goatPrice) + " eggs" + "</button>"
     }
 }
-
-window.setInterval(function () {
-    incrementTime+=Math.random()*1000
-}, timeValue - incrementTime)
 
 //========================================================
 //Animals/Hire Geese
@@ -291,8 +294,6 @@ const gooseInterval = setInterval(function () {
 //========================================================
 //Animal Upgrades
 //========================================================
-let sheepUpgrade1 = 1
-let sheepUpgrade2 = 1
 
 sheepUp1.addEventListener('click', function upgrade1() {
     if (woolCount >= 40) {
