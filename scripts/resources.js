@@ -6,7 +6,7 @@ const sheepUp1 = document.querySelector('#sheepUp1')
 const sheepUp2 = document.querySelector('#sheepUp2')
 const sheepAudio = new Audio('./audio/lamb.wav')
 //Resources per second
-let woolCount = 44   //Wool per second
+let woolCount = 0   //Wool per second
 let woolGenerator = 1
 let milkCount = 0  //Milk per second
 let eggCount = 0  //Eggs per second
