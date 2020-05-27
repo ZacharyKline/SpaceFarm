@@ -6,8 +6,7 @@ const sheepUp1 = document.querySelector('#sheepUp1')
 const sheepUp2 = document.querySelector('#sheepUp2')
 const sheepAudio = new Audio('./audio/lamb.wav')
 //Resources per second
-let woolCount = 2000000
-0   //Wool per second
+let woolCount = 0  //Wool per second
 let woolGenerator = 1
 let milkCount = 0  //Milk per second
 let eggCount = 0  //Eggs per second
@@ -38,6 +37,8 @@ function shearButton(number) {
     document.getElementById('wooly').innerHTML = woolCount;
 
 }
+
+// take that regex
 let commaIncluded = value => value.toString().split('').reverse().map((element, index)=>index%3===0?element+=',':element).reverse().join('').slice(0,-1)
 
 //========================================================
@@ -66,7 +67,7 @@ function buySheep() {
         document.getElementById('wooly').innerHTML = commaIncluded(woolCount)
         document.getElementById('sheeppricy').innerHTML = commaIncluded(sheepPrice) + ' Wool'
     //     // very annoying
-    //     // sheepAudio.play(); 
+        // sheepAudio.play(); 
 
     }
 
@@ -83,7 +84,9 @@ function sheepAccumulator(){
         sheepAccumulator()
         // adjusts time to keep rate sigmotic
         // switches to logarithmic for when the sheep count exceeds 95
-    }, sheepCount >= 95 ? timeValue - timeValue/2 - Math.log((sheepCount+100-Math.E**750)) : timeValue - (timeValue/2)*(1+Math.E ** Math.log(sheepCount/(sheepCount+10))))
+    }, sheepCount >= 95 ? timeValue - timeValue/2 - Math.log((sheepCount+100-Math.E**750)) : timeValue - (timeValue/2)*(1+sheepCount/(sheepCount+10)))
+    // formula is correct, but the constants need tweeking to be even more correct.
+        // }, sheepCount > 449 ? timeValue - 2*(sheepCount+449)**2 : timeValue - (timeValue/2)*(1+Math.E ** .01(sheepCount+100)))
     // formula acquired from logistics function 
 }
 sheepAccumulator()
