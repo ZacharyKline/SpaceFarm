@@ -46,9 +46,10 @@ body {
 }
 
 #clickMe:active {
+    box-sizing: border-box;
     padding:3px 4px 3px 6px;
     width: 50%;
-    height: 8em;
+    height: 10em;
 }
 
 #stuff {
@@ -84,6 +85,24 @@ body {
     position: fixed;
     top: 50%;
     left: 13%;
+}
+#upgradeTab {
+    
+    position: relative;
+    left: 13%;
+    top: 90px;
+}
+
+#altarTab {
+    position: relative;
+    left: 13%;
+    top: 100px;
+}
+
+#labTab {
+    position: relative;
+    left: 13%;
+    top: 110px;
 }
 
 .used {
