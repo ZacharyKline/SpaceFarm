@@ -13,7 +13,6 @@ let eggCount = 0  //Eggs per second
 let gmilkCount = 0  //Goats Milk per second?
 let chaosCount = 0
 let dEggCount = 0
-let squaredEyes = 0  //Special rare sheep currency
 let timeValue = 1500
 let incrementTime = (Math.random()+.1)*10
 let sheepUpgrade1 = 1

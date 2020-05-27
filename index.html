@@ -69,27 +69,28 @@
 		<div id="gameBody">
 			<h3 id="funnyheaders"></h3>
 			<div id="content">
-				<div id="farmtabsarea">
-					<button id="resources" onclick="swapStyles()">Resources</button>
-					<button id="spacefarm" onclick="swapStyles()">Space Barn</button>
-					<button id="altarbutt" onclick="swapStyles()">
-						Altar to your SPACEGODS
-					</button>
-				</div>
+
 				<h5 id="styleheader"></h5>
 				<button id="clickMe" onclick="shearButton(1)">Click me to shear</button>
             </div>
 				<div id="specialtyArea">
-					<div id="ResourceTab">
-						<p>Upgrades:</p>
+					<div id='ResourceTab'></div>
+					<details id="upgradeTab">
+						<summary>Upgrades:</summary>
 						<button id='sheepUp1'>S1</button>
 						<button id='sheepUp2'>S2</button>
-					</div>
-					<div id="spaceBarnTab"></div>
-					<div id="altarTab"></div>
+					</details>
+					<details id="altarTab">
+						<summary>Altar to your Spacegods</summary>
+						<button id='killSheep'>Slaughter Sheep</button>
+					</details>
+					<details id="labTab">
+						<summary>Laboratory</summary>
+					</details>
 				</div>
         </div>
 		<script src="./scripts/main.js"></script>
 		<script src="./scripts/resources.js"></script>
+		<script src='./scripts/altar.js'></script>
 	</body>
 </html>
