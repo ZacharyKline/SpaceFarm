@@ -15,7 +15,6 @@ let chaosCount = 0
 let dEggCount = 0
 let squaredEyes = 0  //Special rare sheep currency
 let timeValue = 1000
-let incrementTime = (Math.random()+.1)*10
 let sheepUpgrade1 = 1
 let sheepUpgrade2 = 1
 // Broken for now.
@@ -242,7 +241,6 @@ function duckAccumulator(){
         generateDuckEggs(duckCount >= 1 ? 1 : duckCount);
         duckAccumulator()
     }, (timeValue-duckCount)/(duckCount))
-    // formula acquired from logistics function 
 }
 duckAccumulator()
 //========================================================
