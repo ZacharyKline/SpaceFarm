@@ -1,18 +1,24 @@
 // This is the javascript file to mess around with resources, and animals, etc.
 
 //Global variables:
-let clickButton = document.getElementById('clickMe');
+const clickButton = document.querySelector('#clickMe');
+const sheepUp1 = document.querySelector('#sheepUp1')
+const sheepUp2 = document.querySelector('#sheepUp2')
 const sheepAudio = new Audio('./audio/lamb.wav')
 //Resources per second
-let woolCount = 0   //Wool per second
+let woolCount = 2000000
+0   //Wool per second
+let woolGenerator = 1
 let milkCount = 0  //Milk per second
 let eggCount = 0  //Eggs per second
 let gmilkCount = 0  //Goats Milk per second?
 let chaosCount = 0
 let dEggCount = 0
 let squaredEyes = 0  //Special rare sheep currency
-let timeValue = 3
-
+let timeValue = 1500
+let incrementTime = (Math.random()+.1)*10
+let sheepUpgrade1 = 1
+let sheepUpgrade2 = 1
 // Broken for now.
 // function incomeCalc(animalname, animalcost, animalcount, resourcecount, resourcename) {
 //         resourcecount -= animalcost;
@@ -32,18 +38,19 @@ function shearButton(number) {
     document.getElementById('wooly').innerHTML = woolCount;
 
 }
+let commaIncluded = value => value.toString().split('').reverse().map((element, index)=>index%3===0?element+=',':element).reverse().join('').slice(0,-1)
 
 //========================================================
 //Animals/Hire Sheep
 //========================================================
 let sheepPrice = 20
 let sheepCount = 0
-let startingInt = sheepCount + 1
 
 function generateWool(number) {
-	woolCount = woolCount + number;
-	document.getElementById("wooly").innerHTML = woolCount;
-    timeValue = timeValue / sheepCount
+//    woolGenerator += number
+    woolCount = woolCount + number * sheepUpgrade1 * sheepUpgrade2
+    let stringed = commaIncluded(woolCount)
+	document.getElementById("wooly").innerHTML = stringed;
 }
 
 function buySheep() {
@@ -55,9 +62,9 @@ function buySheep() {
         let toThePowerOf = Math.pow(1.1, sheepCount);
         sheepPrice = Math.trunc(22 * toThePowerOf);
         sheepCount += 1
-        document.getElementById('sheepy').innerHTML = sheepCount
-        document.getElementById('wooly').innerHTML = woolCount
-        document.getElementById('sheeppricy').innerHTML = sheepPrice + ' Wool'
+        document.getElementById('sheepy').innerHTML = commaIncluded(sheepCount)
+        document.getElementById('wooly').innerHTML = commaIncluded(woolCount)
+        document.getElementById('sheeppricy').innerHTML = commaIncluded(sheepPrice) + ' Wool'
     //     // very annoying
     //     // sheepAudio.play(); 
 
@@ -65,10 +72,21 @@ function buySheep() {
 
 }
 
-window.setInterval(function () {
-    generateWool(sheepCount);
+// inspired by https://teamtreehouse.com/community/how-to-run-setinterval-with-dynamic-delay-value
 
-}, timeValue)
+function sheepAccumulator(){
+    // recursive function to dynamically alter time based off of sheep count
+    setTimeout(() =>{
+        // only 0 or 1 wool per increment of time based on sheep count
+        generateWool(sheepCount >= 1 ? 1 : sheepCount);
+        // recurse!
+        sheepAccumulator()
+        // adjusts time to keep rate sigmotic
+        // switches to logarithmic for when the sheep count exceeds 95
+    }, sheepCount >= 95 ? timeValue - timeValue/2 - Math.log((sheepCount+100-Math.E**750)) : timeValue - (timeValue/2)*(1+Math.E ** Math.log(sheepCount/(sheepCount+10))))
+    // formula acquired from logistics function 
+}
+sheepAccumulator()
 
 
 //========================================================
@@ -79,7 +97,7 @@ let cowCount = 0
 
 function generateMilk(number) {
     milkCount = milkCount + number
-    document.getElementById('milky').innerHTML = milkCount;
+    document.getElementById('milky').innerHTML = commaIncluded(milkCount);
 }
 
 function buyCows() {
@@ -89,17 +107,22 @@ function buyCows() {
         let toThePowerOf = Math.pow(1.1, cowCount);
         cowPrice = Math.trunc(12 * toThePowerOf);
         cowCount += 1
-        document.getElementById('wooly').innerHTML = woolCount
-        document.getElementById('cowNumber').innerHTML = cowCount
-        document.getElementById('milky').innerHTML = milkCount
-        document.getElementById('cowy').innerHTML = "<button onclick='buyCows()'>" + cowPrice + " wool" + "</button>"
+        document.getElementById('wooly').innerHTML = commaIncluded(woolCount)
+        document.getElementById('cowNumber').innerHTML = commaIncluded(cowCount)
+        document.getElementById('milky').innerHTML = commaIncluded(milkCount)
+        document.getElementById('cowy').innerHTML = "<button onclick='buyCows()'>" + commaIncluded(cowPrice) + " wool" + "</button>"
     }
 }
 
-window.setInterval(function () {
-    generateMilk(cowCount)
-
-}, timeValue)
+function cowAccumulator(){
+    setTimeout(() =>{
+        generateMilk(cowCount >= 1 ? 1 : cowCount);
+        cowAccumulator()
+    }, cowCount >= 95 ? timeValue - timeValue/2 - Math.log((cowCount+100-Math.E**750)) : timeValue - (timeValue/2)*(1+Math.E ** Math.log(cowCount/(cowCount+10))))
+    // }, timeValue - (timeValue/2)*(1+Math.pow(Math.E, Math.log(cowCount/(cowCount+10)))))
+    // formula acquired from logistics function 
+}
+cowAccumulator()
 
 //========================================================
 //Animals/Hire Chicken
@@ -109,7 +132,7 @@ let chickenCount = 0
 
 function generateEggs(number) {
     eggCount = eggCount + number
-    document.getElementById('eggy').innerHTML = eggCount;
+    document.getElementById('eggy').innerHTML = commaIncluded(eggCount);
 }
 
 function buyChickens() {
@@ -118,17 +141,22 @@ function buyChickens() {
         let toThePowerOf = Math.pow(1.1, chickenCount);
         chickenPrice = Math.trunc(12 * toThePowerOf);
         chickenCount += 1
-        document.getElementById('milky').innerHTML = milkCount
-        document.getElementById('chickenNumber').innerHTML = chickenCount
-        document.getElementById('eggy').innerHTML = eggCount
-        document.getElementById('chickeny').innerHTML = "<button onclick='buyChickens()'>" + chickenPrice + " milk" + "</button>"
+        document.getElementById('milky').innerHTML = commaIncluded(milkCount)
+        document.getElementById('chickenNumber').innerHTML = commaIncluded(chickenCount)
+        document.getElementById('eggy').innerHTML = commaIncluded(eggCount)
+        document.getElementById('chickeny').innerHTML = "<button onclick='buyChickens()'>" + commaIncluded(chickenPrice) + " milk" + "</button>"
     }
 }
 
-window.setInterval(function () {
-    generateEggs(chickenCount)
-}, timeValue)
-
+function chickenAccumulator(){
+    setTimeout(() =>{
+        generateEggs(chickenCount >= 1 ? 1 : chickenCount);
+        chickenAccumulator()
+    },chickenCount >= 95 ? timeValue - timeValue/2 - Math.log((chickenCount+100-Math.E**750)) : timeValue - (timeValue/2)*(1+Math.E ** Math.log(chickenCount/(chickenCount+10))))
+    // }, timeValue/Math.log((chickenCount+1))/(1+Math.log(-.1*(chickenCount-50))))
+    // formula acquired from logistics function 
+}
+chickenAccumulator()
 //========================================================
 //Animals/Hire Goats
 //========================================================
@@ -137,7 +165,7 @@ let goatCount = 0
 
 function generateGMilk(number) {
     gmilkCount = gmilkCount + number
-    document.getElementById('gmilky').innerHTML = gmilkCount;
+    document.getElementById('gmilky').innerHTML = commaIncluded(gmilkCount);
 }
 
 function buyGoats() {
@@ -146,17 +174,21 @@ function buyGoats() {
         let toThePowerOf = Math.pow(1.1, goatCount);
         goatPrice = Math.trunc(2200 * toThePowerOf);
         goatCount += 1
-        document.getElementById('eggy').innerHTML = eggCount
-        document.getElementById('goatNumber').innerHTML = goatCount
-        document.getElementById('gmilky').innerHTML = gmilkCount
-        document.getElementById('goaty').innerHTML = "<button onclick='buyGoats()'>" + goatPrice + " eggs" + "</button>"
+        document.getElementById('eggy').innerHTML = commaIncluded(eggCount)
+        document.getElementById('goatNumber').innerHTML = commaIncluded(goatCount)
+        document.getElementById('gmilky').innerHTML = commaIncluded(gmilkCount)
+        document.getElementById('goaty').innerHTML = "<button onclick='buyGoats()'>" + commaIncluded(goatPrice) + " eggs" + "</button>"
     }
 }
-
-window.setInterval(function () {
-    generateGMilk(goatCount)
-}, timeValue)
-
+function goatAccumulator(){
+    setTimeout(() =>{
+        generateGMilk(goatCount >= 1 ? 1 : goatCount);
+        goatAccumulator()
+    },goatCount >= 95 ? timeValue - timeValue/2 - Math.log((goatCount+100-Math.E**750)) : timeValue - (timeValue/2)*(1+Math.E ** Math.log(goatCount/(goatCount+10))))
+    // }, timeValue - (timeValue/2)*(1+Math.pow(Math.E, Math.log(goatCount/(goatCount+10)))))
+    // formula acquired from logistics function 
+}
+goatAccumulator()
 //========================================================
 //Animals/Hire Geese
 //========================================================
@@ -165,7 +197,7 @@ let gooseCount = 0
 
 function generateChaos(number) {
     chaosCount = chaosCount + number
-    document.getElementById('chaosy').innerHTML = chaosCount
+    document.getElementById('chaosy').innerHTML = commaIncluded(chaosCount)
 }
 
 function buyGeese() {
@@ -174,16 +206,22 @@ function buyGeese() {
         let toThePowerOf = Math.pow(1.1, gooseCount);
         goosePrice = Math.trunc(110 * toThePowerOf);
         gooseCount += 1
-        document.getElementById('gmilky').innerHTML = gmilkCount
-        document.getElementById('gooseNumber').innerHTML = gooseCount
-        document.getElementById('chaosy').innerHTML = chaosCount
-        document.getElementById('goosey').innerHTML = "<button onclick='buyGeese()'>" + goosePrice + " g-milk" + "</button>"
+        document.getElementById('gmilky').innerHTML = commaIncluded(gmilkCount)
+        document.getElementById('gooseNumber').innerHTML = commaIncluded(gooseCount)
+        document.getElementById('chaosy').innerHTML = commaIncluded(chaosCount)
+        document.getElementById('goosey').innerHTML = "<button onclick='buyGeese()'>" + commaIncluded(goosePrice) + " g-milk" + "</button>"
     }
 }
 
-window.setInterval(function () {
-    generateChaos(gooseCount)
-}, timeValue)
+function gooseAccumulator(){
+    setTimeout(() =>{
+        generateChaos(gooseCount >= 1 ? 1 : gooseCount);
+        gooseAccumulator()
+    },gooseCount >= 95 ? timeValue - timeValue/2 - Math.log((gooseCount+100-Math.E**750)) : timeValue - (timeValue/2)*(1+Math.E ** Math.log(gooseCount/(gooseCount+10))))
+    // }, timeValue - (timeValue/2)*(1+Math.pow(Math.E, Math.log(gooseCount/(gooseCount+10)))))
+    // formula acquired from logistics function 
+}
+gooseAccumulator()
 //========================================================
 //Animals/Hire Ducks
 //========================================================
@@ -192,7 +230,7 @@ let duckCount = 0;
 
 function generateDuckEggs(number) {
 	dEggCount = dEggCount + number;
-	document.getElementById("deggy").innerHTML = dEggCount;
+	document.getElementById("deggy").innerHTML = commaIncluded(dEggCount);
 }
 
 function buyDucks() {
@@ -202,17 +240,22 @@ function buyDucks() {
 		let toThePowerOf = Math.pow(1.1, duckCount);
 		duckPrice = Math.trunc(110 * toThePowerOf);
 		duckCount += 1;
-		document.getElementById("chaosy").innerHTML = chaosCount;
-		document.getElementById("duckNumber").innerHTML = duckCount;
-		document.getElementById("deggy").innerHTML = dEggCount;
-		document.getElementById("duckey").innerHTML = "<button onclick='buyDucks()'>" + duckPrice + " chaos" + "</button>";
+		document.getElementById("chaosy").innerHTML = commaIncluded(chaosCount);
+		document.getElementById("duckNumber").innerHTML = commaIncluded(duckCount);
+		document.getElementById("deggy").innerHTML = commaIncluded(dEggCount);
+		document.getElementById("duckey").innerHTML = "<button onclick='buyDucks()'>" + commaIncluded(duckPrice) + " chaos" + "</button>";
 	}
 }
 
-window.setInterval(function () {
-	generateDuckEggs(duckCount);
-}, timeValue);
-
+function duckAccumulator(){
+    setTimeout(() =>{
+        generateDuckEggs(duckCount >= 1 ? 1 : duckCount);
+        duckAccumulator()
+    },duckCount >= 95 ? timeValue - timeValue/2 - Math.log((duckCount+100-Math.E**750)) : timeValue - (timeValue/2)*(1+Math.E ** Math.log(duckCount/(duckCount+10))))
+    // }, timeValue - (timeValue/2)*(1+Math.pow(Math.E, Math.log(duckCount/(duckCount+10)))))
+    // formula acquired from logistics function 
+}
+duckAccumulator()
 //========================================================
 //Animals/Hire Pigs
 //========================================================
@@ -222,24 +265,31 @@ window.setInterval(function () {
 //========================================================
 //Set interval to check if things are unlocked
 //========================================================
+
+const stop = (interval) => clearInterval(interval)
+
 const sheepInterval = setInterval(function () {
     //Add in the sheep related unlocks here
     if (sheepCount > 10) {
         document.getElementById('cowy').innerHTML = '<button onclick="buyCows()">10 wool</button>'
         document.getElementById('cowCounty').innerHTML = "Cows: <p id='cowNumber'>0</p>"
         // document.getElementById('milkSpot').innerHTML = "Milk: <p id='milky'>0</p>"
-        clearInterval(sheepInterval)
+        stop(sheepInterval)
     }
 }, 5000)
 
-// TODO: Known bug, this is currently not clearing interval after finishing the objective.
+
+
+
+
 const cowInterval = setInterval(function () {
     //Add in cow related unlocks here
+
     if (cowCount > 5) {
         document.getElementById('chickeny').innerHTML = '<button onclick="buyChickens()">20 milk</button>'
         document.getElementById('chickenCounty').innerHTML = "Chickens: <p id='chickenNumber'>0</p>"
         // document.getElementById('eggSpot').innerHTML = "Egg: <p id='eggy'>0</p>"
-        clearInterval(cowInterval)
+        stop(cowInterval)
     }
 }, 5000)
 
@@ -248,8 +298,8 @@ const chickenInterval = setInterval(function () {
     if (eggCount > 1000) {
         document.getElementById('goaty').innerHTML = '<button onclick="buyGoats()">2000 eggs</button>'
         document.getElementById('goatCounty').innerHTML = "Goats: <p id='goatNumber'>0</p>"
+        stop(chickenInterval)
         // document.getElementById('gmilkSpot').innerHTML = "G-Milk: <p id='gmilky'>0</p>"
-        clearInterval(chickenInterval)
     }
 }, 5000)
 
@@ -259,7 +309,7 @@ const goatInterval = setInterval(function () {
         document.getElementById('goosey').innerHTML = '<button onclick="buyGeese()">100 gmilk</button>'
         document.getElementById('gooseCounty').innerHTML = "Goose: <p id='gooseNumber'>0</p>"
         // document.getElementById('chaosSpot').innerHTML = "CHAOS: <p id='chaosy'>0</p>"
-        clearInterval(goatInterval)
+        stop(goatInterval)
     }
 }, 5000)
 
@@ -267,6 +317,30 @@ const gooseInterval = setInterval(function () {
     if (chaosCount > 1000) {
         document.getElementById('duckey').innerHTML = '<button onclick="buyDucks()">100 chaos</button>'
         document.getElementById('duckCounty').innerHTML = "Duck: <p id='duckNumber'>0</p>"
-        clearInterval(gooseInterval)
+        stop(gooseInterval)
+    }
+})
+
+
+//========================================================
+//Animal Upgrades
+//========================================================
+
+sheepUp1.addEventListener('click', function upgrade1() {
+    if (woolCount >= 40) {
+        woolCount -= 40
+        sheepUpgrade1 = 2
+        sheepUp1.classList.add('used')
+        sheepUp1.removeEventListener('click', upgrade1)
+    }
+})
+
+sheepUp2.addEventListener('click', function sheepy2() {
+    if (woolCount >= 400) {
+        woolCount -= 400
+        sheepUpgrade2 = 2
+        sheepUp2.classList.add("used");
+        sheepUp2.removeEventListener('click', sheepy2)
+
     }
 })
