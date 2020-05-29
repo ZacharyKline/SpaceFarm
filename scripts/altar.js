@@ -20,7 +20,7 @@ killSheep.addEventListener("click", function () {
     // Known bug, for some reason the price for sheep isn't resetting after the first sheep, but works after that.
 	if (sheepCount > sacAmount) {
         sheepCount -= sacAmount;
-        let toThePowerOf = Math.pow(1.1, sheepCount);
+        let toThePowerOf = Math.pow(1.1, (sheepCount - sacAmount));
 		sheepPrice = Math.trunc(22 * toThePowerOf);
 		document.getElementById("sheepy").innerHTML = commaIncluded(sheepCount);
         document.getElementById("sheeppricy").innerHTML = commaIncluded(sheepPrice) + " Wool";
