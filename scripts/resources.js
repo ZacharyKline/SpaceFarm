@@ -6,7 +6,8 @@ const sheepUp1 = document.querySelector('#sheepUp1')
 const sheepUp2 = document.querySelector('#sheepUp2')
 const sheepAudio = new Audio('./audio/lamb.wav')
 //Resources per second
-let woolCount = 0   //Wool per second
+let woolCount = 440
+0   //Wool per second
 let woolGenerator = 1
 let milkCount = 0  //Milk per second
 let eggCount = 0  //Eggs per second
@@ -72,8 +73,11 @@ function buySheep() {
 // inspired by https://teamtreehouse.com/community/how-to-run-setinterval-with-dynamic-delay-value
 
 function sheepAccumulator(){
+    // recursive function to dynamically alter time based off of sheep count
     setTimeout(() =>{
+        // only 0 or 1 wool per increment of time based on sheep count
         generateWool(sheepCount >= 1 ? 1 : sheepCount);
+        // recurse!
         sheepAccumulator()
     }, (timeValue-sheepCount)/(sheepCount))
     // formula acquired from logistics function 
