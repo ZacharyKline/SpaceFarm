@@ -6,7 +6,7 @@ const sheepUp1 = document.querySelector('#sheepUp1')
 const sheepUp2 = document.querySelector('#sheepUp2')
 const sheepAudio = new Audio('./audio/lamb.wav')
 //Resources per second
-let woolCount = 0   //Wool per second
+let woolCount = 100000   //Wool per second
 let woolGenerator = 1
 let milkCount = 0  //Milk per second
 let eggCount = 0  //Eggs per second
@@ -57,7 +57,7 @@ function buySheep() {
     // }
     if (woolCount >= sheepPrice) {
         woolCount -= sheepPrice;
-        let toThePowerOf = Math.pow(1.05, sheepCount);
+        let toThePowerOf = Math.pow(1.07, sheepCount);
         sheepPrice = Math.trunc(22 * toThePowerOf);
         sheepCount += 1
         document.getElementById('sheepy').innerHTML = commaIncluded(sheepCount)
@@ -76,7 +76,7 @@ function sheepAccumulator(){
     setTimeout(() =>{
         generateWool(sheepCount >= 1 ? 1 : sheepCount);
         sheepAccumulator()
-    }, (timeValue-sheepCount)/(sheepCount))
+    }, timeValue/(1+Math.E**(.1*(sheepCount + Math.log((1000/999)-.999)*7))))
     // formula acquired from logistics function 
 }
 sheepAccumulator()
