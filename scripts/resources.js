@@ -6,7 +6,7 @@ const sheepUp1 = document.querySelector('#sheepUp1')
 const sheepUp2 = document.querySelector('#sheepUp2')
 const sheepAudio = new Audio('./audio/lamb.wav')
 //Resources per second
-let woolCount = 100000   //Wool per second
+let woolCount = 10000000000000000000000000000000000000000000000000   //Wool per second
 let woolGenerator = 1
 let milkCount = 0  //Milk per second
 let eggCount = 0  //Eggs per second
@@ -46,9 +46,8 @@ let sheepCount = 0
 
 function generateWool(number) {
 //    woolGenerator += number
-    woolCount = woolCount + number * sheepUpgrade1 * sheepUpgrade2
-    let stringed = commaIncluded(woolCount)
-	document.getElementById("wooly").innerHTML = stringed;
+    sheepCount > 110 ? woolCount += Math.trunc(number + (1 + sheepUpgrade1/100) + 1 + sheepUpgrade2/10  ) : woolCount = woolCount + number
+	document.getElementById("wooly").innerHTML = commaIncluded(woolCount);
 }
 
 function buySheep() {
@@ -75,8 +74,12 @@ function buySheep() {
 function sheepAccumulator(){
     setTimeout(() =>{
         generateWool(sheepCount >= 1 ? 1 : sheepCount);
+        console.log(timeValue/(1+Math.E**(.1*(sheepCount*(1)+ Math.log((1000/999)-.999)*7))))
+        console.log((timeValue-sheepCount)/sheepCount)
+        // timeValue = timeValue/(1+Math.E**(.1*(sheepCount + sheepUpgrade1 > 1 ? sheepUpgrade1 : 0 + sheepUpgrade2 > 2 ? sheepUpgrade2/5 : 0 + Math.log((1000/999)-.999)*7)))
         sheepAccumulator()
-    }, timeValue/(1+Math.E**(.1*(sheepCount + Math.log((1000/999)-.999)*7))))
+    }, timeValue-10*sheepCount)
+    // }, sheepCount <=110 ? timeValue/(1+Math.E**(.1*(sheepCount + sheepUpgrade1 > 1 ? sheepUpgrade1 : 0 + sheepUpgrade2 > 2 ? sheepUpgrade2/5 : 0 + Math.log((1000/999)-.999)*7))): 0)
     // formula acquired from logistics function 
 }
 sheepAccumulator()
