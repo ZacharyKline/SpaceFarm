@@ -5,9 +5,9 @@ const killGoats = document.querySelector("#killGoats");
 let sacAmount = 1;
 
 //========================================================
-//Materials
+// Materials
 //========================================================
-//Universal
+// Universal
 let bloodCount = 0; // Amount gained dependant on animal
 // Sheep
 let squaredEyes = 0; // Always get at least one, maybe 2
@@ -26,6 +26,13 @@ let chickenFingers = 0; // THEY DO EXIST??!?! 1 in 100 chance
 let goatHorns = 0
 let thirdEye = 0
 let devilContract = 0
+// Goose
+
+
+// Duck
+
+
+// Other?
 
 
 //========================================================
@@ -36,11 +43,12 @@ killSheep.addEventListener("click", function () {
 	// Known bug, for some reason the price for sheep isn't resetting after the first sheep, but works after that.
 	if (sheepCount > sacAmount) {
 		sheepCount -= sacAmount;
-		let toThePowerOf = Math.pow(1.1, sheepCount - sacAmount);
-		sheepPrice = Math.trunc(22 * toThePowerOf);
-		document.getElementById("sheepy").innerHTML = commaIncluded(sheepCount);
-		document.getElementById("sheeppricy").innerHTML =
-			commaIncluded(sheepPrice) + " Wool";
+			let toThePowerOf = Math.pow(1.05, (sheepCount - 1));
+			sheepPrice = Math.trunc(22 * toThePowerOf);
+			document.getElementById("sheepy").innerHTML = commaIncluded(sheepCount);
+			document.getElementById("sheeppricy").innerHTML =
+				commaIncluded(sheepPrice) + " Wool";
+		
 		for (let i = 0; i < sacAmount; i += 1) {
 			let eyeChance = Math.floor(Math.random() * 100) + 1;
 			let hoovChance = Math.floor(Math.random() * 10) + 1;
@@ -57,7 +65,6 @@ killSheep.addEventListener("click", function () {
 			if (woolChance == 20) {
 				pristineWool += 1;
 			}
-
 
 		}
 	}
@@ -129,7 +136,7 @@ killChickens.addEventListener("click", function () {
 //Generate goat material
 //========================================================
 killGoats.addEventListener('click', function () {
-    // if (goatCount > sacAmount) {
+    if (goatCount > sacAmount) {
         // Add the good stuff here
         for (let i = 0; i < sacAmount; i += 1){
             let hornChance = Math.floor(Math.random() * 100) + 1;
@@ -151,5 +158,5 @@ killGoats.addEventListener('click', function () {
 
         }
 
-    // }
+    }
 })
