@@ -1,16 +1,19 @@
 SPACE FARM: A game with contributions Zachary Kline, Matthew Perry, Samantha Kyle, and Dennis Christenson
 
-//========================================================
+========================================================
 
-// CONCEPT
+ CONCEPT
 
-//========================================================
+========================================================
 
 You're a farmer in space, and need to expand your space farm empire enough to feed the SPACE WHALE at the edge of the galaxy which theatens to swallow your farm space station. The more animals you get the more resources you gain. You can butcher animals for their parts, and then stitch them together using SUPER SCIENCE to create animal abominations, or use the parts to purchase upgrades! Once you've gathered up enough resources and animals, load them into your SPACE CANNON and fire them into the whale's mouth and SAVE YOUR SPACE STATION. With it's hunger sated, it will leave you gifts which will make your life easier next time around.
 
 ========================================================
+
  ANIMALS
+
 ========================================================
+
 
 Sheep - Primary Resource - Wool
 Cows - Primary Resource - Milk
@@ -22,8 +25,11 @@ Pigs - Primary Resource - Bacon?
 Bees - Primary Resource - Honey
 
 ========================================================
+
  UPGRADES  => WILL PROBABLY BE CALLED THE BARN OR TOOLSHED
+
 ========================================================
+
 
 Animal Farm Upgrades Planning doc
 
@@ -108,48 +114,77 @@ Reality Cutting Trimmers:
 
 === For all Egg laying animals ===
 
-//========================================================
-// ALTAR/MAYBE BUTCHERY?
-//========================================================
+========================================================
 
-//========================================================
-// LABORATORY
-//========================================================
+ ALTAR/MAYBE BUTCHERY?
 
-//========================================================
-// SPACE CANNON/RESET MECHANIC
-//========================================================
+========================================================
 
-//========================================================
-// UX OVERHAUL
-//========================================================
+
+========================================================
+
+ LABORATORY
+
+========================================================
+
+
+========================================================
+
+ SPACE CANNON/RESET MECHANIC
+
+========================================================
+
+
+========================================================
+
+ UX OVERHAUL
+
+========================================================
+
     Lets be honest the game looks bad, we need to fix that. Add animations, maybe subtle sounds that aren't supremely irritating, 
 
-//========================================================
-// STRETCH GOALS
-//========================================================
+========================================================
+
+ STRETCH GOALS
+
+========================================================
+
     Below is a list of stretch goals beyond the original scope of the project
 
- //========================================================
-// BREEDING CENTER
-//========================================================
+========================================================
+
+ BREEDING CENTER
+
+========================================================
+
     A spot where you can use materials and animals to create breeding versions of the animals which automatically raise the amount of the animals
 
-//========================================================
-// ACHIEVEMENTS
-//========================================================
+========================================================
+
+ ACHIEVEMENTS
+
+========================================================
+
     Everyone loves achievements, it totally isn't a cheap way to incentivize playing much longer than a game warrents. No of course not.
     ANYWAY achievements would basically be for random goals like a certain number of sheep or stuff like that, and get weirder the more you go. Cookie Clicker did it, so why not us. WHY NOT US I ASK YOU?
 
-//========================================================
-// SAVING USING COOKIES
-//========================================================
+========================================================
+
+ SAVING USING COOKIES
+
+========================================================
+
     Something I'm very unfamiliar with, but would be important for the game to have any real staying power.
 
-//========================================================
-// MORE ANIMALS/UPGRADES/WHATEVER!
-//========================================================
+========================================================
 
-//========================================================
-// USE CLASS SYNTAX INSTEAD OF FUNCTIONAL
-//========================================================
+ MORE ANIMALS/UPGRADES/WHATEVER!
+
+========================================================
+
+
+========================================================
+
+ USE CLASS SYNTAX INSTEAD OF FUNCTIONAL
+
+========================================================
