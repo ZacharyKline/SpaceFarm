@@ -23,17 +23,14 @@ let wings = 0; // Always one or two
 let wattles = 0; // 5% chance
 let chickenFingers = 0; // THEY DO EXIST??!?! 1 in 100 chance
 // Goat
-let goatHorns = 0
-let thirdEye = 0
-let devilContract = 0
+let goatHorns = 0;
+let thirdEye = 0;
+let devilContract = 0;
 // Goose
-
 
 // Duck
 
-
 // Other?
-
 
 //========================================================
 //Generate sheep material
@@ -43,12 +40,12 @@ killSheep.addEventListener("click", function () {
 	// Known bug, for some reason the price for sheep isn't resetting after the first sheep, but works after that.
 	if (sheepCount > sacAmount) {
 		sheepCount -= sacAmount;
-			let toThePowerOf = Math.pow(1.05, (sheepCount - 1));
-			sheepPrice = Math.trunc(22 * toThePowerOf);
-			document.getElementById("sheepy").innerHTML = commaIncluded(sheepCount);
-			document.getElementById("sheeppricy").innerHTML =
-				commaIncluded(sheepPrice) + " Wool";
-		
+		let toThePowerOf = Math.pow(1.15, sheepCount - 1);
+		sheepPrice = Math.trunc(22 * toThePowerOf);
+		document.getElementById("sheepy").innerHTML = commaIncluded(sheepCount);
+		document.getElementById("sheeppricy").innerHTML =
+			commaIncluded(sheepPrice) + " Wool";
+
 		for (let i = 0; i < sacAmount; i += 1) {
 			let eyeChance = Math.floor(Math.random() * 100) + 1;
 			let hoovChance = Math.floor(Math.random() * 10) + 1;
@@ -65,7 +62,6 @@ killSheep.addEventListener("click", function () {
 			if (woolChance == 20) {
 				pristineWool += 1;
 			}
-
 		}
 	}
 });
@@ -75,7 +71,15 @@ killSheep.addEventListener("click", function () {
 //========================================================
 killCows.addEventListener("click", function () {
 	if (cowCount > sacAmount) {
-		// remove a cow and reset price based on new cowCount
+		cowCount -= sacAmount;
+		let toThePowerOf = Math.pow(1.1, cowCount - 1);
+		cowPrice = Math.trunc(12 * toThePowerOf);
+		document.getElementById("cowNumber").innerHTML = commaIncluded(cowCount);
+		document.getElementById("cowy").innerHTML =
+			"<button onclick='buyCows()'>" +
+			commaIncluded(cowPrice) +
+			" wool" +
+			"</button>";
 
 		for (let i = 0; i < sacAmount; i += 1) {
 			let flankChance = Math.floor(Math.random() * 100) + 1;
@@ -93,7 +97,6 @@ killCows.addEventListener("click", function () {
 			if (methaneChance === 20) {
 				methane += 1;
 			}
-
 		}
 	}
 });
@@ -102,61 +105,78 @@ killCows.addEventListener("click", function () {
 //Generate chicken material
 //========================================================
 killChickens.addEventListener("click", function () {
-    // if (chickenCount > sacAmount) {
-        for (let i = 0; i < sacAmount; i += 1) {
-            let featherChance = Math.floor(Math.random() * 100) + 1;
+	if (chickenCount > sacAmount) {
+		chickenCount -= sacAmount;
+		let toThePowerOf = Math.pow(1.1, chickenCount - 1);
+		chickenPrice = Math.trunc(12 * toThePowerOf);
+		document.getElementById("chickenNumber").innerHTML = commaIncluded(
+			chickenCount
+		);
+		document.getElementById("chickeny").innerHTML =
+			"<button onclick='buyChickens()'>" +
+			commaIncluded(chickenPrice) +
+			" milk" +
+			"</button>";
+		for (let i = 0; i < sacAmount; i += 1) {
+			let featherChance = Math.floor(Math.random() * 100) + 1;
 			let wingChance = Math.floor(Math.random() * 10) + 1;
-            let wattleChance = Math.floor(Math.random() * 20) + 1;
-            let fingerChance = Math.floor(Math.random() * 100) + 1;
-            bloodCount += 0.5
-            if (featherChance > 50) {
-                feathers += 5
-            } else if (featherChance > 80) {
-                feathers += 6
-            } else {
-                feathers += 3
-            }
-            if (wingChance > 5) {
-                wings += 2
-            } else {
-                wings += 1
-            }
-            if (wattleChance >= 18) {
-                wattles += 1
-            }
-            if (fingerChance === 100) {
-                chickenFingers += 1 
-            }
-
+			let wattleChance = Math.floor(Math.random() * 20) + 1;
+			let fingerChance = Math.floor(Math.random() * 100) + 1;
+			bloodCount += 0.5;
+			if (featherChance > 50) {
+				feathers += 5;
+			} else if (featherChance > 80) {
+				feathers += 6;
+			} else {
+				feathers += 3;
+			}
+			if (wingChance > 5) {
+				wings += 2;
+			} else {
+				wings += 1;
+			}
+			if (wattleChance >= 18) {
+				wattles += 1;
+			}
+			if (fingerChance === 100) {
+				chickenFingers += 1;
+			}
 		}
-	// }
+	}
 });
 
 //========================================================
 //Generate goat material
 //========================================================
-killGoats.addEventListener('click', function () {
-    if (goatCount > sacAmount) {
-        // Add the good stuff here
-        for (let i = 0; i < sacAmount; i += 1){
-            let hornChance = Math.floor(Math.random() * 100) + 1;
-            let thirdEyeChance = Math.floor(Math.random() * 20) + 1;
-            let contractChance = Math.floor(Math.random() * 20) + 1
-            bloodCount += 1
-            if (hornChance > 70) {
-                goatHorns += 2
-            } else {
-                goatHorns += 1
-            }
-            if (thirdEyeChance > 16) {
-                thirdEye += 1
-            }
-            if (contractChance === 20) {
-                devilContract += 1
-            }
+killGoats.addEventListener("click", function () {
+	if (goatCount > sacAmount) {
+		goatCount -= sacAmount;
+		let toThePowerOf = Math.pow(1.1, goatCount - 1);
+		goatPrice = Math.trunc(1200 * toThePowerOf);
+		document.getElementById("goatNumber").innerHTML = commaIncluded(goatCount);
+		document.getElementById("goaty").innerHTML =
+			"<button onclick='buyGoats()'>" +
+			commaIncluded(goatPrice) +
+			" eggs" +
+			"</button>";
 
-
-        }
-
-    }
-})
+		// Add the good stuff here
+		for (let i = 0; i < sacAmount; i += 1) {
+			let hornChance = Math.floor(Math.random() * 100) + 1;
+			let thirdEyeChance = Math.floor(Math.random() * 20) + 1;
+			let contractChance = Math.floor(Math.random() * 20) + 1;
+			bloodCount += 1;
+			if (hornChance > 70) {
+				goatHorns += 2;
+			} else {
+				goatHorns += 1;
+			}
+			if (thirdEyeChance > 16) {
+				thirdEye += 1;
+			}
+			if (contractChance === 20) {
+				devilContract += 1;
+			}
+		}
+	}
+});

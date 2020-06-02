@@ -58,7 +58,7 @@ function buySheep() {
     // }
     if (woolCount >= sheepPrice) {
         woolCount -= sheepPrice;
-        let toThePowerOf = Math.pow(1.05, sheepCount);
+        let toThePowerOf = Math.pow(1.15, sheepCount);
         sheepPrice = Math.trunc(22 * toThePowerOf);
         sheepCount += 1
         document.getElementById('sheepy').innerHTML = commaIncluded(sheepCount)
@@ -101,7 +101,7 @@ function buyCows() {
 
     if (woolCount >= cowPrice) {
         woolCount -= cowPrice
-        let toThePowerOf = Math.pow(1.1, cowCount);
+        let toThePowerOf = Math.pow(1.1, cowCount); 
         cowPrice = Math.trunc(12 * toThePowerOf);
         cowCount += 1
         document.getElementById('wooly').innerHTML = commaIncluded(woolCount)
@@ -167,7 +167,7 @@ function buyGoats() {
     if (eggCount >= goatPrice) {
         eggCount -= goatPrice
         let toThePowerOf = Math.pow(1.1, goatCount);
-        goatPrice = Math.trunc(2200 * toThePowerOf);
+        goatPrice = Math.trunc(1200 * toThePowerOf);
         goatCount += 1
         document.getElementById('eggy').innerHTML = commaIncluded(eggCount)
         document.getElementById('goatNumber').innerHTML = commaIncluded(goatCount)
