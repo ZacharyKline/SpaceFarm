@@ -1,13 +1,16 @@
 SPACE FARM: A game with contributions Zachary Kline, Matthew Perry, Samantha Kyle, and Dennis Christenson
 
 //========================================================
+
 // CONCEPT
-//========================================================
-You're a farmer in space, and need to expand your space farm empire enough to feed the SPACE WHALE at the edge of the galaxy which theatens to swallow your farm space station. The more animals you get the more resources you gain. You can butcher animals for their parts, and then stitch them together using SUPER SCIENCE to create animal abominations, or use the parts to purchase upgrades! Once you've gathered up enough resources and animals, load them into your SPACE CANNON and fire them into the whale's mouth and SAVE YOUR SPACE STATION. With it's hunger sated, it will leave you gifts which will make your life easier next time around.
 
 //========================================================
-// ANIMALS
-//========================================================
+
+You're a farmer in space, and need to expand your space farm empire enough to feed the SPACE WHALE at the edge of the galaxy which theatens to swallow your farm space station. The more animals you get the more resources you gain. You can butcher animals for their parts, and then stitch them together using SUPER SCIENCE to create animal abominations, or use the parts to purchase upgrades! Once you've gathered up enough resources and animals, load them into your SPACE CANNON and fire them into the whale's mouth and SAVE YOUR SPACE STATION. With it's hunger sated, it will leave you gifts which will make your life easier next time around.
+
+========================================================
+ ANIMALS
+========================================================
 
 Sheep - Primary Resource - Wool
 Cows - Primary Resource - Milk
@@ -18,9 +21,9 @@ Ducks - Primary Resource - Duck Eggs
 Pigs - Primary Resource - Bacon?
 Bees - Primary Resource - Honey
 
-//========================================================
-// UPGRADES  => WILL PROBABLY BE CALLED THE BARN OR TOOLSHED
-//========================================================
+========================================================
+ UPGRADES  => WILL PROBABLY BE CALLED THE BARN OR TOOLSHED
+========================================================
 
 Animal Farm Upgrades Planning doc
 
