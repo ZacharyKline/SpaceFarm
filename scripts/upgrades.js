@@ -26,7 +26,7 @@ sheepUp2.addEventListener("click", function sheepy2() { // unlock at 20 sheep ow
 	if (woolCount >= 400 && squaredEyes >= 5) {
         woolCount -= 400;
         squaredEyes -= 5
-		sheepUpgrade2 = 2;
+		sheepUpgrade2 = 3;
 		sheepUp2.classList.add("used");
         sheepUp2.removeEventListener("click", sheepy2);
         eyeSpot.innerHTML = squaredEyes
@@ -39,9 +39,10 @@ sheepUp3.addEventListener('click', function sheepy3(){
         squaredEyes -= 20
         sheepHooves -= 5
         sheepUpgrade3 = 2
-        sheepUp2.classList.add("used");
-        sheepUp2.removeEventListener("click", sheepy3);
+        sheepUp3.classList.add("used");
+        sheepUp3.removeEventListener("click", sheepy3);
 
-
+        eyeSpot.innerHTML = squaredEyes
+        hoovSpot.innerHTML = sheepHooves
     }
 })
