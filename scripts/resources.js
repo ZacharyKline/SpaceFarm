@@ -14,6 +14,7 @@ let gmilkCount = 0  //Goats Milk per second?
 let chaosCount = 0
 let dEggCount = 0
 let timeValue = 1000
+
 let incrementTime = (Math.random()+.1)*10
 // upgrade variables
 let sheepUpgrade1 = 1;
@@ -24,6 +25,7 @@ let sheepUpgrade5 = 1;
 let sheepUpgrade6 = 1;
 let sheepUpgrade7 = 1;
 let sheepUpgrade8 = 1;
+
 // Broken for now.
 // function incomeCalc(animalname, animalcost, animalcount, resourcecount, resourcename) {
 //         resourcecount -= animalcost;
@@ -251,7 +253,6 @@ function duckAccumulator(){
         generateDuckEggs(duckCount >= 1 ? 1 : duckCount);
         duckAccumulator()
     }, (timeValue-duckCount)/(duckCount))
-    // formula acquired from logistics function 
 }
 duckAccumulator()
 //========================================================
