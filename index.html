@@ -38,9 +38,9 @@
 						CHAOS:
 						<p id="chaosy">0</p>
 					</div>
-					<div id='deggySpot'>
+					<div id="deggySpot">
 						Duck Eggs:
-						<p id='deggy'>0</p>
+						<p id="deggy">0</p>
 					</div>
 				</div>
 				<div id="animalCounts">
@@ -69,31 +69,52 @@
 		<div id="gameBody">
 			<h3 id="funnyheaders"></h3>
 			<div id="content">
-
 				<h5 id="styleheader"></h5>
 				<button id="clickMe" onclick="shearButton(1)">Click me to shear</button>
-            </div>
-				<div id="specialtyArea">
-					<div id='ResourceTab'></div>
-					<details id="upgradeTab">
-						<summary>Upgrades:</summary>
-						<button id='sheepUp1'>S1</button>
-						<button id='sheepUp2'>S2</button>
-					</details>
-					<details id="altarTab">
-						<summary>Altar to your Spacegods</summary>
-						<button id='killSheep'>Slaughter Sheep</button>
-						<button id='killCows'>Slaughter Cows</button>
-						<button id='killChickens'>Slaughter Chicken</button>
-						<button id='killGoats'>Slaughter Goats</button>
-					</details>
-					<details id="labTab">
-						<summary>Laboratory</summary>
-					</details>
-				</div>
-        </div>
+			</div>
+			<div id="specialtyArea">
+				<div id="ResourceTab"></div>
+				<details id="upgradeTab">
+					<summary>Upgrades:</summary>
+					<div id='sheepUpgradeSpot'>
+						<h2>Sheep Parts</h2>
+						<div id='sheepPartsSpot'>
+							<p>Squared Eyes:
+						<span id='eyesSpot'>0</span>
+						</p>
+						<p>Sheep Hooves:
+							<span id='hoovSpot'>0</span>
+						</p>
+						<p>Pristine Wool:
+							<span id='fleeceSpot'>0</span>
+						</p>
+						</div>
+						<h2>Sheep Upgrades</h2>
+						<button id="sheepUp1">S1</button>
+						<button id="sheepUp2">S2</button>
+						<button id="sheepUp3">S3</button>
+						<button id="sheepUp4">S4</button>
+						<button id="sheepUp5">S5</button>
+						<button id="sheepUp6">S6</button>
+						<button id="sheepUp7">S7</button>
+						<button id="sheepUp8">S8</button>
+					</div>
+				</details>
+				<details id="altarTab">
+					<summary>Altar to your Spacegods</summary>
+					<button id="killSheep">Slaughter Sheep</button>
+					<button id="killCows">Slaughter Cows</button>
+					<button id="killChickens">Slaughter Chicken</button>
+					<button id="killGoats">Slaughter Goats</button>
+				</details>
+				<details id="labTab">
+					<summary>Laboratory</summary>
+				</details>
+			</div>
+		</div>
 		<script src="./scripts/main.js"></script>
 		<script src="./scripts/resources.js"></script>
-		<script src='./scripts/altar.js'></script>
+		<script src="./scripts/altar.js"></script>
+		<script src="./scripts/upgrades.js"></script>
 	</body>
 </html>

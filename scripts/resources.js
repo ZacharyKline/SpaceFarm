@@ -2,8 +2,7 @@
 
 //Global variables:
 const clickButton = document.querySelector('#clickMe');
-const sheepUp1 = document.querySelector('#sheepUp1')
-const sheepUp2 = document.querySelector('#sheepUp2')
+
 const sheepAudio = new Audio('./audio/lamb.wav')
 //Resources per second
 let woolCount = 440
@@ -16,8 +15,15 @@ let chaosCount = 0
 let dEggCount = 0
 let timeValue = 1000
 let incrementTime = (Math.random()+.1)*10
-let sheepUpgrade1 = 1
-let sheepUpgrade2 = 1
+// upgrade variables
+let sheepUpgrade1 = 1;
+let sheepUpgrade2 = 1;
+let sheepUpgrade3 = 1;
+let sheepUpgrade4 = 1;
+let sheepUpgrade5 = 1;
+let sheepUpgrade6 = 1;
+let sheepUpgrade7 = 1;
+let sheepUpgrade8 = 1;
 // Broken for now.
 // function incomeCalc(animalname, animalcost, animalcount, resourcecount, resourcename) {
 //         resourcecount -= animalcost;
@@ -47,7 +53,7 @@ let sheepCount = 0
 
 function generateWool(number) {
 //    woolGenerator += number
-    woolCount = woolCount + number * sheepUpgrade1 * sheepUpgrade2
+    woolCount = woolCount + number * sheepUpgrade1 * sheepUpgrade2 * sheepUpgrade3 * sheepUpgrade4 * sheepUpgrade5 * sheepUpgrade6 * sheepUpgrade7 * sheepUpgrade8
     let stringed = commaIncluded(woolCount)
 	document.getElementById("wooly").innerHTML = stringed;
 }
@@ -155,7 +161,7 @@ chickenAccumulator()
 //========================================================
 //Animals/Hire Goats
 //========================================================
-let goatPrice = 2000
+let goatPrice = 1200
 let goatCount = 0
 
 function generateGMilk(number) {
@@ -314,25 +320,3 @@ const gooseInterval = setInterval(function () {
 })
 
 
-//========================================================
-//Animal Upgrades
-//========================================================
-
-sheepUp1.addEventListener('click', function upgrade1() {
-    if (woolCount >= 40) {
-        woolCount -= 40
-        sheepUpgrade1 = 2
-        sheepUp1.classList.add('used')
-        sheepUp1.removeEventListener('click', upgrade1)
-    }
-})
-
-sheepUp2.addEventListener('click', function sheepy2() {
-    if (woolCount >= 400) {
-        woolCount -= 400
-        sheepUpgrade2 = 2
-        sheepUp2.classList.add("used");
-        sheepUp2.removeEventListener('click', sheepy2)
-
-    }
-})

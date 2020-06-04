@@ -1,7 +1,13 @@
+// Buttons to kill off animals
 const killSheep = document.querySelector("#killSheep");
 const killCows = document.querySelector("#killCows");
 const killChickens = document.querySelector("#killChickens");
 const killGoats = document.querySelector("#killGoats");
+// spans to give counts of parts
+const eyeSpot = document.querySelector('#eyesSpot')
+const hoovSpot = document.querySelector('#hoovSpot')
+const fleeceSpot = document.querySelector('#fleeceSpot')
+//Amount of animals sacrificed
 let sacAmount = 1;
 
 //========================================================
@@ -62,6 +68,9 @@ killSheep.addEventListener("click", function () {
 			if (woolChance == 20) {
 				pristineWool += 1;
 			}
+			eyeSpot.innerHTML = squaredEyes;
+			hoovSpot.innerHTML = sheepHooves;
+			fleeceSpot.innerHTML = pristineWool
 		}
 	}
 });
@@ -180,3 +189,20 @@ killGoats.addEventListener("click", function () {
 		}
 	}
 });
+
+//========================================================
+//Generate Goose material
+//========================================================
+
+
+//========================================================
+//Generate Duck material
+//========================================================
+
+//========================================================
+//Generate Pig material
+//========================================================
+
+//========================================================
+//Generate Bees material
+//========================================================
