@@ -48,7 +48,7 @@ killSheep.addEventListener("click", function () {
 		sheepCount -= sacAmount;
 		let toThePowerOf = Math.pow(1.15, sheepCount - 1);
 		sheepPrice = Math.trunc(22 * toThePowerOf);
-		document.getElementById("sheepy").innerHTML = commaIncluded(sheepCount);
+		document.getElementById("sheepCounty").innerHTML = commaIncluded(sheepCount);
 		document.getElementById("sheeppricy").innerHTML =
 			commaIncluded(sheepPrice) + " Wool";
 

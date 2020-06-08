@@ -7,11 +7,11 @@ const sheepAudio = new Audio('./audio/lamb.wav')
 //Resources per second
 let woolCount = 440
 let woolGenerator = 1
-let milkCount = 0  //Milk per second
-let eggCount = 0  //Eggs per second
-let gmilkCount = 0  //Goats Milk per second?
-let chaosCount = 0
-let dEggCount = 0
+let milkCount = 4000  //Milk per second
+let eggCount = 4000  //Eggs per second
+let gmilkCount = 4000  //Goats Milk per second?
+let chaosCount = 4000
+let dEggCount = 4000
 let timeValue = 1000
 let incrementTime = (Math.random()+.1)*10
 // upgrade variables
@@ -270,6 +270,8 @@ const cowInterval = setInterval(function () {
     //Add in cow related unlocks here
 
     if (cowCount > 5) {
+        document.querySelector("#chickenImage").innerHTML =
+					'<img src="./img/chicken.png" class="animals" height=100 width=100/>';
         document.getElementById('chickeny').innerHTML = '<button onclick="buyChickens()">20 milk</button>'
         document.getElementById('chickenCounty').innerHTML = "Chickens: <p id='chickenNumber'>0</p>"
         stop(cowInterval)
@@ -279,7 +281,9 @@ const cowInterval = setInterval(function () {
 const chickenInterval = setInterval(function () {
     //Add in chicken related unlocks here
     if (eggCount > 1000) {
-        document.getElementById('goaty').innerHTML = '<button onclick="buyGoats()">2000 eggs</button>'
+document.querySelector("#goatImage").innerHTML =
+	'<img src="./img/goat.png" class="animals" height=100 width=100/>';
+        document.getElementById('goaty').innerHTML = '<button onclick="buyGoats()">1200 eggs</button>'
         document.getElementById('goatCounty').innerHTML = "Goats: <p id='goatNumber'>0</p>"
         stop(chickenInterval)
     }
@@ -288,6 +292,8 @@ const chickenInterval = setInterval(function () {
 const goatInterval = setInterval(function () {
     //Add in chicken related unlocks here
     if (gmilkCount > 500) {
+        document.querySelector("#gooseImage").innerHTML =
+					'<img src="./img/goose.png" class="animals" height=100 width=100/>';
         document.getElementById('goosey').innerHTML = '<button onclick="buyGeese()">100 gmilk</button>'
         document.getElementById('gooseCounty').innerHTML = "Goose: <p id='gooseNumber'>0</p>"
         stop(goatInterval)
@@ -296,6 +302,8 @@ const goatInterval = setInterval(function () {
 
 const gooseInterval = setInterval(function () {
     if (chaosCount > 1000) {
+        document.querySelector("#duckImage").innerHTML =
+					'<img src="./img/duck.jpeg" class="animals" height=100 width=100/>';
         document.getElementById('duckey').innerHTML = '<button onclick="buyDucks()">100 chaos</button>'
         document.getElementById('duckCounty').innerHTML = "Duck: <p id='duckNumber'>0</p>"
         stop(gooseInterval)
