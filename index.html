@@ -43,26 +43,7 @@
 						<p id="deggy">0</p>
 					</div>
 				</div>
-				<div id="animalCounts">
-					SPACE ANIMALS
-					<div>
-						<button onclick="buySheep()" id="sheeppricy">20 Wool</button>
-					</div>
-					<div>
-						Sheep:
-						<p id="sheepy">0</p>
-					</div>
-					<div id="cowy"></div>
-					<div id="cowCounty"></div>
-					<div id="chickeny"></div>
-					<div id="chickenCounty"></div>
-					<div id="goaty"></div>
-					<div id="goatCounty"></div>
-					<div id="goosey"></div>
-					<div id="gooseCounty"></div>
-					<div id="duckey"></div>
-					<div id="duckCounty"></div>
-				</div>
+
 			</div>
 		</aside>
 
@@ -76,18 +57,21 @@
 				<div id="ResourceTab"></div>
 				<details id="upgradeTab">
 					<summary>Upgrades:</summary>
-					<div id='sheepUpgradeSpot'>
+					<div id="sheepUpgradeSpot">
 						<h2>Sheep Parts</h2>
-						<div id='sheepPartsSpot'>
-							<p>Squared Eyes:
-						<span id='eyesSpot'>0</span>
-						</p>
-						<p>Sheep Hooves:
-							<span id='hoovSpot'>0</span>
-						</p>
-						<p>Pristine Wool:
-							<span id='fleeceSpot'>0</span>
-						</p>
+						<div id="sheepPartsSpot">
+							<p>
+								Squared Eyes:
+								<span id="eyesSpot">0</span>
+							</p>
+							<p>
+								Sheep Hooves:
+								<span id="hoovSpot">0</span>
+							</p>
+							<p>
+								Pristine Wool:
+								<span id="fleeceSpot">0</span>
+							</p>
 						</div>
 						<h2>Sheep Upgrades</h2>
 						<button id="sheepUp1">S1</button>
@@ -110,8 +94,43 @@
 				<details id="labTab">
 					<summary>Laboratory</summary>
 				</details>
-				<details id='marketTab'>
+				<details id="marketTab">
 					<summary>Market</summary>
+					<div id="marketArea">
+						<div id='sheepMarket'>
+							<img src='./img/sheep.png' height=100 width=100>
+							<br>
+            <button onclick="buySheep()" id="sheeppricy">20 Wool</button>
+							<p>Sheep: <span id="sheepCounty">0</span></p>
+
+
+						</div>
+						<div id="cowMarket">
+							<div id="cowImage"></div>
+							<div id="cowy"></div>
+							<div id="cowCounty"></div>
+						</div>
+						<div id="chickenMarket">
+							<div id="chickenImage"></div>
+							<div id="chickeny"></div>
+							<div id="chickenCounty"></div>
+						</div>
+						<div id="goatMarket">
+							<div id="goatImage"></div>
+							<div id="goaty"></div>
+							<div id="goatCounty"></div>
+						</div>
+						<div id='gooseMarket'>
+							<div id='gooseImage'></div>
+							<div id="goosey"></div>
+							<div id="gooseCounty"></div>
+						</div>
+						<div id='duckMarket'>
+							<div id='duckImage'></div>
+							<div id="duckey"></div>
+							<div id="duckCounty"></div>
+						</div>
+					</div>
 				</details>
 			</div>
 		</div>

@@ -24,17 +24,6 @@ let sheepUpgrade5 = 1;
 let sheepUpgrade6 = 1;
 let sheepUpgrade7 = 1;
 let sheepUpgrade8 = 1;
-// Broken for now.
-// function incomeCalc(animalname, animalcost, animalcount, resourcecount, resourcename) {
-//         resourcecount -= animalcost;
-//         let toThePowerOf = Math.pow(1.1, animalcount);
-//         animalcost = Math.trunc(22 * toThePowerOf);
-//         animalcount += 1
-//         console.log(animalcount)
-//         document.getElementById(animalname + "y").innerHTML = animalcount
-//         document.getElementById(resourcename + 'y').innerHTML = resourcecount
-//         document.getElementById(animalname+ "pricy").innerHTML = animalcost + " " + resourcename;
-// }
 
 //The first and most basic currency in the space farm game will be wool, and their producer will be space sheep.
 function shearButton(number) {
@@ -67,7 +56,7 @@ function buySheep() {
         let toThePowerOf = Math.pow(1.15, sheepCount);
         sheepPrice = Math.trunc(22 * toThePowerOf);
         sheepCount += 1
-        document.getElementById('sheepy').innerHTML = commaIncluded(sheepCount)
+        document.getElementById('sheepCounty').innerHTML = commaIncluded(sheepCount)
         document.getElementById('wooly').innerHTML = commaIncluded(woolCount)
         document.getElementById('sheeppricy').innerHTML = commaIncluded(sheepPrice) + ' Wool'
     //     // very annoying
@@ -251,7 +240,6 @@ function duckAccumulator(){
         generateDuckEggs(duckCount >= 1 ? 1 : duckCount);
         duckAccumulator()
     }, (timeValue-duckCount)/(duckCount))
-    // formula acquired from logistics function 
 }
 duckAccumulator()
 //========================================================
@@ -266,18 +254,17 @@ duckAccumulator()
 
 const stop = (interval) => clearInterval(interval)
 
+
 const sheepInterval = setInterval(function () {
     //Add in the sheep related unlocks here
     if (sheepCount > 10) {
-        document.getElementById('cowy').innerHTML = '<button onclick="buyCows()">10 wool</button>'
-        document.getElementById('cowCounty').innerHTML = "Cows: <p id='cowNumber'>0</p>"
-        // document.getElementById('milkSpot').innerHTML = "Milk: <p id='milky'>0</p>"
+        document.querySelector("#cowImage").innerHTML =
+					'<img src="./img/cow.png" class="animals" height=100 width=100/>';
+        document.querySelector('#cowy').innerHTML = '<button onclick="buyCows()">10 wool</button>'
+        document.querySelector('#cowCounty').innerHTML = "Cows: <p id='cowNumber'>0</p>"
         stop(sheepInterval)
     }
 }, 5000)
-
-
-
 
 
 const cowInterval = setInterval(function () {
@@ -286,7 +273,6 @@ const cowInterval = setInterval(function () {
     if (cowCount > 5) {
         document.getElementById('chickeny').innerHTML = '<button onclick="buyChickens()">20 milk</button>'
         document.getElementById('chickenCounty').innerHTML = "Chickens: <p id='chickenNumber'>0</p>"
-        // document.getElementById('eggSpot').innerHTML = "Egg: <p id='eggy'>0</p>"
         stop(cowInterval)
     }
 }, 5000)
@@ -297,7 +283,6 @@ const chickenInterval = setInterval(function () {
         document.getElementById('goaty').innerHTML = '<button onclick="buyGoats()">2000 eggs</button>'
         document.getElementById('goatCounty').innerHTML = "Goats: <p id='goatNumber'>0</p>"
         stop(chickenInterval)
-        // document.getElementById('gmilkSpot').innerHTML = "G-Milk: <p id='gmilky'>0</p>"
     }
 }, 5000)
 
@@ -306,7 +291,6 @@ const goatInterval = setInterval(function () {
     if (gmilkCount > 500) {
         document.getElementById('goosey').innerHTML = '<button onclick="buyGeese()">100 gmilk</button>'
         document.getElementById('gooseCounty').innerHTML = "Goose: <p id='gooseNumber'>0</p>"
-        // document.getElementById('chaosSpot').innerHTML = "CHAOS: <p id='chaosy'>0</p>"
         stop(goatInterval)
     }
 }, 5000)
