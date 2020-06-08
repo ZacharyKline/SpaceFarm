@@ -6,7 +6,6 @@ const clickButton = document.querySelector('#clickMe');
 const sheepAudio = new Audio('./audio/lamb.wav')
 //Resources per second
 let woolCount = 440
-0   //Wool per second
 let woolGenerator = 1
 let milkCount = 0  //Milk per second
 let eggCount = 0  //Eggs per second
