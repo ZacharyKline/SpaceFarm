@@ -78,16 +78,38 @@ Quantum Milking Computer:
 Egg Conveyor Belt:
 Hydrolic Egg Extractor:
 Hypersonic Egg Extractor:
-
+Laser Power Egg Launcher:
+Golden Egg Plating:
+Cloaca Cannon:
+Robotic Egg Sorter:
+Psychic Chick Sexer:
 
 === Goats ===
-
+Really Nice Cans:
+Robotic Goat Maids:
+Electrified Goat Horns:
+Darkened Blood Pact:
+Void Infused Milk:
+Haunting Bleets:
+Ritualistic Blood Sacrifice:
+Ascension of the Goat God:
 
 === Geese ===
 
+
 === Ducks ===
 
+
 === Pigs ===
+Exfoliating Mud Pit:
+Super Slop:
+Extra Curly Tails:
+Professional Pig Masseuse:
+Genetic Manipulation:
+Zero Calorie Bacon:
+Hyper Healing Mutation:
+A Copy of Animal Farm:
+
 
 === Bees === DO YOU KNOW HOW HARD IT IS TO RAISE BEES IN ZERO GRAVITY?!?!?!?
 Mechanical Bee wings:
@@ -187,7 +209,7 @@ Reality Cutting Trimmers:
 
 ========================================================
 
-    placeholder
+    Theres a ton more animals and upgrades that could be added.
 
 ========================================================
 
@@ -195,5 +217,5 @@ Reality Cutting Trimmers:
 
 ========================================================
 
-    placeholder
+    We're currently using functional javascript for the whole game, but we could alternatively upgrade it to class syntax, or maybe object oriented eventually?
 
