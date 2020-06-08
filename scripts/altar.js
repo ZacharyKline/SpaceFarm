@@ -3,10 +3,14 @@ const killSheep = document.querySelector("#killSheep");
 const killCows = document.querySelector("#killCows");
 const killChickens = document.querySelector("#killChickens");
 const killGoats = document.querySelector("#killGoats");
+const killGeese = document.querySelector('#killGeese');
+const killDucks = document.querySelector('#killDucks')
+const killPigs = document.querySelector('#killPigs');
+const killBees = document.querySelector('#killBees')
 // spans to give counts of parts
-const eyeSpot = document.querySelector('#eyesSpot')
-const hoovSpot = document.querySelector('#hoovSpot')
-const fleeceSpot = document.querySelector('#fleeceSpot')
+const eyeSpot = document.querySelector('#eyesSpot');
+const hoovSpot = document.querySelector('#hoovSpot');
+const fleeceSpot = document.querySelector('#fleeceSpot');
 //Amount of animals sacrificed
 let sacAmount = 1;
 

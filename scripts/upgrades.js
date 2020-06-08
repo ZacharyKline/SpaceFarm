@@ -179,3 +179,43 @@ sheepUp8.addEventListener("click", function sheepy8() {
 		sheepUp8.removeEventListener("click", sheepy8);
 	}
 });
+
+// Cow
+cowUp1.addEventListener('click', function cowy1() {
+    if (milkCount >= 200) {
+        milkCount -= 200
+        
+    }
+})
+
+cowUp1.addEventListener("click", function cowy1() { 
+
+});
+
+cowUp2.addEventListener("click", function cowy2() {
+    // Stuff
+ });
+
+cowUp3.addEventListener("click", function cowy3() { 
+
+});
+
+cowUp4.addEventListener("click", function cowy4() { 
+
+});
+
+cowUp5.addEventListener("click", function cowy5() { 
+
+});
+
+cowUp6.addEventListener("click", function cowy6() { 
+
+});
+
+cowUp7.addEventListener("click", function cowy7() { 
+
+});
+
+cowUp8.addEventListener("click", function cowy8() {
+
+});
