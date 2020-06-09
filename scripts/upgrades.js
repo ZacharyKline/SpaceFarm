@@ -509,14 +509,142 @@ duckUp7.addEventListener("click", function duck7() {
 duckUp8.addEventListener("click", function duck8() {
 	if (dEggCount >= 500) {
 		dEggCount -= 500;
-		duckUpgrade1 = 2;
+		duckUpgrade8 = 2;
 		duckUp8.classList.add("used");
 		duckUp8.removeEventListener("click", duck8);
 	}
 });
 // Pigs
-
+pigUp1.addEventListener('click', function pig1() {
+	if (pigletCount >= 400) {
+		pigletCount -= 400
+		pigUpgrade1 = 2
+		pigUp1.classList.add("used");
+		pigUp1.removeEventListener('click', pig1)
+	}
+})
+pigUp2.addEventListener("click", function pig2() {
+	if (pigletCount >= 400) {
+		pigletCount -= 400;
+		pigUpgrade2 = 2;
+		pigUp2.classList.add("used");
+		pigUp2.removeEventListener("click", pig2);
+	}
+});
+pigUp3.addEventListener("click", function pig3() {
+	if (pigletCount >= 400) {
+		pigletCount -= 400;
+		pigUpgrade3 = 2;
+		pigUp3.classList.add("used");
+		pigUp3.removeEventListener("click", pig3);
+	}
+});
+pigUp4.addEventListener("click", function pig4() {
+	if (pigletCount >= 400) {
+		pigletCount -= 400;
+		pigUpgrade4 = 2;
+		pigUp4.classList.add("used");
+		pigUp4.removeEventListener("click", pig4);
+	}
+});
+pigUp5.addEventListener("click", function pig5() {
+	if (pigletCount >= 400) {
+		pigletCount -= 400;
+		pigUpgrade5 = 2;
+		pigUp5.classList.add("used");
+		pigUp5.removeEventListener("click", pig5);
+	}
+});
+pigUp6.addEventListener("click", function pig6() {
+	if (pigletCount >= 400) {
+		pigletCount -= 400;
+		pigUpgrade6 = 2;
+		pigUp6.classList.add("used");
+		pigUp6.removeEventListener("click", pig6);
+	}
+});
+pigUp7.addEventListener("click", function pig7() {
+	if (pigletCount >= 400) {
+		pigletCount -= 400;
+		pigUpgrade7 = 2;
+		pigUp7.classList.add("used");
+		pigUp7.removeEventListener("click", pig7);
+	}
+});
+pigUp8.addEventListener("click", function pig8() {
+	if (pigletCount >= 400) {
+		pigletCount -= 400;
+		pigUpgrade8 = 2;
+		pigUp8.classList.add("used");
+		pigUp8.removeEventListener("click", pig8);
+	}
+});
 // Bees
+beeUp1.addEventListener('click', function bee1() {
+	if (honeyCount >= 500) {
+		honeyCount -= 500
+		beeUpgrade1 = 2
+		beeUp1.classList.add("used");
+		beeUp1.removeEventListener('click', bee1)
+	}
+})
+beeUp2.addEventListener("click", function bee2() {
+	if (honeyCount >= 500) {
+		honeyCount -= 500;
+		beeUpgrade2 = 2;
+		beeUp2.classList.add("used");
+		beeUp2.removeEventListener("click", bee2);
+	}
+});
+beeUp3.addEventListener("click", function bee3() {
+	if (honeyCount >= 500) {
+		honeyCount -= 500;
+		beeUpgrade3 = 2;
+		beeUp3.classList.add("used");
+		beeUp3.removeEventListener("click", bee3);
+	}
+});
+
+beeUp4.addEventListener('click', function bee4() {
+	if (honeyCount >= 500) {
+		honeyCount -= 500
+		beeUpgrade4 = 2
+		beeUp4.classList.add("used");
+		beeUp4.removeEventListener('click', bee4)
+	}
+})
+beeUp5.addEventListener('click', function bee5() {
+	if (honeyCount >= 500) {
+		honeyCount -= 500
+		beeUpgrade5 = 2
+		beeUp5.classList.add("used");
+		beeUp5.removeEventListener('click', bee5)
+	}
+})
+beeUp6.addEventListener('click', function bee6() {
+	if (honeyCount >= 500) {
+		honeyCount -= 500
+		beeUpgrade6 = 2
+		beeUp6.classList.add("used");
+		beeUp6.removeEventListener('click', bee6)
+	}
+})
+beeUp7.addEventListener('click', function bee7() {
+	if (honeyCount >= 500) {
+		honeyCount -= 500
+		beeUpgrade7 = 2
+		beeUp7.classList.add("used");
+		beeUp7.removeEventListener('click', bee7)
+	}
+})
+beeUp8.addEventListener('click', function bee8() {
+	if (honeyCount >= 500) {
+		honeyCount -= 500
+		beeUpgrade8 = 2
+		beeUp8.classList.add("used");
+		beeUp8.removeEventListener('click', bee8)
+	}
+})
 
 // Sacrifice
 

@@ -27,6 +27,14 @@ const ChaosEyeSpot = document.querySelector("#ChaosEyeSpot");
 const webbedFeetSpot = document.querySelector("#webbedFeetSpot");
 const billSpot = document.querySelector("#billSpot");
 const duckFeatherSpot = document.querySelector("#duckFeatherSpot");
+const baconSpot = document.querySelector("#baconSpot");
+const snoutSpot = document.querySelector("#snoutSpot");
+const curlyTailSpot = document.querySelector("#curlyTailSpot");
+const CommunismSpot = document.querySelector("#communismSpot");
+const stingerSpot = document.querySelector("#stingerSpot");
+const honeyCombSpot = document.querySelector("#honeyCombSpot");
+const royalJellySpot = document.querySelector("#royalJellySpot");
+const beeMovieSpot = document.querySelector("#beeMovieSpot");
 //Amount of animals sacrificed
 let sacAmount = 1;
 
@@ -60,7 +68,16 @@ let eyeofChaos = 0;
 let webbedFeet = 0;
 let duckBill = 0;
 let beautifulFeather = 0;
-// Other?
+// Pigs
+let bacon = 0;
+let snouts = 0;
+let curlyTails = 0;
+let communism = 0;
+// Bees
+let stingers = 0;
+let honeycomb = 0;
+let royalJelly = 0;
+let beeMovie = 0;
 
 //========================================================
 //Generate sheep material
@@ -282,17 +299,17 @@ killDucks.addEventListener("click", function () {
 			let duckBillChance = Math.floor(Math.random() * 20) + 1;
 			let beautifulChance = Math.floor(Math.random() * 20) + 1;
 			if (webbedFeetChance >= 70) {
-				webbedFeet += 1
+				webbedFeet += 1;
 			}
 			if (duckBillChance >= 17) {
-				duckBill += 1
+				duckBill += 1;
 			}
 			if (beautifulChance === 20) {
-				beautifulFeather += 1
+				beautifulFeather += 1;
 			}
-			webbedFeetSpot.innerHTML = webbedFeet
-			billSpot.innerHTML = duckBill
-			duckFeatherSpot.innerHTML = beautifulFeather
+			webbedFeetSpot.innerHTML = webbedFeet;
+			billSpot.innerHTML = duckBill;
+			duckFeatherSpot.innerHTML = beautifulFeather;
 		}
 	}
 });
@@ -300,7 +317,78 @@ killDucks.addEventListener("click", function () {
 //========================================================
 //Generate Pig material
 //========================================================
-
+killPigs.addEventListener("click", function () {
+	if (pigCount >= sacAmount) {
+		pigCount -= sacAmount;
+		let toThePowerOf = Math.pow(1.1, pigCount);
+		pigPrice = Math.trunc(40 * toThePowerOf);
+		document.getElementById("pigNumber").innerHTML = commaIncluded(pigCount);
+		document.getElementById("pigy").innerHTML =
+			"<button onclick='buyPigs()'>" +
+			commaIncluded(pigPrice) +
+			" piglet" +
+			"</button>";
+		for (let i = 0; i < sacAmount; i += 1) {
+			let baconChance = Math.floor(Math.random() * 100) + 1;
+			let snoutChance = Math.floor(Math.random() * 20) + 1;
+			let curlyTailChance = Math.floor(Math.random() * 20) + 1;
+			let communismChance = Math.floor(Math.random() * 100) + 1;
+			if (baconChance >= 50) {
+				bacon += 2;
+			} else {
+				bacon += 1;
+			}
+			if (snoutChance >= 15) {
+				snouts += 1;
+			}
+			if (curlyTailChance === 20) {
+				curlyTails += 1;
+			}
+			if (communismChance >= 98) {
+				communism += 1;
+			}
+			baconSpot.innerHTML = bacon;
+			snoutSpot.innerHTML = snouts;
+			curlyTailSpot.innerHTML = curlyTails;
+			CommunismSpot.innerHTML = communism;
+		}
+	}
+});
 //========================================================
 //Generate Bees material
 //========================================================
+killBees.addEventListener("click", function () {
+	if (beeCount > sacAmount) {
+		beeCount -= sacAmount;
+		let toThePowerOf = Math.pow(1.1, beeCount);
+		beePrice = Math.trunc(10 * toThePowerOf);
+		document.getElementById("beeNumber").innerHTML = commaIncluded(beeCount);
+		document.getElementById("beey").innerHTML =
+			"<button onclick='buyBees()'>" +
+			commaIncluded(beePrice) +
+			" Honey" +
+			"</button>";
+		for (let i = 0; i < sacAmount; i += 1) {
+			let stingerChance = Math.floor(Math.random() * 100) + 1;
+			let honeyCombChance = Math.floor(Math.random() * 20) + 1;
+			let royalJellyChance = Math.floor(Math.random() * 20) + 1;
+			let beeMovieChance = Math.floor(Math.random() * 100) + 1;
+			if (stingerChance >= 40) {
+				stingers += 1
+			}
+			if (honeyCombChance >= 10) {
+				honeycomb += 1
+			}
+			if (royalJellyChance >= 19) {
+				royalJelly += 1
+			}
+			if (beeMovieChance === 100) {
+				beeMovie += 1
+			}
+			stingerSpot.innerHTML = stingers;
+			honeyCombSpot.innerHTML = honeycomb;
+			royalJellySpot.innerHTML = royalJelly;
+			beeMovieSpot.innerHTML = beeMovie
+		}
+	}
+});

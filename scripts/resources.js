@@ -180,7 +180,7 @@ let chickenPrice = 10
 let chickenCount = 0
 
 function generateEggs(number) {
-    eggCount = eggCount + number
+    eggCount = eggCount + number * chickenUpgrade1 * chickenUpgrade2 * chickenUpgrade3 * chickenUpgrade4 * chickenUpgrade5 * chickenUpgrade6 * chickenUpgrade7 * chickenUpgrade8
     document.getElementById('eggy').innerHTML = commaIncluded(eggCount);
 }
 
@@ -212,7 +212,7 @@ let goatPrice = 1200
 let goatCount = 0
 
 function generateGMilk(number) {
-    gmilkCount = gmilkCount + number
+    gmilkCount = gmilkCount + number * goatUpgrade1 * goatUpgrade2 * goatUpgrade3 * goatUpgrade4 * goatUpgrade5 * goatUpgrade6 * goatUpgrade7 * goatUpgrade8
     document.getElementById('gmilky').innerHTML = commaIncluded(gmilkCount);
 }
 
@@ -243,7 +243,7 @@ let goosePrice = 100
 let gooseCount = 0
 
 function generateChaos(number) {
-    chaosCount = chaosCount + number
+    chaosCount = chaosCount + number * geeseUpgrade1 * geeseUpgrade2 * geeseUpgrade3 * geeseUpgrade4 * geeseUpgrade5 * geeseUpgrade6 * geeseUpgrade7 * geeseUpgrade8
     document.getElementById('chaosy').innerHTML = commaIncluded(chaosCount)
 }
 
@@ -275,7 +275,7 @@ let duckPrice = 100;
 let duckCount = 0;
 
 function generateDuckEggs(number) {
-	dEggCount += number;
+	dEggCount += number * duckUpgrade1 * duckUpgrade2 * duckUpgrade3 * duckUpgrade4 * duckUpgrade5 * duckUpgrade6 * duckUpgrade7 * duckUpgrade8
 	document.getElementById("deggy").innerHTML = commaIncluded(dEggCount);
 }
 
@@ -307,7 +307,7 @@ let pigPrice = 40;
 let pigCount = 0;
 
 function generatePiglet(number) {
-	pigletCount += number 
+	pigletCount += number * pigUpgrade1 * pigUpgrade2 * pigUpgrade3 * pigUpgrade4 * pigUpgrade5 * pigUpgrade6 * pigUpgrade7 * pigUpgrade8
 	document.getElementById("piglety").innerHTML = commaIncluded(pigletCount);
 }
 
@@ -340,7 +340,7 @@ let beePrice = 10;
 let beeCount = 0;
 
 function generateHoney(number) {
-	honeyCount += number 
+	honeyCount += number * beeUpgrade1 * beeUpgrade2 * beeUpgrade3 * beeUpgrade4 * beeUpgrade5 * beeUpgrade6 * beeUpgrade7 * beeUpgrade8
 	document.getElementById("honeyy").innerHTML = commaIncluded(honeyCount);
 }
 
