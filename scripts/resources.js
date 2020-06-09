@@ -23,6 +23,47 @@ let sheepUpgrade5 = 1;
 let sheepUpgrade6 = 1;
 let sheepUpgrade7 = 1;
 let sheepUpgrade8 = 1;
+let cowUpgrade1 = 1;
+let cowUpgrade2 = 1;
+let cowUpgrade3 = 1;
+let cowUpgrade4 = 1;
+let cowUpgrade5 = 1;
+let cowUpgrade6 = 1;
+let cowUpgrade7 = 1;
+let cowUpgrade8 = 1;
+let chickenUpgrade1 = 1;
+let chickenUpgrade2 = 1;
+let chickenUpgrade3 = 1;
+let chickenUpgrade4 = 1;
+let chickenUpgrade5 = 1;
+let chickenUpgrade6 = 1;
+let chickenUpgrade7 = 1;
+let chickenUpgrade8 = 1;
+let goatUpgrade1 = 1;
+let goatUpgrade2 = 1;
+let goatUpgrade3 = 1;
+let goatUpgrade4 = 1;
+let goatUpgrade5 = 1;
+let goatUpgrade6 = 1;
+let goatUpgrade7 = 1;
+let goatUpgrade8 = 1;
+let geeseUpgrade1 = 1;
+let geeseUpgrade2 = 1;
+let geeseUpgrade3 = 1;
+let geeseUpgrade4 = 1;
+let geeseUpgrade5 = 1;
+let geeseUpgrade6 = 1;
+let geeseUpgrade7 = 1;
+let geeseUpgrade8 = 1;
+let duckUpgrade1 = 1
+let duckUpgrade2 = 1;
+let duckUpgrade3 = 1;
+let duckUpgrade4 = 1;
+let duckUpgrade5 = 1;
+let duckUpgrade6 = 1;
+let duckUpgrade7 = 1
+let duckUpgrade8 = 1;
+
 
 //The first and most basic currency in the space farm game will be wool, and their producer will be space sheep.
 function shearButton(number) {
@@ -87,7 +128,7 @@ let cowPrice = 10
 let cowCount = 0
 
 function generateMilk(number) {
-    milkCount = milkCount + number
+    milkCount = milkCount + number * cowUpgrade1 * cowUpgrade2 * cowUpgrade3 * cowUpgrade4 * cowUpgrade5 * cowUpgrade6 * cowUpgrade7 * cowUpgrade8
     document.getElementById('milky').innerHTML = commaIncluded(milkCount);
 }
 

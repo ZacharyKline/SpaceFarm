@@ -3,10 +3,30 @@ const killSheep = document.querySelector("#killSheep");
 const killCows = document.querySelector("#killCows");
 const killChickens = document.querySelector("#killChickens");
 const killGoats = document.querySelector("#killGoats");
+const killGeese = document.querySelector("#killGeese");
+const killDucks = document.querySelector("#killDucks");
+const killPigs = document.querySelector("#killPigs");
+const killBees = document.querySelector("#killBees");
 // spans to give counts of parts
-const eyeSpot = document.querySelector('#eyesSpot')
-const hoovSpot = document.querySelector('#hoovSpot')
-const fleeceSpot = document.querySelector('#fleeceSpot')
+const eyeSpot = document.querySelector("#eyesSpot");
+const hoovSpot = document.querySelector("#hoovSpot");
+const fleeceSpot = document.querySelector("#fleeceSpot");
+const flankSpot = document.querySelector("#flankSpot");
+const stomachSpot = document.querySelector("#stomachSpot");
+const methaneSpot = document.querySelector("#methaneSpot");
+const featherSpot = document.querySelector("#featherSpot");
+const wingSpot = document.querySelector("#wingSpot");
+const wattleSpot = document.querySelector("#wattleSpot");
+const fingerSpot = document.querySelector("#fingerSpot");
+const goatHornSpot = document.querySelector("#goatHornSpot");
+const thirdEyeSpot = document.querySelector("#thirdEyeSpot");
+const devilSpot = document.querySelector("#devilSpot");
+const tongueSpot = document.querySelector("#tongueSpot");
+const gooseTeethSpot = document.querySelector("#gooseTeethSpot");
+const ChaosEyeSpot = document.querySelector("#ChaosEyeSpot");
+const webbedFeetSpot = document.querySelector("#webbedFeetSpot");
+const billSpot = document.querySelector("#billSpot");
+const duckFeatherSpot = document.querySelector("#duckFeatherSpot");
 //Amount of animals sacrificed
 let sacAmount = 1;
 
@@ -33,9 +53,13 @@ let goatHorns = 0;
 let thirdEye = 0;
 let devilContract = 0;
 // Goose
-
+let tongue = 0;
+let gooseTeeth = 0;
+let eyeofChaos = 0;
 // Duck
-
+let webbedFeet = 0;
+let duckBill = 0;
+let beautifulFeather = 0;
 // Other?
 
 //========================================================
@@ -48,7 +72,9 @@ killSheep.addEventListener("click", function () {
 		sheepCount -= sacAmount;
 		let toThePowerOf = Math.pow(1.15, sheepCount - 1);
 		sheepPrice = Math.trunc(22 * toThePowerOf);
-		document.getElementById("sheepCounty").innerHTML = commaIncluded(sheepCount);
+		document.getElementById("sheepCounty").innerHTML = commaIncluded(
+			sheepCount
+		);
 		document.getElementById("sheeppricy").innerHTML =
 			commaIncluded(sheepPrice) + " Wool";
 
@@ -70,7 +96,7 @@ killSheep.addEventListener("click", function () {
 			}
 			eyeSpot.innerHTML = squaredEyes;
 			hoovSpot.innerHTML = sheepHooves;
-			fleeceSpot.innerHTML = pristineWool
+			fleeceSpot.innerHTML = pristineWool;
 		}
 	}
 });
@@ -106,6 +132,9 @@ killCows.addEventListener("click", function () {
 			if (methaneChance === 20) {
 				methane += 1;
 			}
+			flankSpot.innerHTML = cowFlank;
+			stomachSpot.innerHTML = cowStomach;
+			methaneSpot.innerHTML = methane;
 		}
 	}
 });
@@ -150,6 +179,10 @@ killChickens.addEventListener("click", function () {
 			if (fingerChance === 100) {
 				chickenFingers += 1;
 			}
+			featherSpot.innerHTML = feathers;
+			wingSpot.innerHTML = wings;
+			wattleSpot.innerHTML = wattles;
+			fingerSpot.innerHTML = chickenFingers;
 		}
 	}
 });
@@ -186,6 +219,9 @@ killGoats.addEventListener("click", function () {
 			if (contractChance === 20) {
 				devilContract += 1;
 			}
+			goatHornSpot.innerHTML = goatHorns;
+			thirdEyeSpot.innerHTML = thirdEye;
+			devilSpot.innerHTML = devilContract;
 		}
 	}
 });
@@ -193,11 +229,73 @@ killGoats.addEventListener("click", function () {
 //========================================================
 //Generate Goose material
 //========================================================
-
+killGeese.addEventListener("click", function () {
+	if (gooseCount > sacAmount) {
+		gooseCount -= sacAmount;
+		let toThePowerOf = Math.pow(1.1, gooseCount);
+		goosePrice = Math.trunc(110 * toThePowerOf);
+		document.getElementById("gooseNumber").innerHTML = commaIncluded(
+			gooseCount
+		);
+		document.getElementById("goosey").innerHTML =
+			"<button onclick='buyGeese()'>" +
+			commaIncluded(goosePrice) +
+			" g-milk" +
+			"</button>";
+		for (let i = 0; i < sacAmount; i += 1) {
+			let tongueChance = Math.floor(Math.random() * 100) + 1;
+			let toothChance = Math.floor(Math.random() * 20) + 1;
+			let chaosEyeChance = Math.floor(Math.random() * 20) + 1;
+			bloodCount += 1;
+			if (tongueChance > 70) {
+				tongue += 2;
+			}
+			if (toothChance > 16) {
+				gooseTeeth += 1;
+			}
+			if (chaosEyeChance === 20) {
+				eyeofChaos += 1;
+			}
+			tongueSpot.innerHTML = tongue;
+			gooseTeethSpot.innerHTML = gooseTeeth;
+			ChaosEyeSpot.innerHTML = eyeofChaos;
+		}
+	}
+});
 
 //========================================================
 //Generate Duck material
 //========================================================
+killDucks.addEventListener("click", function () {
+	if (duckCount > sacAmount) {
+		duckCount -= sacAmount;
+		let toThePowerOf = Math.pow(1.1, duckCount);
+		duckPrice = Math.trunc(110 * toThePowerOf);
+		document.getElementById("duckNumber").innerHTML = commaIncluded(duckCount);
+		document.getElementById("duckey").innerHTML =
+			"<button onclick='buyDucks()'>" +
+			commaIncluded(duckPrice) +
+			" chaos" +
+			"</button>";
+		for (let i = 0; i < sacAmount; i += 1) {
+			let webbedFeetChance = Math.floor(Math.random() * 100) + 1;
+			let duckBillChance = Math.floor(Math.random() * 20) + 1;
+			let beautifulChance = Math.floor(Math.random() * 20) + 1;
+			if (webbedFeetChance >= 70) {
+				webbedFeet += 1
+			}
+			if (duckBillChance >= 17) {
+				duckBill += 1
+			}
+			if (beautifulChance === 20) {
+				beautifulFeather += 1
+			}
+			webbedFeetSpot.innerHTML = webbedFeet
+			billSpot.innerHTML = duckBill
+			duckFeatherSpot.innerHTML = beautifulFeather
+		}
+	}
+});
 
 //========================================================
 //Generate Pig material
