@@ -1,60 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		<link
-			id="pagestyle"
-			href="./styles/resources.css"
-			rel="stylesheet"
-			type="text/css"
-		/>
-		<title>Space Sheep Simulator</title>
-	</head>
 
-	<body>
-		<aside id="resourceBar" style="overflow-y: scroll;">
-			<div id="sidebarText">
-				Resources
-				<div id="stuff">
-					<div>
-						Wool:
-						<p id="wooly">0</p>
-					</div>
-					<div id="milkSpot">
-						Milk:
-						<p id="milky">0</p>
-					</div>
-					<div id="eggSpot">
-						Eggs:
-						<p id="eggy">0</p>
-					</div>
-					<div id="gmilkSpot">
-						G-Milk:
-						<p id="gmilky">0</p>
-					</div>
-					<div id="chaosSpot">
-						CHAOS:
-						<p id="chaosy">0</p>
-					</div>
-					<div id="deggySpot">
-						Duck Eggs:
-						<p id="deggy">0</p>
-					</div>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<link id="pagestyle" href="./styles/resources.css" rel="stylesheet" type="text/css" />
+	<title>Space Sheep Simulator</title>
+</head>
+
+<body>
+	<aside id="resourceBar" style="overflow-y: scroll;">
+		<div id="sidebarText">
+			Resources
+			<div id="stuff">
+				<div>
+					Wool:
+					<p id="wooly">0</p>
 				</div>
-
+				<div id="milkSpot">
+					Milk:
+					<p id="milky">0</p>
+				</div>
+				<div id="eggSpot">
+					Eggs:
+					<p id="eggy">0</p>
+				</div>
+				<div id="gmilkSpot">
+					G-Milk:
+					<p id="gmilky">0</p>
+				</div>
+				<div id="chaosSpot">
+					CHAOS:
+					<p id="chaosy">0</p>
+				</div>
+				<div id="deggySpot">
+					Duck Eggs:
+					<p id="deggy">0</p>
+				</div>
 			</div>
-		</aside>
+		</div>
+	</aside>
 
-		<div id="gameBody">
-			<h3 id="funnyheaders"></h3>
-			<div id="content">
-				<h5 id="styleheader"></h5>
-				<button id="clickMe" onclick="shearButton(1)">Click me to shear</button>
-			</div>
-			<div id="specialtyArea">
-				<div id="ResourceTab"></div>
+	<div id="gameBody">
+		<h3 id="funnyheaders"></h3>
+		<div id="content">
+			<h5 id="styleheader"></h5>
+			<button id="clickMe" onclick="shearButton(1)">Click me to shear</button>
+		</div>
+		<div id="specialtyArea">
+			<div id="ResourceTab">
 				<details id="upgradeTab">
 					<summary>Upgrades:</summary>
 					<div id="sheepUpgradeSpot">
@@ -83,64 +78,206 @@
 						<button id="sheepUp7">S7</button>
 						<button id="sheepUp8">S8</button>
 					</div>
-				</details>
-				<details id="altarTab">
-					<summary>Altar to your Spacegods</summary>
-					<button id="killSheep">Slaughter Sheep</button>
-					<button id="killCows">Slaughter Cows</button>
-					<button id="killChickens">Slaughter Chicken</button>
-					<button id="killGoats">Slaughter Goats</button>
-					<button id='killGeese'>Slaughter Geese</button>
-					<button id='killDucks'>Slaughter Ducks</button>
-					<button id='killPigs'>Slaughter Pigs</button>
-					<button id='killBees'>Slaughter Bees</button>
-				</details>
-				<details id="labTab">
-					<summary>Laboratory</summary>
-				</details>
-				<details id="marketTab">
-					<summary>Market</summary>
-					<div id="marketArea">
-						<div id='sheepMarket'>
-							<img src='./img/sheep.png' height=100 width=100>
-							<br>
-            <button onclick="buySheep()" id="sheeppricy">20 Wool</button>
-							<p>Sheep: <span id="sheepCounty">0</span></p>
-
-
+					<br>
+					<div id="cowUpgradeSpot">
+						<h2>Cow Parts</h2>
+						<div id="cowPartsSpot">
+							<p>
+								Cow Flank:
+								<span id="flankSpot">0</span>
+							</p>
+							<p>
+								Cow Stomach:
+								<span id="stomachSpot">0</span>
+							</p>
+							<p>
+								Methane:
+								<span id="methaneSpot">0</span>
+							</p>
 						</div>
-						<div id="cowMarket">
-							<div id="cowImage"></div>
-							<div id="cowy"></div>
-							<div id="cowCounty"></div>
-						</div>
-						<div id="chickenMarket">
-							<div id="chickenImage"></div>
-							<div id="chickeny"></div>
-							<div id="chickenCounty"></div>
-						</div>
-						<div id="goatMarket">
-							<div id="goatImage"></div>
-							<div id="goaty"></div>
-							<div id="goatCounty"></div>
-						</div>
-						<div id='gooseMarket'>
-							<div id='gooseImage'></div>
-							<div id="goosey"></div>
-							<div id="gooseCounty"></div>
-						</div>
-						<div id='duckMarket'>
-							<div id='duckImage'></div>
-							<div id="duckey"></div>
-							<div id="duckCounty"></div>
-						</div>
+						<h2>Cow Upgrades</h2>
+						<button id="cowUp1">S1</button>
+						<button id="cowUp2">S2</button>
+						<button id="cowUp3">S3</button>
+						<button id="cowUp4">S4</button>
+						<button id="cowUp5">S5</button>
+						<button id="cowUp6">S6</button>
+						<button id="cowUp7">S7</button>
+						<button id="cowUp8">S8</button>
 					</div>
+					<br>
+					<div id="chickenUpgradeSpot">
+						<h2>Chicken Parts</h2>
+						<div id="chickenPartsSpot">
+							<p>
+								Chicken Feathers:
+								<span id="featherSpot">0</span>
+							</p>
+							<p>
+								Chicken Wings:
+								<span id="wingSpot">0</span>
+							</p>
+							<p>
+								Wattles:
+								<span id="wattleSpot">0</span>
+							</p>
+							<p>
+								Chicken Fingers:
+								<span id="fingerSpot">0</span>
+							</p>
+						</div>
+						<h2>Chicken Upgrades</h2>
+						<button id="chickenUp1">S1</button>
+						<button id="chickenUp2">S2</button>
+						<button id="chickenUp3">S3</button>
+						<button id="chickenUp4">S4</button>
+						<button id="chickenUp5">S5</button>
+						<button id="chickenUp6">S6</button>
+						<button id="chickenUp7">S7</button>
+						<button id="chickenUp8">S8</button>
+					</div>
+					<br>
+					<div id="goatUpgradeSpot">
+						<h2>Goat Parts</h2>
+						<div id="goatPartsSpot">
+							<p>
+								Goat Horns:
+								<span id="goatHornSpot">0</span>
+							</p>
+							<p>
+								Third Eyes:
+								<span id="thirdEyeSpot">0</span>
+							</p>
+							<p>
+								Devil Contracts:
+								<span id="devilSpot">0</span>
+							</p>
+						</div>
+						<h2>Goat Upgrades</h2>
+						<button id="goatUp1">S1</button>
+						<button id="goatUp2">S2</button>
+						<button id="goatUp3">S3</button>
+						<button id="goatUp4">S4</button>
+						<button id="goatUp5">S5</button>
+						<button id="goatUp6">S6</button>
+						<button id="goatUp7">S7</button>
+						<button id="goatUp8">S8</button>
+					</div>
+					<br>
+					<div id="gooseUpgradeSpot">
+						<h2>Goose Parts</h2>
+						<div id="goosePartsSpot">
+							<p>
+								Goose Tongue:
+								<span id="tongueSpot">0</span>
+							</p>
+							<p>
+								Goose Teeth:
+								<span id="gooseTeethSpot">0</span>
+							</p>
+							<p>
+								Eye of Chaos:
+								<span id="ChaosEyeSpot">0</span>
+							</p>
+						</div>
+						<h2>Goose Upgrades</h2>
+						<button id="gooseUp1">S1</button>
+						<button id="gooseUp2">S2</button>
+						<button id="gooseUp3">S3</button>
+						<button id="gooseUp4">S4</button>
+						<button id="gooseUp5">S5</button>
+						<button id="gooseUp6">S6</button>
+						<button id="gooseUp7">S7</button>
+						<button id="gooseUp8">S8</button>
+					</div>
+					<br>
+						<div id="duckUpgradeSpot">
+						<h2>Duck Parts</h2>
+						<div id="duckPartsSpot">
+							<p>
+								Webbed Feet:
+								<span id="webbedFeetSpot">0</span>
+							</p>
+							<p>
+								Duck Bill:
+								<span id="billSpot">0</span>
+							</p>
+							<p>
+								Beautiful Feather:
+								<span id="duckFeatherSpot">0</span>
+							</p>
+						</div>
+						<h2>Duck Upgrades</h2>
+						<button id="duckUp1">S1</button>
+						<button id="duckUp2">S2</button>
+						<button id="duckUp3">S3</button>
+						<button id="duckUp4">S4</button>
+						<button id="duckUp5">S5</button>
+						<button id="duckUp6">S6</button>
+						<button id="duckUp7">S7</button>
+						<button id="duckUp8">S8</button>
+					</div>
+					<br>
 				</details>
 			</div>
+
+			<details id="altarTab">
+				<summary>Altar to your Spacegods</summary>
+				<button id="killSheep">Slaughter Sheep</button>
+				<button id="killCows">Slaughter Cows</button>
+				<button id="killChickens">Slaughter Chicken</button>
+				<button id="killGoats">Slaughter Goats</button>
+				<button id="killGeese">Slaughter Geese</button>
+				<button id="killDucks">Slaughter Ducks</button>
+				<button id="killPigs">Slaughter Pigs</button>
+				<button id="killBees">Slaughter Bees</button>
+			</details>
+			<details id="labTab">
+				<summary>Laboratory</summary>
+			</details>
+			<details id="marketTab">
+				<summary>Market</summary>
+				<div id="marketArea">
+					<div id="sheepMarket">
+						<img src="./img/sheep.png" height="100" width="100" />
+						<br />
+						<button onclick="buySheep()" id="sheeppricy">20 Wool</button>
+						<p>Sheep: <span id="sheepCounty">0</span></p>
+					</div>
+					<div id="cowMarket">
+						<div id="cowImage"></div>
+						<div id="cowy"></div>
+						<div id="cowCounty"></div>
+					</div>
+					<div id="chickenMarket">
+						<div id="chickenImage"></div>
+						<div id="chickeny"></div>
+						<div id="chickenCounty"></div>
+					</div>
+					<div id="goatMarket">
+						<div id="goatImage"></div>
+						<div id="goaty"></div>
+						<div id="goatCounty"></div>
+					</div>
+					<div id="gooseMarket">
+						<div id="gooseImage"></div>
+						<div id="goosey"></div>
+						<div id="gooseCounty"></div>
+					</div>
+					<div id="duckMarket">
+						<div id="duckImage"></div>
+						<div id="duckey"></div>
+						<div id="duckCounty"></div>
+					</div>
+				</div>
+			</details>
 		</div>
-		<script src="./scripts/main.js"></script>
-		<script src="./scripts/resources.js"></script>
-		<script src="./scripts/altar.js"></script>
-		<script src="./scripts/upgrades.js"></script>
-	</body>
+	</div>
+	</div>
+	<script src="./scripts/main.js"></script>
+	<script src="./scripts/resources.js"></script>
+	<script src="./scripts/altar.js"></script>
+	<script src="./scripts/upgrades.js"></script>
+</body>
+
 </html>

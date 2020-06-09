@@ -35,23 +35,23 @@ const cowUp6 = document.querySelector("#cowUp6");
 const cowUp7 = document.querySelector("#cowUp7");
 const cowUp8 = document.querySelector("#cowUp8 ");
 // buttons for chicken
-const chickenUp1 = document.querySelector('chickenUp1')
-const chickenUp2 = document.querySelector("chickenUp2");
-const chickenUp3 = document.querySelector("chickenUp3");
-const chickenUp4 = document.querySelector("chickenUp4");
-const chickenUp5 = document.querySelector("chickenUp5");
-const chickenUp6 = document.querySelector("chickenUp6");
-const chickenUp7 = document.querySelector("chickenUp7");
-const chickenUp8 = document.querySelector("chickenUp8");
+const chickenUp1 = document.querySelector('#chickenUp1')
+const chickenUp2 = document.querySelector("#chickenUp2");
+const chickenUp3 = document.querySelector("#chickenUp3");
+const chickenUp4 = document.querySelector("#chickenUp4");
+const chickenUp5 = document.querySelector("#chickenUp5");
+const chickenUp6 = document.querySelector("#chickenUp6");
+const chickenUp7 = document.querySelector("#chickenUp7");
+const chickenUp8 = document.querySelector("#chickenUp8");
 // buttons for goats
-const goatUp1 = document.querySelector('goatUp1')
-const goatUp2 = document.querySelector("goatUp2");
-const goatUp3 = document.querySelector("goatUp3");
-const goatUp4 = document.querySelector("goatUp4");
-const goatUp5 = document.querySelector("goatUp5");
-const goatUp6 = document.querySelector("goatUp6");
-const goatUp7 = document.querySelector("goatUp7");
-const goatUp8 = document.querySelector("goatUp8");
+const goatUp1 = document.querySelector('#goatUp1')
+const goatUp2 = document.querySelector("#goatUp2");
+const goatUp3 = document.querySelector("#goatUp3");
+const goatUp4 = document.querySelector("#goatUp4");
+const goatUp5 = document.querySelector("#goatUp5");
+const goatUp6 = document.querySelector("#goatUp6");
+const goatUp7 = document.querySelector("#goatUp7");
+const goatUp8 = document.querySelector("#goatUp8");
 // buttons for geese
 const gooseUp1 = document.querySelector('#gooseUp1')
 const gooseUp2 = document.querySelector("#gooseUp2");
@@ -184,38 +184,340 @@ sheepUp8.addEventListener("click", function sheepy8() {
 cowUp1.addEventListener('click', function cowy1() {
     if (milkCount >= 200) {
         milkCount -= 200
-        
+        cowUpgrade1 = 2
+        cowUp1.classList.add("used");
+        cowUp1.removeEventListener('click', cowy1)
+
     }
 })
 
-cowUp1.addEventListener("click", function cowy1() { 
-
-});
-
 cowUp2.addEventListener("click", function cowy2() {
-    // Stuff
+    if (milkCount >= 2000) {
+        milkCount -= 2000
+        cowUpgrade2 = 2
+        cowUp2.classList.add("used");
+        cowUp2.removeEventListener("click", cowy2);
+
+    }
  });
 
 cowUp3.addEventListener("click", function cowy3() { 
-
+    if (milkCount >= 10000) {
+			milkCount -= 10000;
+			cowUpgrade3 = 2;
+			cowUp3.classList.add("used");
+			cowUp3.removeEventListener("click", cowy3);
+		}
 });
 
 cowUp4.addEventListener("click", function cowy4() { 
-
+    if (milkCount >= 25000) {
+			milkCount -= 25000;
+			cowUpgrade4 = 2;
+			cowUp4.classList.add("used");
+			cowUp4.removeEventListener("click", cowy4);
+		}
 });
 
 cowUp5.addEventListener("click", function cowy5() { 
-
+    if (milkCount >= 100000) {
+			milkCount -= 100000;
+			cowUpgrade5 = 2;
+			cowUp5.classList.add("used");
+			cowUp5.removeEventListener("click", cowy5);
+		}
 });
 
 cowUp6.addEventListener("click", function cowy6() { 
-
+    if (milkCount >= 250000) {
+			milkCount -= 250000;
+			cowUpgrade6 = 2;
+			cowUp6.classList.add("used");
+			cowUp6.removeEventListener("click", cowy6);
+		}
 });
 
 cowUp7.addEventListener("click", function cowy7() { 
-
+    if (milkCount >= 750000) {
+			milkCount -= 750000;
+			cowUpgrade7 = 2;
+			cowUp7.classList.add("used");
+			cowUp7.removeEventListener("click", cowy7);
+		}
 });
 
 cowUp8.addEventListener("click", function cowy8() {
-
+    if (milkCount >= 1000000) {
+			milkCount -= 1000000;
+			cowUpgrade8 = 2;
+			cowUp8.classList.add("used");
+			cowUp8.removeEventListener("click", cowy8);
+		}
 });
+// Chicken
+chickenUp1.addEventListener('click', function chicken1(){
+        if (eggCount >= 10000) {
+			eggCount -= 10000;
+			chickenUpgrade1 = 2;
+			chickenUp1.classList.add("used");
+			chickenUp1.removeEventListener("click", chicken1);
+		}
+})
+chickenUp2.addEventListener('click', function chicken2(){
+        if (eggCount >= 10000) {
+			eggCount -= 10000;
+			chickenUpgrade2 = 2;
+			chickenUp2.classList.add("used");
+			chickenUp2.removeEventListener("click", chicken2);
+		}
+})
+chickenUp3.addEventListener('click', function chicken3(){
+        if (eggCount >= 10000) {
+			eggCount -= 10000;
+			chickenUpgrade3 = 2;
+			chickenUp3.classList.add("used");
+			chickenUp3.removeEventListener("click", chicken3);
+		}
+})
+chickenUp4.addEventListener("click", function chicken4() {
+	if (eggCount >= 10000) {
+		eggCount -= 10000;
+		chickenUpgrade4 = 2;
+		chickenUp4.classList.add("used");
+		chickenUp4.removeEventListener("click", chicken4);
+	}
+});
+chickenUp5.addEventListener("click", function chicken5() {
+	if (eggCount >= 10000) {
+		eggCount -= 10000;
+		chickenUpgrade5 = 2;
+		chickenUp5.classList.add("used");
+		chickenUp5.removeEventListener("click", chicken5);
+	}
+});
+chickenUp6.addEventListener("click", function chicken6() {
+	if (eggCount >= 10000) {
+		eggCount -= 10000;
+		chickenUpgrade6 = 2;
+		chickenUp6.classList.add("used");
+		chickenUp6.removeEventListener("click", chicken6);
+	}
+});
+chickenUp7.addEventListener("click", function chicken7() {
+	if (eggCount >= 10000) {
+		eggCount -= 10000;
+		chickenUpgrade7 = 2;
+		chickenUp7.classList.add("used");
+		chickenUp7.removeEventListener("click", chicken7);
+	}
+});
+chickenUp8.addEventListener("click", function chicken8() {
+	if (eggCount >= 10000) {
+		eggCount -= 10000;
+		chickenUpgrade8 = 2;
+		chickenUp8.classList.add("used");
+		chickenUp8.removeEventListener("click", chicken8);
+	}
+});
+// Goats
+goatUp1.addEventListener('click', function goat1() {
+    if (gmilkCount >= 400) {
+        gmilkCount -= 400;
+        goatUpgrade1 = 2;
+        goatUp1.classList.add("used");
+        goatUp1.removeEventListener("click", goat1);
+    }
+})
+goatUp2.addEventListener("click", function goat2() {
+	if (gmilkCount >= 400) {
+		gmilkCount -= 400;
+		goatUpgrade2 = 2;
+		goatUp2.classList.add("used");
+		goatUp2.removeEventListener("click", goat2);
+	}
+});
+goatUp3.addEventListener("click", function goat3() {
+	if (gmilkCount >= 400) {
+		gmilkCount -= 400;
+		goatUpgrade3 = 2;
+		goatUp3.classList.add("used");
+		goatUp3.removeEventListener("click", goat3);
+	}
+});
+goatUp4.addEventListener("click", function goat4() {
+	if (gmilkCount >= 400) {
+		gmilkCount -= 400;
+		goatUpgrade4 = 2;
+		goatUp4.classList.add("used");
+		goatUp4.removeEventListener("click", goat4);
+	}
+});
+goatUp5.addEventListener("click", function goat5() {
+	if (gmilkCount >= 400) {
+		gmilkCount -= 400;
+		goatUpgrade5 = 2;
+		goatUp5.classList.add("used");
+		goatUp5.removeEventListener("click", goat5);
+	}
+});
+goatUp6.addEventListener("click", function goat6() {
+	if (gmilkCount >= 400) {
+		gmilkCount -= 400;
+		goatUpgrade6 = 2;
+		goatUp6.classList.add("used");
+		goatUp6.removeEventListener("click", goat6);
+	}
+});
+goatUp7.addEventListener("click", function goat7() {
+	if (gmilkCount >= 400) {
+		gmilkCount -= 400;
+		goatUpgrade7 = 2;
+		goatUp7.classList.add("used");
+		goatUp7.removeEventListener("click", goat7);
+	}
+});
+goatUp8.addEventListener("click", function goat8() {
+	if (gmilkCount >= 400) {
+		gmilkCount -= 400;
+		goatUpgrade8 = 2;
+		goatUp8.classList.add("used");
+		goatUp8.removeEventListener("click", goat8);
+	}
+});
+// Geese
+gooseUp1.addEventListener('click', function goose1() {
+    if (chaosCount >= 300) {
+        chaosCount -= 300;
+        geeseUpgrade1 = 2;
+        gooseUp1.classList.add("used");
+        gooseUp1.removeEventListener('click', goose1)
+    }
+})
+gooseUp2.addEventListener("click", function goose2() {
+	if (chaosCount >= 300) {
+		chaosCount -= 300;
+		geeseUpgrade2 = 2;
+		gooseUp2.classList.add("used");
+		gooseUp2.removeEventListener("click", goose2);
+	}
+});
+gooseUp3.addEventListener("click", function goose3() {
+	if (chaosCount >= 300) {
+		chaosCount -= 300;
+		geeseUpgrade3 = 2;
+		gooseUp3.classList.add("used");
+		gooseUp3.removeEventListener("click", goose3);
+	}
+});
+gooseUp4.addEventListener("click", function goose4() {
+	if (chaosCount >= 300) {
+		chaosCount -= 300;
+		geeseUpgrade4 = 2;
+		gooseUp4.classList.add("used");
+		gooseUp4.removeEventListener("click", goose4);
+	}
+});
+gooseUp5.addEventListener("click", function goose5() {
+	if (chaosCount >= 300) {
+		chaosCount -= 300;
+		geeseUpgrade5 = 2;
+		gooseUp5.classList.add("used");
+		gooseUp5.removeEventListener("click", goose5);
+	}
+});
+gooseUp6.addEventListener("click", function goose6() {
+	if (chaosCount >= 300) {
+		chaosCount -= 300;
+		geeseUpgrade6 = 2;
+		gooseUp6.classList.add("used");
+		gooseUp6.removeEventListener("click", goose6);
+	}
+});
+gooseUp7.addEventListener("click", function goose7() {
+	if (chaosCount >= 300) {
+		chaosCount -= 300;
+		geeseUpgrade7 = 2;
+		gooseUp7.classList.add("used");
+		gooseUp7.removeEventListener("click", goose7);
+	}
+});
+gooseUp8.addEventListener("click", function goose8() {
+	if (chaosCount >= 300) {
+		chaosCount -= 300;
+		geeseUpgrade8 = 2;
+		gooseUp8.classList.add("used");
+		gooseUp8.removeEventListener("click", goose8);
+	}
+});
+// Ducks
+duckUp1.addEventListener('click', function duck1(){
+    if (dEggCount >= 500) {
+        dEggCount -= 500;
+        duckUpgrade1 = 2;
+        duckUp1.classList.add("used");
+        duckUp1.removeEventListener("click", duck1);
+    }
+})
+duckUp2.addEventListener("click", function duck2() {
+	if (dEggCount >= 500) {
+		dEggCount -= 500;
+		duckUpgrade2 = 2;
+		duckUp2.classList.add("used");
+		duckUp2.removeEventListener("click", duck2);
+	}
+});
+duckUp3.addEventListener("click", function duck3() {
+	if (dEggCount >= 500) {
+		dEggCount -= 500;
+		duckUpgrade3 = 2;
+		duckUp3.classList.add("used");
+		duckUp3.removeEventListener("click", duck3);
+	}
+});
+duckUp4.addEventListener("click", function duck4() {
+	if (dEggCount >= 500) {
+		dEggCount -= 500;
+		duckUpgrade4 = 2;
+		duckUp4.classList.add("used");
+		duckUp4.removeEventListener("click", duck4);
+	}
+});
+duckUp5.addEventListener("click", function duck5() {
+	if (dEggCount >= 500) {
+		dEggCount -= 500;
+		duckUpgrade5 = 2;
+		duckUp5.classList.add("used");
+		duckUp5.removeEventListener("click", duck5);
+	}
+});
+duckUp6.addEventListener("click", function duck6() {
+	if (dEggCount >= 500) {
+		dEggCount -= 500;
+		duckUpgrade6 = 2;
+		duckUp6.classList.add("used");
+		duckUp6.removeEventListener("click", duck6);
+	}
+});
+duckUp7.addEventListener("click", function duck7() {
+	if (dEggCount >= 500) {
+		dEggCount -= 500;
+		duckUpgrade7 = 2;
+		duckUp7.classList.add("used");
+		duckUp7.removeEventListener("click", duck7);
+	}
+});
+duckUp8.addEventListener("click", function duck8() {
+	if (dEggCount >= 500) {
+		dEggCount -= 500;
+		duckUpgrade1 = 2;
+		duckUp8.classList.add("used");
+		duckUp8.removeEventListener("click", duck8);
+	}
+});
+// Pigs
+
+// Bees
+
+// Sacrifice
+
+// Clicker
