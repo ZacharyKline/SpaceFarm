@@ -1,131 +1,196 @@
-
 body {
-    content: "Click that sheep!";
-    background: rgb(181, 141, 215);
-    color: black;
-    position: relative;
-    margin: 0px;
-    display: flex;
-    /* overflow-x: hidden; */
+	content: "Click that sheep!";
+	background: rgb(181, 141, 215);
+	color: black;
+	position: relative;
+	margin: 0px;
+	display: flex;
+	/* overflow-x: hidden; */
 }
 
-
 #content {
-    display: flex;
-    flex-direction: column;
-    margin-left: 14%;
-    height: 50%;
+	display: flex;
+	flex-direction: column;
+	margin-left: 14%;
+	height: 50%;
 }
 
 #resourceBar {
-    box-sizing: border-box;
-    width: 13%;
-    height: 100%;
-    background: rgb(157, 136, 108);
-    position: fixed;
-    margin: 0px;
-    padding: 15px;
-    border-right: 10px groove rgb(136, 77, 43);
-    z-index: 2;
-   }
+	box-sizing: border-box;
+	width: 13%;
+	height: 100%;
+	background: rgb(157, 136, 108);
+	position: fixed;
+	margin: 0px;
+	padding: 15px;
+	border-right: 10px groove rgb(136, 77, 43);
+	z-index: 2;
+}
 
 #clickMe {
-    margin: auto;
-    height: 10em;
-    width: 100%;
-    background: rgb(181, 141, 215);
-    background-image: url('../img/sheep.png');
-    background-size: cover;
-    border: none;
-    font-size: 15px;
-    font-weight: bolder;
-    color: rgb(16, 58, 16);
-    text-shadow: 1px 1px white;
+	margin: auto;
+	height: 10em;
+	width: 100%;
+	background: rgb(181, 141, 215);
+	background-image: url("../img/sheep.png");
+	background-size: cover;
+	border: none;
+	font-size: 15px;
+	font-weight: bolder;
+	color: rgb(16, 58, 16);
+	text-shadow: 1px 1px white;
 }
 
 #clickMe:active {
-    box-sizing: border-box;
-    padding:3px 4px 3px 6px;
-    width: 90%;
-    height: 10em;
+	box-sizing: border-box;
+	padding: 3px 4px 3px 6px;
+	width: 90%;
+	height: 10em;
 }
 
 #stuff {
-    margin-left: 5px;
-    margin-bottom: 0px;
+	margin-left: 5px;
+	margin-bottom: 0px;
 }
 
 #funnyheaders {
-    margin-left: 14%;
+	margin-left: 14%;
 }
 
 #gameBody {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-size: cover;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-size: cover;
 }
-#specialtyArea{
-    position: relative;
-    height: 50%;
-    width: 100%;
-    bottom: 0;
-
-} 
+#specialtyArea {
+	position: relative;
+	height: 50%;
+	width: 100%;
+	bottom: 0;
+}
 #ResourceTab {
-    box-sizing: border-box;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    /* border-top: 10px groove rgb(136, 77, 43); */
-    position: fixed;
-    top: 50%;
-    left: 13%;
+	box-sizing: border-box;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	/* border-top: 10px groove rgb(136, 77, 43); */
+	position: relative;
+	top: 50%;
 }
 #upgradeTab {
-    
-    position: relative;
-    left: 14%;
-    top: 90px;
+	position: relative;
+	left: 14%;
+	top: 90px;
 }
 
 #altarTab {
-    position: relative;
-    left: 14%;
-    top: 100px;
+	position: relative;
+	left: 14%;
+	top: 100px;
 }
 
 #labTab {
-    position: relative;
-    left: 14%;
-    top: 110px;
+	position: relative;
+	left: 14%;
+	top: 110px;
 }
 #marketTab {
-    position: relative;
-    left: 14%;
-    top: 120px;
+	position: relative;
+	left: 14%;
+	top: 120px;
 }
 
 .used {
-    background-color: grey !important;
-    border-style: outset;
+	background-color: grey !important;
+	border-style: outset;
 }
 
-#sheepUp1, #sheepUp2, #sheepUp3, #sheepUp4, #sheepUp5, #sheepUp6, #sheepUp7, #sheepUp8 {
-    background-color: aquamarine;
-    height: 10%;
-    width: 10%;
-    border: 3px solid rgb(99, 197, 164);
-    border-radius: 5px;
-    font-size: 15px;
-    padding: 5px;
-
-}
-
-#cowMarket {
-    height: 15%;
-    width: 15%;
+#sheepUp1,
+#sheepUp2,
+#sheepUp3,
+#sheepUp4,
+#sheepUp5,
+#sheepUp6,
+#sheepUp7,
+#sheepUp8,
+#cowUp1,
+#cowUp2,
+#cowUp3,
+#cowUp4,
+#cowUp5,
+#cowUp6,
+#cowUp7,
+#cowUp8,
+#chickenUp1,
+#chickenUp2,
+#chickenUp3,
+#chickenUp4,
+#chickenUp5,
+#chickenUp6,
+#chickenUp7,
+#chickenUp8,
+#goatUp1,
+#goatUp2,
+#goatUp3,
+#goatUp4,
+#goatUp5,
+#goatUp6,
+#goatUp7,
+#goatUp8,
+#gooseUp1,
+#gooseUp2,
+#gooseUp3,
+#gooseUp4,
+#gooseUp5,
+#gooseUp6,
+#gooseUp7,
+#gooseUp8,
+#duckUp1,
+#duckUp2,
+#duckUp3,
+#duckUp4,
+#duckUp5,
+#duckUp6,
+#duckUp7,
+#duckUp8,
+#pigUp1,
+#pigUp2,
+#pigUp3,
+#pigUp4,
+#pigUp5,
+#pigUp6,
+#pigUp7,
+#pigUp8,
+#beeUp1,
+#beeUp2,
+#beeUp3,
+#beeUp4,
+#beeUp5,
+#beeUp6,
+#beeUp7,
+#beeUp8,
+#clickUp1,
+#clickUp2,
+#clickUp3,
+#clickUp4,
+#clickUp5,
+#clickUp6,
+#clickUp7,
+#clickUp8,
+#sacUp1,
+#sacUp2,
+#sacUp3,
+#sacUp4
+{
+	background-color: aquamarine;
+	height: 10%;
+	width: 10%;
+	border: 3px solid rgb(99, 197, 164);
+	border-radius: 5px;
+	font-size: 15px;
+	padding: 5px;
 }

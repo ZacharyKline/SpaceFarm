@@ -12,6 +12,8 @@ let eggCount = 4000  //Eggs per second
 let gmilkCount = 4000  //Goats Milk per second?
 let chaosCount = 4000
 let dEggCount = 4000
+let pigletCount = 4000
+let honeyCount = 4000
 let timeValue = 1000
 let incrementTime = (Math.random()+.1)*10
 // upgrade variables
@@ -23,15 +25,84 @@ let sheepUpgrade5 = 1;
 let sheepUpgrade6 = 1;
 let sheepUpgrade7 = 1;
 let sheepUpgrade8 = 1;
+let cowUpgrade1 = 1;
+let cowUpgrade2 = 1;
+let cowUpgrade3 = 1;
+let cowUpgrade4 = 1;
+let cowUpgrade5 = 1;
+let cowUpgrade6 = 1;
+let cowUpgrade7 = 1;
+let cowUpgrade8 = 1;
+let chickenUpgrade1 = 1;
+let chickenUpgrade2 = 1;
+let chickenUpgrade3 = 1;
+let chickenUpgrade4 = 1;
+let chickenUpgrade5 = 1;
+let chickenUpgrade6 = 1;
+let chickenUpgrade7 = 1;
+let chickenUpgrade8 = 1;
+let goatUpgrade1 = 1;
+let goatUpgrade2 = 1;
+let goatUpgrade3 = 1;
+let goatUpgrade4 = 1;
+let goatUpgrade5 = 1;
+let goatUpgrade6 = 1;
+let goatUpgrade7 = 1;
+let goatUpgrade8 = 1;
+let geeseUpgrade1 = 1;
+let geeseUpgrade2 = 1;
+let geeseUpgrade3 = 1;
+let geeseUpgrade4 = 1;
+let geeseUpgrade5 = 1;
+let geeseUpgrade6 = 1;
+let geeseUpgrade7 = 1;
+let geeseUpgrade8 = 1;
+let duckUpgrade1 = 1;
+let duckUpgrade2 = 1;
+let duckUpgrade3 = 1;
+let duckUpgrade4 = 1;
+let duckUpgrade5 = 1;
+let duckUpgrade6 = 1;
+let duckUpgrade7 = 1;
+let duckUpgrade8 = 1;
+let beeUpgrade1 = 1;
+let beeUpgrade2 = 1;
+let beeUpgrade3 = 1;
+let beeUpgrade4 = 1;
+let beeUpgrade5 = 1;
+let beeUpgrade6 = 1;
+let beeUpgrade7 = 1;
+let beeUpgrade8 = 1;
+let pigUpgrade1 = 1;
+let pigUpgrade2 = 1;
+let pigUpgrade3 = 1;
+let pigUpgrade4 = 1;
+let pigUpgrade5 = 1;
+let pigUpgrade6 = 1;
+let pigUpgrade7 = 1;
+let pigUpgrade8 = 1;
+let clickUpgrade1 = 1;
+let clickUpgrade2 = 1;
+let clickUpgrade3 = 1;
+let clickUpgrade4 = 1;
+let clickUpgrade5 = 1;
+let clickUpgrade6 = 1;
+let clickUpgrade7 = 1;
+let clickUpgrade8 = 1;
+let sacUpgrade1 = 1;
+let sacUpgrade2 = 1;
+let sacUpgrade3 = 1;
+let sacUpgrade4 = 1;
 
+
+let commaIncluded = value => value.toLocaleString()
 //The first and most basic currency in the space farm game will be wool, and their producer will be space sheep.
 function shearButton(number) {
     randomNum = Math.floor(Math.random() * 100)
-    woolCount = woolCount + number
-    document.getElementById('wooly').innerHTML = woolCount;
+    woolCount = woolCount + number * clickUpgrade1 * clickUpgrade2 * clickUpgrade3 * clickUpgrade4 * clickUpgrade5 * clickUpgrade6 * clickUpgrade7 * clickUpgrade8
+    document.getElementById('wooly').innerHTML = commaIncluded(woolCount);
 
 }
-let commaIncluded = value => value.toString().split('').reverse().map((element, index)=>index%3===0?element+=',':element).reverse().join('').slice(0,-1)
 
 //========================================================
 //Animals/Hire Sheep
@@ -87,7 +158,7 @@ let cowPrice = 10
 let cowCount = 0
 
 function generateMilk(number) {
-    milkCount = milkCount + number
+    milkCount = milkCount + number * cowUpgrade1 * cowUpgrade2 * cowUpgrade3 * cowUpgrade4 * cowUpgrade5 * cowUpgrade6 * cowUpgrade7 * cowUpgrade8
     document.getElementById('milky').innerHTML = commaIncluded(milkCount);
 }
 
@@ -121,7 +192,7 @@ let chickenPrice = 10
 let chickenCount = 0
 
 function generateEggs(number) {
-    eggCount = eggCount + number
+    eggCount = eggCount + number * chickenUpgrade1 * chickenUpgrade2 * chickenUpgrade3 * chickenUpgrade4 * chickenUpgrade5 * chickenUpgrade6 * chickenUpgrade7 * chickenUpgrade8
     document.getElementById('eggy').innerHTML = commaIncluded(eggCount);
 }
 
@@ -153,7 +224,7 @@ let goatPrice = 1200
 let goatCount = 0
 
 function generateGMilk(number) {
-    gmilkCount = gmilkCount + number
+    gmilkCount = gmilkCount + number * goatUpgrade1 * goatUpgrade2 * goatUpgrade3 * goatUpgrade4 * goatUpgrade5 * goatUpgrade6 * goatUpgrade7 * goatUpgrade8
     document.getElementById('gmilky').innerHTML = commaIncluded(gmilkCount);
 }
 
@@ -184,7 +255,7 @@ let goosePrice = 100
 let gooseCount = 0
 
 function generateChaos(number) {
-    chaosCount = chaosCount + number
+    chaosCount = chaosCount + number * geeseUpgrade1 * geeseUpgrade2 * geeseUpgrade3 * geeseUpgrade4 * geeseUpgrade5 * geeseUpgrade6 * geeseUpgrade7 * geeseUpgrade8
     document.getElementById('chaosy').innerHTML = commaIncluded(chaosCount)
 }
 
@@ -216,7 +287,7 @@ let duckPrice = 100;
 let duckCount = 0;
 
 function generateDuckEggs(number) {
-	dEggCount = dEggCount + number;
+	dEggCount += number * duckUpgrade1 * duckUpgrade2 * duckUpgrade3 * duckUpgrade4 * duckUpgrade5 * duckUpgrade6 * duckUpgrade7 * duckUpgrade8
 	document.getElementById("deggy").innerHTML = commaIncluded(dEggCount);
 }
 
@@ -244,9 +315,69 @@ duckAccumulator()
 //========================================================
 //Animals/Hire Pigs
 //========================================================
+let pigPrice = 40;
+let pigCount = 0;
+
+function generatePiglet(number) {
+	pigletCount += number * pigUpgrade1 * pigUpgrade2 * pigUpgrade3 * pigUpgrade4 * pigUpgrade5 * pigUpgrade6 * pigUpgrade7 * pigUpgrade8
+	document.getElementById("piglety").innerHTML = commaIncluded(pigletCount);
+}
+
+function buyPigs() {
+	if (dEggCount >= pigPrice) {
+		dEggCount -= pigPrice;
+		let toThePowerOf = Math.pow(1.1, pigCount);
+		pigPrice = Math.trunc(40 * toThePowerOf);
+		pigCount += 1;
+		document.getElementById("deggy").innerHTML = commaIncluded(duckCount);
+		document.getElementById("pigNumber").innerHTML = commaIncluded(pigCount);
+		document.getElementById("piglety").innerHTML = commaIncluded(pigletCount);
+		document.getElementById("pigy").innerHTML = "<button onclick='buyPigs()'>" + commaIncluded(pigPrice) + " piglet" + "</button>";
+	}
+}
+
+function pigAccumulator(){
+    setTimeout(() =>{
+        generatePiglet(pigCount >= 1 ? 1 : pigCount);
+        pigAccumulator()
+    }, (timeValue-pigCount)/(pigCount))
+}
+pigAccumulator()
+
+
+//========================================================
+//Animals/Hire Bees
+//========================================================
+let beePrice = 10;
+let beeCount = 0;
+
+function generateHoney(number) {
+	honeyCount += number * beeUpgrade1 * beeUpgrade2 * beeUpgrade3 * beeUpgrade4 * beeUpgrade5 * beeUpgrade6 * beeUpgrade7 * beeUpgrade8
+	document.getElementById("honeyy").innerHTML = commaIncluded(honeyCount);
+}
+
+function buyBees() {
+	if (pigletCount >= beePrice) {
+		pigletCount -= beePrice;
+		let toThePowerOf = Math.pow(1.1, beeCount);
+		beePrice = Math.trunc(10 * toThePowerOf);
+		beeCount += 1;
+		document.getElementById("piglety").innerHTML = commaIncluded(pigCount);
+		document.getElementById("beeNumber").innerHTML = commaIncluded(beeCount);
+		document.getElementById("honeyy").innerHTML = commaIncluded(honeyCount);
+		document.getElementById("beey").innerHTML = "<button onclick='buyBees()'>" + commaIncluded(beePrice) + " Honey" + "</button>";
+	}
+}
 
 
 
+function beeAccumulator(){
+    setTimeout(() =>{
+        generateHoney(beeCount >= 1 ? 1 : beeCount);
+        beeAccumulator()
+    }, (timeValue-beeCount)/(beeCount))
+}
+beeAccumulator()
 //========================================================
 //Set interval to check if things are unlocked
 //========================================================
@@ -307,6 +438,25 @@ const gooseInterval = setInterval(function () {
         document.getElementById('duckey').innerHTML = '<button onclick="buyDucks()">100 chaos</button>'
         document.getElementById('duckCounty').innerHTML = "Duck: <p id='duckNumber'>0</p>"
         stop(gooseInterval)
+    }
+})
+const duckInterval = setInterval(function () {
+    if (dEggCount > 500) {
+        document.querySelector("#pigImage").innerHTML =
+					'<img src="./img/pig.png" class="animals" height=100 width=100/>';
+        document.getElementById('pigy').innerHTML = '<button onclick="buyPigs()">40 piglet</button>'
+        document.getElementById('pigCounty').innerHTML = "pig: <p id='pigNumber'>0</p>"
+        stop(duckInterval)
+    }
+})
+
+const pigInterval = setInterval(function () {
+    if (pigletCount > 30) {
+        document.querySelector("#beeImage").innerHTML =
+					'<img src="./img/bee.png" class="animals" height=100 width=100/>';
+        document.getElementById('beey').innerHTML = '<button onclick="buyBees()">10 honey</button>'
+        document.getElementById('beeCounty').innerHTML = "bee: <p id='beeNumber'>0</p>"
+        stop(pigInterval)
     }
 })
 
