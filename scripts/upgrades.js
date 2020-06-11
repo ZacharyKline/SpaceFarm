@@ -646,6 +646,113 @@ beeUp8.addEventListener('click', function bee8() {
 	}
 })
 
-// Sacrifice
-
 // Clicker
+clickUp1.addEventListener('click', function click1(){
+	if(woolCount >= 10){
+	woolCount -= 10
+		clickUpgrade1 = 2
+		clickUp1.classList.add("used");
+		clickUp1.removeEventListener('click', click1)
+
+	}
+})
+clickUp2.addEventListener("click", function click2() {
+	if (woolCount >= 10) {
+		woolCount -= 10;
+		clickUpgrade2 = 2;
+		clickUp2.classList.add("used");
+		clickUp2.removeEventListener("click", click2);
+	}
+});
+clickUp3.addEventListener("click", function click3() {
+	if (woolCount >= 10) {
+		woolCount -= 10;
+		clickUpgrade3 = 2;
+		clickUp3.classList.add("used");
+		clickUp3.removeEventListener("click", click3);
+	}
+});
+clickUp4.addEventListener('click', function click4(){
+	if(woolCount >= 10){
+	woolCount -= 10
+		clickUpgrade4 = 2
+		clickUp4.classList.add("used");
+		clickUp4.removeEventListener('click', click4)
+
+	}
+})
+clickUp5.addEventListener("click", function click5() {
+	if (woolCount >= 10) {
+		woolCount -= 10;
+		clickUpgrade5 = 2;
+		clickUp5.classList.add("used");
+		clickUp5.removeEventListener("click", click5);
+	}
+});
+clickUp6.addEventListener('click', function click6(){
+	if(woolCount >= 10){
+	woolCount -= 10
+		clickUpgrade6 = 2
+		clickUp6.classList.add("used");
+		clickUp6.removeEventListener('click', click6)
+
+	}
+})
+clickUp7.addEventListener('click', function click7(){
+	if(woolCount >= 10){
+	woolCount -= 10
+		clickUpgrade7 = 2
+		clickUp7.classList.add("used");
+		clickUp7.removeEventListener('click', click7)
+
+	}
+})
+clickUp7.addEventListener('click', function click7(){
+	if(woolCount >= 10){
+	woolCount -= 10
+		clickUpgrade7 = 2
+		clickUp7.classList.add("used");
+		clickUp7.removeEventListener('click', click7)
+
+	}
+})
+clickUp8.addEventListener('click', function click8(){
+	if(woolCount >= 10){
+	woolCount -= 10
+		clickUpgrade8 = 2
+		clickUp8.classList.add("used");
+		clickUp8.removeEventListener('click', click8)
+
+	}
+})
+
+// Sacrifice
+sacUp1.addEventListener('click', function sac1() {
+	if (true) {
+		sacUpgrade1 = 2
+		sacUp1.classList.add("used");
+		sacUp1.removeEventListener("click", sac1);
+
+	}
+})
+sacUp2.addEventListener("click", function sac2() {
+	if (true) {
+		sacUpgrade2 = 2;
+		sacUp2.classList.add("used");
+		sacUp2.removeEventListener("click", sac2);
+	}
+});
+sacUp3.addEventListener("click", function sac3() {
+	if (true) {
+		sacUpgrade3 = 2;
+		sacUp3.classList.add("used");
+		sacUp3.removeEventListener("click", sac3);
+	}
+});
+sacUp4.addEventListener("click", function sac4() {
+	if (true) {
+		sacUpgrade4 = 2;
+		sacUp4.classList.add("used");
+		sacUp4.removeEventListener("click", sac4);
+	}
+});

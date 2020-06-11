@@ -81,13 +81,25 @@ let pigUpgrade5 = 1;
 let pigUpgrade6 = 1;
 let pigUpgrade7 = 1;
 let pigUpgrade8 = 1;
+let clickUpgrade1 = 1;
+let clickUpgrade2 = 1;
+let clickUpgrade3 = 1;
+let clickUpgrade4 = 1;
+let clickUpgrade5 = 1;
+let clickUpgrade6 = 1;
+let clickUpgrade7 = 1;
+let clickUpgrade8 = 1;
+let sacUpgrade1 = 1;
+let sacUpgrade2 = 1;
+let sacUpgrade3 = 1;
+let sacUpgrade4 = 1;
 
 
 let commaIncluded = value => value.toLocaleString()
 //The first and most basic currency in the space farm game will be wool, and their producer will be space sheep.
 function shearButton(number) {
     randomNum = Math.floor(Math.random() * 100)
-    woolCount = woolCount + number
+    woolCount = woolCount + number * clickUpgrade1 * clickUpgrade2 * clickUpgrade3 * clickUpgrade4 * clickUpgrade5 * clickUpgrade6 * clickUpgrade7 * clickUpgrade8
     document.getElementById('wooly').innerHTML = commaIncluded(woolCount);
 
 }
