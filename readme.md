@@ -142,7 +142,7 @@ Reality Cutting Trimmers:
 
 ========================================================
 
-    placeholder
+    The altar is a place where you can sacrifice animals to your horrifying space gods for animal parts and blood. Each main animal has 3 - 4 special parts which can be gained from sacrificing them, and you can use those parts to purchase upgrades, use in the laboratory to create specialty animals, or (stretch goal) use the parts to create breeding animals to gain more animals over time.
 
 ========================================================
 
@@ -150,7 +150,8 @@ Reality Cutting Trimmers:
 
 ========================================================
 
-    placeholder
+    The laboratory is where you can create specialty animals using parts from various animals in large quantities and a lot of the universal resource blood to make abominations the likes the world has never seen. These animals and made once, and never can be made again until a reset happens, they provide massive bonuses and (stretch goal?) can be made to level up using even more parts, evolving them into further horrors.
+    A list needs to be made for ideas of specialty animals, so that should be a high priority for now until we get it done.
 
 
 ========================================================
@@ -219,3 +220,10 @@ Reality Cutting Trimmers:
 
     We're currently using functional javascript for the whole game, but we could alternatively upgrade it to class syntax, or maybe object oriented eventually?
 
+========================================================
+
+ AUTO SACRIFICER
+
+========================================================
+
+    If the breeding center stretch goal is done, I'd like to do a auto sacrificer where you can have a machine or something you purchase (with reset mechanic resources?) where it will automatically kill off your animals at a set rate so you don't have to always manually kill them. This would probably be best implemented if we made it so you could make multiple specialty animals, but might be helpful for the whole leveling them up thing if we decide to do that.
