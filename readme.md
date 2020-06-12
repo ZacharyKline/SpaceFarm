@@ -95,10 +95,25 @@ Ritualistic Blood Sacrifice:
 Ascension of the Goat God:
 
 === Geese ===
+Honk Amplification Device:
+Steel Wings:
+Better Nesting:
+High Powered Honk:
+Fear Inducing Hiss:
+Essence of Chaos:
+All Yo' Shit:
+Dimensional Doorway to the Chaos Dimension:
 
 
 === Ducks ===
-
+Less Ugly Ducklings:
+Super Cork Screw:
+Quack Earthquake:
+Extendable Webbed Feet:
+Ability To Get Wet:
+Duck College:
+Master Ducks:
+PHD: All ducks have officially become "quacks"
 
 === Pigs ===
 Exfoliating Mud Pit:
@@ -119,7 +134,7 @@ Advanced Pollen Detection:
 Six Mechanical Arms:
 Human Bee Hivemind Connection:
 Even Royaler Jelly:
-The script to the Bee Movie:
+A Major Motion Picture:
 
 
 === Multiple Animal Upgrades: ===
@@ -143,6 +158,49 @@ Reality Cutting Trimmers:
 ========================================================
 
     The altar is a place where you can sacrifice animals to your horrifying space gods for animal parts and blood. Each main animal has 3 - 4 special parts which can be gained from sacrificing them, and you can use those parts to purchase upgrades, use in the laboratory to create specialty animals, or (stretch goal) use the parts to create breeding animals to gain more animals over time.
+
+    === Sheep ===
+    Squared Eyes - One or two chance per sacrifice (CPS)
+    Sheep Hooves - 10% CPS
+    Pristine Wool - 5% CPS
+
+    === Cows ====
+    Cow Flank - One or two CPS
+    Cow Stomach - 20% CPS
+    Methane - 5% CPS
+
+    === Chickens ===
+    Feathers - 6 to 3 CPS
+    Wings - 1 to 2 CPS
+    Wattles - 10% CPS
+    Chicken Fingers - 1% CPS
+
+    === Goats ===
+    Goat Horns - 1 or 2 CPS
+    Third Eyes - 20% CPS
+    Devil Contract - 5% CPS
+
+    === Geese ===
+    Goose Tongue - 30% CPS
+    Goose Teeth - 20% CPS
+    Eye of Chaos - 5% CPS
+
+    === Ducks ===
+    Webbed Feet - 30% CPS
+    Duck Bill - 15% CPS
+    Beautiful Feather - 5% CPS
+
+    === Pigs ===
+    Bacon - 1 or 2 CPS
+    Snouts - 25% CPS
+    Curly Tails - 5% CPS
+    Communism - 2% CPS
+
+    === Bees ===
+    Stingers - 60% CPS
+    Honey Combs - 50% CPS
+    Royal Jelly - 10% CPS
+    A Script to A Bee Movie - 1% CPS
 
 ========================================================
 

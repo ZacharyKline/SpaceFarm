@@ -98,13 +98,13 @@ killSheep.addEventListener("click", function () {
 		for (let i = 0; i < sacAmount; i += 1) {
 			let eyeChance =
 				Math.floor(Math.random() * 100) +
-				1 * sacUpgrade1 * sacUpgrade2 * sacUpgrade3;
+				1 + sacUpgrade1 + sacUpgrade2 + sacUpgrade3;
 			let hoovChance =
 				Math.floor(Math.random() * 10) +
-				1 * sacUpgrade1 * sacUpgrade2 * sacUpgrade3;
+				1 + sacUpgrade1 + sacUpgrade2 + sacUpgrade3;
 			let woolChance =
 				Math.floor(Math.random() * 20) +
-				1 * sacUpgrade1 * sacUpgrade2 * sacUpgrade3;
+				1 + sacUpgrade1 + sacUpgrade2 + sacUpgrade3;
 
 			bloodCount += 1;
 			if (eyeChance > 70) {
@@ -115,13 +115,13 @@ killSheep.addEventListener("click", function () {
 			if (hoovChance >= 8) {
 				sheepHooves += 1 * sacUpgrade4;
 			}
-			if (woolChance == 20) {
+			if (woolChance >= 20) {
 				pristineWool += 1 * sacUpgrade4;
 			}
 			eyeSpot.innerHTML = squaredEyes;
 			hoovSpot.innerHTML = sheepHooves;
 			fleeceSpot.innerHTML = pristineWool;
-			
+			console.log(eyeChance, hoovChance, woolChance)
 		}
 	}
 });
@@ -144,13 +144,13 @@ killCows.addEventListener("click", function () {
 		for (let i = 0; i < sacAmount; i += 1) {
 			let flankChance =
 				Math.floor(Math.random() * 100) +
-				1 * sacUpgrade1 * sacUpgrade2 * sacUpgrade3;
+				1 + sacUpgrade1 + sacUpgrade2 + sacUpgrade3;
 			let stomachChance =
 				Math.floor(Math.random() * 10) +
-				1 * sacUpgrade1 * sacUpgrade2 * sacUpgrade3;
+				1 + sacUpgrade1 + sacUpgrade2 + sacUpgrade3;
 			let methaneChance =
 				Math.floor(Math.random() * 20) +
-				1 * sacUpgrade1 * sacUpgrade2 * sacUpgrade3;
+				1 + sacUpgrade1 + sacUpgrade2 + sacUpgrade3;
 			bloodCount += 2 * sacUpgrade4;
 			if (flankChance > 70) {
 				cowFlank += 2 * sacUpgrade4;
@@ -160,7 +160,7 @@ killCows.addEventListener("click", function () {
 			if (stomachChance >= 8) {
 				cowStomach += 1 * sacUpgrade4;
 			}
-			if (methaneChance === 20) {
+			if (methaneChance >= 20) {
 				methane += 1 * sacUpgrade4;
 			}
 			flankSpot.innerHTML = cowFlank;
@@ -189,16 +189,16 @@ killChickens.addEventListener("click", function () {
 		for (let i = 0; i < sacAmount; i += 1) {
 			let featherChance =
 				Math.floor(Math.random() * 100) +
-				1 * sacUpgrade1 * sacUpgrade2 * sacUpgrade3;
+				1 + sacUpgrade1 + sacUpgrade2 + sacUpgrade3;
 			let wingChance =
 				Math.floor(Math.random() * 10) +
-				1 * sacUpgrade1 * sacUpgrade2 * sacUpgrade3;
+				1 + sacUpgrade1 + sacUpgrade2 + sacUpgrade3;
 			let wattleChance =
 				Math.floor(Math.random() * 20) +
-				1 * sacUpgrade1 * sacUpgrade2 * sacUpgrade3;
+				1 + sacUpgrade1 + sacUpgrade2 + sacUpgrade3;
 			let fingerChance =
 				Math.floor(Math.random() * 100) +
-				1 * sacUpgrade1 * sacUpgrade2 * sacUpgrade3;
+				1 + sacUpgrade1 + sacUpgrade2 + sacUpgrade3;
 			bloodCount += 0.5 * sacUpgrade4;
 			if (featherChance > 50) {
 				feathers += 5 * sacUpgrade4;
@@ -215,7 +215,7 @@ killChickens.addEventListener("click", function () {
 			if (wattleChance >= 18) {
 				wattles += 1 * sacUpgrade4;
 			}
-			if (fingerChance === 100) {
+			if (fingerChance >= 100) {
 				chickenFingers += 1 * sacUpgrade4;
 			}
 			featherSpot.innerHTML = feathers;
@@ -245,13 +245,13 @@ killGoats.addEventListener("click", function () {
 		for (let i = 0; i < sacAmount; i += 1) {
 			let hornChance =
 				Math.floor(Math.random() * 100) +
-				1 * sacUpgrade1 * sacUpgrade2 * sacUpgrade3;
+				1 + sacUpgrade1 + sacUpgrade2 + sacUpgrade3;
 			let thirdEyeChance =
 				Math.floor(Math.random() * 20) +
-				1 * sacUpgrade1 * sacUpgrade2 * sacUpgrade3;
+				1 + sacUpgrade1 + sacUpgrade2 + sacUpgrade3;
 			let contractChance =
 				Math.floor(Math.random() * 20) +
-				1 * sacUpgrade1 * sacUpgrade2 * sacUpgrade3;
+				1 + sacUpgrade1 + sacUpgrade2 + sacUpgrade3;
 			bloodCount += 1 * sacUpgrade4;
 			if (hornChance > 70) {
 				goatHorns += 2 * sacUpgrade4;
@@ -261,7 +261,7 @@ killGoats.addEventListener("click", function () {
 			if (thirdEyeChance > 16) {
 				thirdEye += 1 * sacUpgrade4;
 			}
-			if (contractChance === 20) {
+			if (contractChance >= 20) {
 				devilContract += 1 * sacUpgrade4;
 			}
 			goatHornSpot.innerHTML = goatHorns;
@@ -291,21 +291,21 @@ killGeese.addEventListener("click", function () {
 			bloodCount += 1 * sacUpgrade4;
 			let tongueChance =
 				Math.floor(Math.random() * 100) +
-				1 * sacUpgrade1 * sacUpgrade2 * sacUpgrade3;
+				1 + sacUpgrade1 + sacUpgrade2 + sacUpgrade3;
 			let toothChance =
 				Math.floor(Math.random() * 20) +
-				1 * sacUpgrade1 * sacUpgrade2 * sacUpgrade3;
+				1 + sacUpgrade1 + sacUpgrade2 + sacUpgrade3;
 			let chaosEyeChance =
 				Math.floor(Math.random() * 20) +
-				1 * sacUpgrade1 * sacUpgrade2 * sacUpgrade3;
+				1 + sacUpgrade1 + sacUpgrade2 + sacUpgrade3;
 			bloodCount += 1 * sacUpgrade4;
 			if (tongueChance > 70) {
-				tongue += 2 * sacUpgrade4;
+				tongue += 1 * sacUpgrade4;
 			}
 			if (toothChance > 16) {
 				gooseTeeth += 1 * sacUpgrade4;
 			}
-			if (chaosEyeChance === 20) {
+			if (chaosEyeChance >= 20) {
 				eyeofChaos += 1 * sacUpgrade4;
 			}
 			tongueSpot.innerHTML = tongue;
@@ -333,20 +333,20 @@ killDucks.addEventListener("click", function () {
 			bloodCount += 1 * sacUpgrade4;
 			let webbedFeetChance =
 				Math.floor(Math.random() * 100) +
-				1 * sacUpgrade1 * sacUpgrade2 * sacUpgrade3;
+				1 + sacUpgrade1 + sacUpgrade2 + sacUpgrade3;
 			let duckBillChance =
 				Math.floor(Math.random() * 20) +
-				1 * sacUpgrade1 * sacUpgrade2 * sacUpgrade3;
+				1 + sacUpgrade1 + sacUpgrade2 + sacUpgrade3;
 			let beautifulChance =
 				Math.floor(Math.random() * 20) +
-				1 * sacUpgrade1 * sacUpgrade2 * sacUpgrade3;
+				1 + sacUpgrade1 + sacUpgrade2 + sacUpgrade3;
 			if (webbedFeetChance >= 70) {
 				webbedFeet += 1 * sacUpgrade4;
 			}
 			if (duckBillChance >= 17) {
 				duckBill += 1 * sacUpgrade4;
 			}
-			if (beautifulChance === 20) {
+			if (beautifulChance >= 20) {
 				beautifulFeather += 1 * sacUpgrade4;
 			}
 			webbedFeetSpot.innerHTML = webbedFeet;
@@ -374,16 +374,16 @@ killPigs.addEventListener("click", function () {
 			bloodCount += 2 * sacUpgrade4;
 			let baconChance =
 				Math.floor(Math.random() * 100) +
-				1 * sacUpgrade1 * sacUpgrade2 * sacUpgrade3;
+				1 + sacUpgrade1 + sacUpgrade2 + sacUpgrade3;
 			let snoutChance =
 				Math.floor(Math.random() * 20) +
-				1 * sacUpgrade1 * sacUpgrade2 * sacUpgrade3;
+				1 + sacUpgrade1 + sacUpgrade2 + sacUpgrade3;
 			let curlyTailChance =
 				Math.floor(Math.random() * 20) +
-				1 * sacUpgrade1 * sacUpgrade2 * sacUpgrade3;
+				1 + sacUpgrade1 + sacUpgrade2 + sacUpgrade3;
 			let communismChance =
 				Math.floor(Math.random() * 100) +
-				1 * sacUpgrade1 * sacUpgrade2 * sacUpgrade3;
+				1 + sacUpgrade1 + sacUpgrade2 + sacUpgrade3;
 			if (baconChance >= 50) {
 				bacon += 2 * sacUpgrade4;
 			} else {
@@ -392,7 +392,7 @@ killPigs.addEventListener("click", function () {
 			if (snoutChance >= 15) {
 				snouts += 1 * sacUpgrade4;
 			}
-			if (curlyTailChance === 20) {
+			if (curlyTailChance >= 20) {
 				curlyTails += 1 * sacUpgrade4;
 			}
 			if (communismChance >= 98) {
@@ -424,16 +424,16 @@ killBees.addEventListener("click", function () {
 			bloodCount += 0.5 * sacUpgrade4;
 			let stingerChance =
 				Math.floor(Math.random() * 100) +
-				1 * sacUpgrade1 * sacUpgrade2 * sacUpgrade3;
+				1 + sacUpgrade1 + sacUpgrade2 + sacUpgrade3;
 			let honeyCombChance =
 				Math.floor(Math.random() * 20) +
-				1 * sacUpgrade1 * sacUpgrade2 * sacUpgrade3;
+				1 + sacUpgrade1 + sacUpgrade2 + sacUpgrade3;
 			let royalJellyChance =
 				Math.floor(Math.random() * 20) +
-				1 * sacUpgrade1 * sacUpgrade2 * sacUpgrade3;
+				1 + sacUpgrade1 + sacUpgrade2 + sacUpgrade3;
 			let beeMovieChance =
 				Math.floor(Math.random() * 100) +
-				1 * sacUpgrade1 * sacUpgrade2 * sacUpgrade3;
+				1 + sacUpgrade1 + sacUpgrade2 + sacUpgrade3;
 			if (stingerChance >= 40) {
 				stingers += 1 * sacUpgrade4;
 			}
@@ -443,7 +443,7 @@ killBees.addEventListener("click", function () {
 			if (royalJellyChance >= 19) {
 				royalJelly += 1 * sacUpgrade4;
 			}
-			if (beeMovieChance === 100) {
+			if (beeMovieChance >= 100) {
 				beeMovie += 1 * sacUpgrade4;
 			}
 			stingerSpot.innerHTML = stingers;
