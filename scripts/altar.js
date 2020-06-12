@@ -105,9 +105,7 @@ killSheep.addEventListener("click", function () {
 			let woolChance =
 				Math.floor(Math.random() * 20) +
 				1 * sacUpgrade1 * sacUpgrade2 * sacUpgrade3;
-			console.log(eyeChance)
-			console.log(hoovChance)
-			console.log(woolChance)
+
 			bloodCount += 1;
 			if (eyeChance > 70) {
 				squaredEyes += 2 * sacUpgrade4;
