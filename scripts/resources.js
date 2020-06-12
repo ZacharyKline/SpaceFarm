@@ -89,9 +89,9 @@ let clickUpgrade5 = 1;
 let clickUpgrade6 = 1;
 let clickUpgrade7 = 1;
 let clickUpgrade8 = 1;
-let sacUpgrade1 = 1;
-let sacUpgrade2 = 1;
-let sacUpgrade3 = 1;
+let sacUpgrade1 = 0;
+let sacUpgrade2 = 0;
+let sacUpgrade3 = 0;
 let sacUpgrade4 = 1;
 
 
