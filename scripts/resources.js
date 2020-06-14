@@ -329,7 +329,7 @@ function buyPigs() {
 		let toThePowerOf = Math.pow(1.1, pigCount);
 		pigPrice = Math.trunc(40 * toThePowerOf);
 		pigCount += 1;
-		document.getElementById("deggy").innerHTML = commaIncluded(duckCount);
+		document.getElementById("deggy").innerHTML = commaIncluded(dEggCount);
 		document.getElementById("pigNumber").innerHTML = commaIncluded(pigCount);
 		document.getElementById("piglety").innerHTML = commaIncluded(pigletCount);
 		document.getElementById("pigy").innerHTML = "<button onclick='buyPigs()'>" + commaIncluded(pigPrice) + " piglet" + "</button>";
