@@ -35,6 +35,7 @@ const stingerSpot = document.querySelector("#stingerSpot");
 const honeyCombSpot = document.querySelector("#honeyCombSpot");
 const royalJellySpot = document.querySelector("#royalJellySpot");
 const beeMovieSpot = document.querySelector("#beeMovieSpot");
+const bloodSpot = document.querySelector("#bloodSpot");
 //Amount of animals sacrificed
 let sacAmount = 1;
 
@@ -121,6 +122,7 @@ killSheep.addEventListener("click", function () {
 			eyeSpot.innerHTML = squaredEyes;
 			hoovSpot.innerHTML = sheepHooves;
 			fleeceSpot.innerHTML = pristineWool;
+			bloodSpot.innerHTML = bloodCount;
 			console.log(eyeChance, hoovChance, woolChance)
 		}
 	}
@@ -166,6 +168,8 @@ killCows.addEventListener("click", function () {
 			flankSpot.innerHTML = cowFlank;
 			stomachSpot.innerHTML = cowStomach;
 			methaneSpot.innerHTML = methane;
+			bloodSpot.innerHTML = bloodCount;
+
 		}
 	}
 });
@@ -222,6 +226,7 @@ killChickens.addEventListener("click", function () {
 			wingSpot.innerHTML = wings;
 			wattleSpot.innerHTML = wattles;
 			fingerSpot.innerHTML = chickenFingers;
+			bloodSpot.innerHTML = bloodCount;
 		}
 	}
 });
@@ -267,6 +272,8 @@ killGoats.addEventListener("click", function () {
 			goatHornSpot.innerHTML = goatHorns;
 			thirdEyeSpot.innerHTML = thirdEye;
 			devilSpot.innerHTML = devilContract;
+			bloodSpot.innerHTML = bloodCount;
+
 		}
 	}
 });
@@ -311,6 +318,8 @@ killGeese.addEventListener("click", function () {
 			tongueSpot.innerHTML = tongue;
 			gooseTeethSpot.innerHTML = gooseTeeth;
 			ChaosEyeSpot.innerHTML = eyeofChaos;
+			bloodSpot.innerHTML = bloodCount;
+
 		}
 	}
 });
@@ -352,6 +361,8 @@ killDucks.addEventListener("click", function () {
 			webbedFeetSpot.innerHTML = webbedFeet;
 			billSpot.innerHTML = duckBill;
 			duckFeatherSpot.innerHTML = beautifulFeather;
+			bloodSpot.innerHTML = bloodCount;
+
 		}
 	}
 });
@@ -402,6 +413,8 @@ killPigs.addEventListener("click", function () {
 			snoutSpot.innerHTML = snouts;
 			curlyTailSpot.innerHTML = curlyTails;
 			CommunismSpot.innerHTML = communism;
+			bloodSpot.innerHTML = bloodCount;
+
 			
 		}
 	}
@@ -450,6 +463,8 @@ killBees.addEventListener("click", function () {
 			honeyCombSpot.innerHTML = honeycomb;
 			royalJellySpot.innerHTML = royalJelly;
 			beeMovieSpot.innerHTML = beeMovie;
+			bloodSpot.innerHTML = bloodCount;
+
 		}
 	}
 });
