@@ -159,6 +159,7 @@ Reality Cutting Trimmers:
 
     The altar is a place where you can sacrifice animals to your horrifying space gods for animal parts and blood. Each main animal has 3 - 4 special parts which can be gained from sacrificing them, and you can use those parts to purchase upgrades, use in the laboratory to create specialty animals, or (stretch goal) use the parts to create breeding animals to gain more animals over time.
 
+    PERCENTAGES ARE BASE VALUES BEFORE UPGRADES
     === Sheep ===
     Squared Eyes - One or two chance per sacrifice (CPS)
     Sheep Hooves - 10% CPS
@@ -210,6 +211,22 @@ Reality Cutting Trimmers:
 
     The laboratory is where you can create specialty animals using parts from various animals in large quantities and a lot of the universal resource blood to make abominations the likes the world has never seen. These animals and made once, and never can be made again until a reset happens, they provide massive bonuses and (stretch goal?) can be made to level up using even more parts, evolving them into further horrors.
     A list needs to be made for ideas of specialty animals, so that should be a high priority for now until we get it done.
+
+    Lab ideas: Maybe have it so only one of the speciality animals can be active at a time, and they give crazy bonuses. Maybe with the resource mechanic we can make it so you can buy slots to activate the other animals using the resource, for a lot of resources. That way there is a bit of reward for playing long term. (stretch goal idea) - maybe the "speciality" animals could level up as they are used, giving them further bonuses over time, or maybe the amount of times they are chosen as the "speciality" animal? This would require the ability to only make 1 - (however many purchased) available each game until reset.
+
+
+    =======================
+    List of "specialty" animals
+    =======================
+    Unicorn? (cow + goat?)
+    Shigg? (sheep + pig)
+    Flying Pig? (goose + pig)
+    Turducken? (may need to add turkeys?)
+    Honey Duck (bee + duck)
+    Sheat (sheep + goat)
+    goow (goose + cow)
+
+
 
 
 ========================================================
