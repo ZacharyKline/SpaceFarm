@@ -127,7 +127,7 @@ function buySheep() {
         sheepPrice = Math.trunc(22 * toThePowerOf);
         sheepCount += 1
         document.getElementById('sheepCounty').innerHTML = commaIncluded(sheepCount)
-        document.getElementById('wooly').innerHTML = commaIncluded(woolCount)
+        document.getElementById("wooly").innerHTML = commaIncluded(woolCount);
         document.getElementById('sheeppricy').innerHTML = commaIncluded(sheepPrice) + ' Wool'
     //     // very annoying
     //     // sheepAudio.play(); 
